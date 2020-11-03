@@ -32,6 +32,18 @@ button{
 }
 
 /*==============================*/
+/*==vuetify inputs auto height==*/
+/*==============================*/
+.v-text-field.v-text-field--solo .v-input__control{
+    min-height: auto !important;
+}
+.v-text-field .v-input__control .v-input__slot {
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/*==============================*/
 /*=bootstrap dropdown animation=*/
 /*==============================*/
 .animate {
