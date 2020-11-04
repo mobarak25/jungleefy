@@ -61,10 +61,15 @@ header{
     padding:rem-calc(0 15px);
     text-align: center;
     & > a{
-       color: map-get($colors , white); 
+        text-decoration: none;
+        span{ color: map-get($colors , white)}; 
     }
     span{
         @include font(false, 14px, 18px,false);
+        &.sign-text{
+            width: 86px;
+            display: block;
+        }
     }
 }
 .header-widgets-icon{
