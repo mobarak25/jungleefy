@@ -41,8 +41,8 @@ header{
 .site-search-box{
     width: calc(100% - 117px);
     .v-text-field--outlined, .v-text-field--solo {
-    border-radius: 4px 0 0 4px;
-}
+        border-radius: 4px 0 0 4px;
+    }
 }
 .site-search-field{
     width: 100%;
@@ -102,46 +102,25 @@ header{
         border: 2px solid map-get($colors , vulcan);
         @include absolute(24px, 24px, top, -10px, right,-17px);
     }
-
-    
 }
 
 .select-box-wrapper{
     padding-right: rem-calc(11px);
 }
 .select-box {
+    margin-right: rem-calc(20px);
+    width: 104px;
     overflow: hidden;
     position: relative;
-    i{
-        transform: translateY(-50%);
-        @include font(white, 14px, 14px, false);
-        @include absolute(false, false, top, 50%, right, 0);
+
+    .theme--dark.v-label {
+        @include font(white, 14px, 16px, false);
     }
-
-
-    select {
-        @include font(white, 14px, 22px,false);
-        background: transparent;
-        width: 100%;
-        height: 35px;
-        border: 0;
-        position: relative;
-        z-index: 2;
-        border-radius: 0;
-        -webkit-appearance: none;
-        vertical-align: top!important;
-        text-align: left;
-
-        option{
-            padding:50px;
-            background-color: #202227;
-            border-bottom: 1px solid #fff;
-            @include font(white, 14px, 22px,false);
-        }
-
-        &:focus{
-            outline: 0;
-        }
+    .v-icon.v-icon {font-size: 20px;}
+    .v-input__icon {
+        height: 16px;
+        min-width: 13px;
+        width: 13px;
     }
 }
 
@@ -176,5 +155,4 @@ header{
     border: 1px solid map-get($colors, Black-Russian);
     background: rgb(43,48,55);
     background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
-
 }

@@ -4,6 +4,7 @@
             <v-layout class="top-header-wrapper">
                 <v-container class="py-0">
                     <v-layout class="top-header mx-0 wrap">
+                        <!-- Top header left -->
                         <v-flex
                             class="top-header-left flex-grow-0 d-flex align-center justify-space-between"
                         >
@@ -14,9 +15,36 @@
                                 class="flex-grow-0"
                                 :src="require('@/assets/images/logo.png')"
                             ></v-img>
-                            <h5>sad</h5>
+                            <v-layout class="select-box-wrapper flex-grow-0">
+                                <v-flex class="select-box flex-grow-0">
+                                    <v-select
+                                        dark
+                                        solo
+                                        append-icon="mdi-chevron-down"
+                                        :items="locations"
+                                        label="Location"
+                                        hide-details
+                                        v-model="selectedLocation"
+                                        background-color="vulcan"
+                                    ></v-select>
+                                </v-flex>
+
+                                <v-flex class="select-box flex-grow-0">
+                                    <v-select
+                                        dark
+                                        solo
+                                        append-icon="mdi-chevron-down"
+                                        :items="locations"
+                                        label="Location"
+                                        hide-details
+                                        v-model="selectedLocation"
+                                        background-color="vulcan"
+                                    ></v-select>
+                                </v-flex>
+                            </v-layout>
                         </v-flex>
 
+                        <!-- Top header mid -->
                         <v-flex class="top-header-mid pa-0">
                             <v-flex class="site-search pa-0">
                                 <v-flex class="site-search-box">
@@ -63,7 +91,6 @@
                             <v-flex class="top-header-widgets flex-grow-0">
                                 <v-menu offset-y transition="slide-x-transition" :offset-x="offset">
                                     <template v-slot:activator="{ on, attrs }">
-                                        <!-- <a v-bind="attrs" v-on="on">Dropdown</a> -->
                                         <v-flex v-bind="attrs" v-on="on" class="pointer">
                                             <v-flex class="header-widgets-icon">
                                                 <i class="icofont-ui-user"></i>
@@ -85,11 +112,21 @@
                                 </v-menu>
                             </v-flex>
                         </v-layout>
-                        <!-- //Top header right -->
                     </v-layout>
                 </v-container>
             </v-layout>
-            <v-layout class="btm-header-wrapper">sdf</v-layout>
+            <v-layout class="btm-header-wrapper">
+                <v-container class="py-0">
+                    <v-toolbar flat tag="div" class="pa-0">
+                        <v-toolbar-items>
+                            <v-btn>Home</v-btn>
+                            <v-btn>Home</v-btn>
+                            <v-btn>Home</v-btn>
+                            <v-btn>Home</v-btn>
+                        </v-toolbar-items>
+                    </v-toolbar>
+                </v-container>
+            </v-layout>
         </v-layout>
 
         <v-card class="d-flex" flat>
@@ -114,13 +151,17 @@ export default {
     name: "SiteHeader",
 
     data: () => ({
+        offset: false,
+
+        selectedLocation: "",
+        locations: ["Dhaka", "India", "pakistan"],
+
         items: ["foo", "bar", "fizz", "buzz"],
         values: [],
         value: null,
-        offset: true,
 
         userInfos: [
-            { title: "Click Me Click Me Click Me" },
+            { title: "Click Me" },
             { title: "Click Me" },
             { title: "Click Me" },
             { title: "Click Me 2" }
