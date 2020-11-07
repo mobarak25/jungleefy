@@ -123,10 +123,6 @@ header{
         width: 13px;
     }
 }
-
-.btm-header{
-    padding: rem-calc(5px 0 7px);
-}
 .main-menu{
     width: calc(100% - 138px);
     > ul{
@@ -136,6 +132,10 @@ header{
             @include font(white, 15px, 30px, light);
             a{
                color: map-get($colors , white); 
+               &:hover{
+                   @include transition(all, 400ms);
+                   color: map-get($colors , brand);
+               }
             }
             ul{
                 display: none;
@@ -147,12 +147,16 @@ header{
         @include font(brand, 15px, 30px, light);
     }
 }
-.post-add{
-    width: 138px;
-    text-align: center;
-    @include border-radius(6px);
-    @include font(white, 15px, 30px, false);
-    border: 1px solid map-get($colors, Black-Russian);
-    background: rgb(43,48,55);
-    background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
+.btm-header{
+
+    .post-add{
+        width: 138px;
+        text-align: center;
+        @include border-radius(6px);
+        @include font(white, 15px, 30px, false);
+        border: 1px solid map-get($colors, Black-Russian);
+        background: rgb(43,48,55);
+        background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
+    }
 }
+

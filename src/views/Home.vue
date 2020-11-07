@@ -1,18 +1,16 @@
 <template>
-    <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png" />
-        <SiteHeader msg="Welcome to Your Vue.js App" />
-    </div>
+    <v-main>
+        <HomeBanner />
+    </v-main>
 </template>
 
 <script>
-// @ is an alias to /src
-import SiteHeader from "@/components/SiteHeader.vue";
-
+import HomeBanner from "@/components/HomeBanner";
 export default {
     name: "Home",
+
     components: {
-        SiteHeader
+        HomeBanner
     }
 };
 </script>

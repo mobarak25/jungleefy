@@ -115,40 +115,23 @@
                     </v-layout>
                 </v-container>
             </v-layout>
+
             <v-layout class="btm-header-wrapper">
-                <v-container class="py-0">
-                    <v-toolbar flat tag="div" class="pa-0">
-                        <v-toolbar-items>
-                            <v-btn>Home</v-btn>
-                            <v-btn>Home</v-btn>
-                            <v-btn>Home</v-btn>
-                            <v-btn>Home</v-btn>
-                        </v-toolbar-items>
-                    </v-toolbar>
-                </v-container>
+                <site-menu></site-menu>
             </v-layout>
         </v-layout>
-
-        <v-card class="d-flex" flat>
-            <div>I'm a flexbox container!</div>
-        </v-card>
-
-        <v-menu offset-y max-width="200">
-            <template v-slot:activator="{ on, attrs }">
-                <a v-bind="attrs" v-on="on">Dropdown</a>
-            </template>
-            <v-list>
-                <v-list-item v-for="(item, index) in userInfos" :key="index">
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </v-menu>
     </nav>
 </template>
 
 <script>
+import SiteMenu from "@/components/SiteMenu";
+
 export default {
     name: "SiteHeader",
+
+    components: {
+        SiteMenu
+    },
 
     data: () => ({
         offset: false,
