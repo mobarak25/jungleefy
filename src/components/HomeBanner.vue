@@ -8,6 +8,14 @@
                             START FROM
                             <span>TK 200</span>
                         </v-btn>
+                        <h2>
+                            BEST Deal
+                            <br />CATCH IF YOU CAN
+                        </h2>
+                        <p>
+                            Don't miss out! Amazing deals taking
+                            <br />place daily at online auctions.
+                        </p>
                     </v-container>
                 </v-flex>
             </v-img>

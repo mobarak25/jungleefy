@@ -1,12 +1,14 @@
 .banner-wrapper{
-    padding: 0;
-    margin: 0;
     .banner-caption{
-    padding: 0;
-    margin: 0;
-    height: 200px;
         .v-btn{
-            height: auto;
+            height: 35px;
+            line-height: 35px;
+            .v-btn__content{
+                span{
+                    @include font(false, 18px, 18px, false);
+                }
+                
+            }
         }
     }
 }
