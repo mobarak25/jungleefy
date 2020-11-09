@@ -1,6 +1,10 @@
 <template>
     <v-layout tag="section" class="banner-wrapper">
-        <v-img :src="require('@/assets/images/home_banner.png')">
+        <v-img
+            :src="require('@/assets/images/home_banner.png')"
+            alt="Banner Image"
+            title="Banner Image"
+        >
             <v-flex class="banner-caption d-flex fill-height align-center">
                 <v-container>
                     <v-btn href="#" tile depressed class="brand white--text">
@@ -25,6 +29,7 @@
                     </v-flex>
                 </v-container>
             </v-flex>
+            <v-icon class="banner-truck">mdi-truck</v-icon>
         </v-img>
     </v-layout>
 </template>

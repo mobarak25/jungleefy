@@ -9,12 +9,13 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
+                primary: '#353a44',
+                secondary: '#ff9900',
                 brand: '#ff9900',
-                primary: '#ff9900',
-                white: '#fff',
-                grey: '#ebd5d5',
-                vulcan: '#353a44',
-                BlackRussian: '#222428'
+                info: '#fff',
+                warning: '#ebd5d5',
+                success: '#222428',
+                danger: '#222428',
             },
         },
     },

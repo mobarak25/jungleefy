@@ -8,7 +8,7 @@ module.exports = {
                 prependData: `
                     @import "@/assets/sass/app.scss";
                 `
-            }
+            },
         }
     }
 };

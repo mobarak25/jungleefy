@@ -1,4 +1,5 @@
 .banner-wrapper{
+    position: relative;
     .banner-caption{
         .v-btn{
             height: 35px;
@@ -25,6 +26,7 @@
         }
         .banner-btns{
             padding-top: rem-calc(36px);
+            position: relative;
 
             .v-btn{
                 height:rem-calc(48px);
@@ -36,5 +38,33 @@
             }
         }
 
+    }
+}
+
+.banner-wrapper .banner-truck{
+    @include font(brand, 24px, 24px, false);
+    @include absolute(false,false,left, 0, bottom, -3px);
+    animation: pulse 50s linear infinite;
+    z-index: 9999;
+}
+@keyframes pulse{
+    0% {
+        left: 0;
+    }
+    49% {
+        left: 99%;
+        transform: rotateY(0deg);
+    }
+    50% {
+        left: 99%;
+        transform: rotateY(-180deg);
+    }
+    99% {
+        transform: rotateY(-180deg);
+        left: 0;
+    }
+    100% {
+        left: 0;
+        transform: rotateY(0deg);
     }
 }
