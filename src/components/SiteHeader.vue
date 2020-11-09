@@ -152,3 +152,6 @@ export default {
     })
 };
 </script>
+<style lang="scss">
+@import "@/assets/sass/header.scss";
+</style>

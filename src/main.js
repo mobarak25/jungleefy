@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 
-import "@/assets/sass/app.scss";
+import "@/assets/css/icofont.min.css";
 
 Vue.config.productionTip = false;
 

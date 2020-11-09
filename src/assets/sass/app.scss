@@ -2,8 +2,6 @@
 // // bootstrap
 // @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-// plugins
-@import "../css/icofont.min.css";
 
 //pages
 @import "variables";
@@ -11,5 +9,4 @@
 @import "mixins";
 @import "common";
 @import "elements";
-@import "header";
-@import "home_banner";
+

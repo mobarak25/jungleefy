@@ -1,0 +1,40 @@
+.banner-wrapper{
+    .banner-caption{
+        .v-btn{
+            height: 35px;
+            line-height: 35px;
+            .v-btn__content{
+                span{
+                    @include font(false, 18px, 18px, false);
+                }
+                
+            }
+        }
+        h2{
+            padding: rem-calc(4px 0 7px);
+            @include font(vulcan, 86px, 100px, semi-bold)
+        }
+        p{
+            padding-left: rem-calc(25px);
+            position: relative;
+            @include font(vulcan, 25px, 38px, semi-bold);
+
+            &:before{
+                @include sudo(4px, 60px, left ,0, top, 11px, brand);
+            }
+        }
+        .banner-btns{
+            padding-top: rem-calc(36px);
+
+            .v-btn{
+                height:rem-calc(48px);
+                @include font(false, 16px, 48px, medium);
+
+                &:not(:last-child){
+                    margin-right:rem-calc(22px) ;
+                }
+            }
+        }
+
+    }
+}
