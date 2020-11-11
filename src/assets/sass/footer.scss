@@ -1,0 +1,17 @@
+.site-footer{
+    .footer-box{
+        h3{
+            @include font(false, 22px, 28px, medium);
+        }
+    }
+    .copy{
+        padding: rem-calc(7px 0);
+        @include font(white,14px, 22px, false);
+        a{
+            color: white;
+            &:hover{
+                color: map-get($colors, brand);
+            }
+        }
+    }
+}

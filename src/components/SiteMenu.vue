@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar flat prominent height="40" tag="div" class="pa-0 vulcan">
+    <v-toolbar flat prominent height="40" tag="div" class="pa-0 primary">
         <v-container class="py-0">
             <div class="btm-header d-flex wrap justify-between align-center">
                 <nav class="main-menu d-flex wrap justify-center align-center">
@@ -25,7 +25,7 @@
                     <a class="more-menu" href="#">More..</a>
                 </nav>
 
-                <a class="post-add" href="#">
+                <a class="post-promotion" href="#">
                     <i class="icofont-plus"></i> Post Your Ad
                 </a>
             </div>

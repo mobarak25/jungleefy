@@ -1,11 +1,10 @@
 
 $btn-letter-spacing: 0;
 $colors: (
-    brand        : #ff9900,
-    white        : #fff,
-    grey         : #828282,
-    vulcan       : #353a44,
-    Black-Russian:#222428,
+    primary         : #353a44, // header-bg
+    secondary       : #30353d, // footer-bg
+    brand           : #ff9900, // logo-bg
+    light           :#fff
 );
 
 $font-weight: (
@@ -17,7 +16,3 @@ $font-weight: (
     extra-bold : 800,
     black      : 900,
 );
-
-$url: '../images';
-
-

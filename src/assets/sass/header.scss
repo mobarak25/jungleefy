@@ -1,8 +1,8 @@
 header{
-    background-color: map-get($colors, vulcan);
+    background-color: map-get($colors, primary);
 }
 .top-header-wrapper{
-    border-bottom: 1px solid map-get($colors, Black-Russian);
+    border-bottom: 1px solid darken(map-get($colors,primary),10);
 }
 .top-header{
    padding:rem-calc(23 0);
@@ -26,7 +26,7 @@ header{
         @include font(false, 16px, 22px,false);
         @include absolute(117px, 100%, right,0, top,0);
         @include border-radius(0 4px 4px 0);
-        color: map-get($colors , white);
+        color: map-get($colors , light);
         background-color: map-get($colors , brand);
 
         i{
@@ -62,7 +62,7 @@ header{
     text-align: center;
     & > a{
         text-decoration: none;
-        span{ color: map-get($colors , white)}; 
+        span{ color: map-get($colors , light)}; 
     }
     span{
         @include font(false, 14px, 18px,false);
@@ -83,7 +83,7 @@ header{
     i{
         line-height: 16px;
         @include center(false, false);
-        color: map-get($colors , white);
+        color: map-get($colors , light);
 
         &.icofont-heart-alt{
             top: 14px;
@@ -114,7 +114,7 @@ header{
     position: relative;
 
     .theme--dark.v-label {
-        @include font(white, 14px, 16px, false);
+        @include font(light, 14px, 16px, false);
     }
     .v-icon.v-icon {font-size: 20px;}
     .v-input__icon {
@@ -129,9 +129,9 @@ header{
         > li{
             padding: rem-calc(0 15px);
             display: inline-block;
-            @include font(white, 15px, 30px, light);
+            @include font(light, 15px, 30px, light);
             a{
-               color: map-get($colors , white); 
+               color: map-get($colors , light); 
                &:hover{
                    @include transition(all, 400ms);
                    color: map-get($colors , brand);
@@ -149,12 +149,12 @@ header{
 }
 .btm-header{
 
-    .post-add{
+    .post-promotion{
         width: 138px;
         text-align: center;
         @include border-radius(6px);
-        @include font(white, 15px, 30px, false);
-        border: 1px solid map-get($colors, Black-Russian);
+        @include font(light, 15px, 30px, false);
+        border: 1px solid darken(map-get($colors, primary), 10);
         background: rgb(43,48,55);
         background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
     }

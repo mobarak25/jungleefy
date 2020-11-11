@@ -6,7 +6,7 @@
             title="Banner Image"
         >
             <v-flex class="banner-caption d-flex fill-height align-center">
-                <v-container>
+                <v-container class="py-0">
                     <v-btn href="#" tile depressed class="brand white--text">
                         START FROM
                         <span>TK 200</span>

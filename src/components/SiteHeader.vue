@@ -25,7 +25,7 @@
                                         label="Location"
                                         hide-details
                                         v-model="selectedLocation"
-                                        background-color="vulcan"
+                                        background-color="primary"
                                     ></v-select>
                                 </v-flex>
 
@@ -38,7 +38,7 @@
                                         label="Location"
                                         hide-details
                                         v-model="selectedLocation"
-                                        background-color="vulcan"
+                                        background-color="primary"
                                     ></v-select>
                                 </v-flex>
                             </v-layout>
