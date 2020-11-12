@@ -1,14 +1,56 @@
 .site-footer{
+    .footer-top{
+        padding: rem-calc(44px 0 44px);
+
+        .footer-social .v-btn{
+            background-color: map-get($colors, primary);
+            border-color:  darken(map-get($colors, primary), 7);
+
+            &:not(:last-child){
+                margin-right: rem-calc(8px);
+            }
+        }
+    }
+
     .footer-box{
         h3{
             @include font(false, 22px, 28px, medium);
         }
+        ul{
+            padding: rem-calc(20px 0 0);
+            li{
+                padding: rem-calc(4px 0);
+                @include font(light, 15px, 20px, false);
+
+                a{
+                    position: relative;
+                    @include transition(all, 400ms);
+                    color: map-get($colors, light);
+
+                    &:before{
+                        @include transition(all, 300ms);
+                        @include sudo(0, 1px, left,0, bottom, -2px, brand);
+                    }
+
+                    &:hover{
+                        margin-left: rem-calc(4px);
+                        color: map-get($colors, brand);
+
+                        &:before{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
+
     .copy{
         padding: rem-calc(7px 0);
-        @include font(white,14px, 22px, false);
+        @include font(white, 14px, 22px, false);
         a{
             color: white;
+            
             &:hover{
                 color: map-get($colors, brand);
             }
