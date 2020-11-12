@@ -26,7 +26,7 @@ export default {
     data: () => ({
         featuredAuctions: {
             title: "Featured Auctions",
-            url: "/About",
+            url: "About",
             products: [
                 {
                     id: 1,

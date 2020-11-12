@@ -12,22 +12,23 @@
                         text
                         color="primary"
                         class="color text-none"
+                        :to="{name:options.url}"
                     >Show All</v-btn>
                 </h2>
             </v-flex>
             <v-row>
-                <v-col lg="3" class>sd</v-col>
-                <v-col lg="3" class>sd</v-col>
-                <v-col lg="3" class>sd</v-col>
-                <v-col lg="3" class>sd</v-col>
-                <v-col lg="3" class>sd</v-col>
+                <v-col lg="3">sd</v-col>
+                <v-col lg="3">sd</v-col>
+                <v-col lg="3">sd</v-col>
+                <v-col lg="3">sd</v-col>
+                <v-col lg="3">sd</v-col>
             </v-row>
         </v-container>
     </v-layout>
 </template>
 <script>
 export default {
-    name: "FeatureAuctions",
+    name: "HomeProductSections",
     props: {
         options: Object,
     },

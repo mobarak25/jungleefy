@@ -8,13 +8,15 @@
                         <v-flex
                             class="top-header-left flex-grow-0 d-flex align-center justify-space-between"
                         >
-                            <v-img
-                                width="171"
-                                height="29"
-                                contain
-                                class="flex-grow-0"
-                                :src="require('@/assets/images/logo.png')"
-                            ></v-img>
+                            <router-link :to="{name:'Home'}">
+                                <v-img
+                                    width="171"
+                                    height="29"
+                                    contain
+                                    class="flex-grow-0"
+                                    :src="require('@/assets/images/logo.png')"
+                                ></v-img>
+                            </router-link>
                             <v-layout class="select-box-wrapper flex-grow-0">
                                 <v-flex class="select-box flex-grow-0">
                                     <v-select
@@ -130,7 +132,7 @@ export default {
     name: "SiteHeader",
 
     components: {
-        SiteMenu
+        SiteMenu,
     },
 
     data: () => ({
@@ -147,9 +149,9 @@ export default {
             { title: "Click Me" },
             { title: "Click Me" },
             { title: "Click Me" },
-            { title: "Click Me 2" }
-        ]
-    })
+            { title: "Click Me 2" },
+        ],
+    }),
 };
 </script>
 <style lang="scss">

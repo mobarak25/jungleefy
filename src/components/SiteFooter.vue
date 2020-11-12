@@ -4,14 +4,16 @@
             <v-container>
                 <v-row no-gutters>
                     <v-col class="footer-box">
-                        <v-img
-                            max-width="171"
-                            max-height="29"
-                            contain
-                            class="flex-grow-0 mb-6"
-                            :src="require('@/assets/images/logo.png')"
-                            alt="Footer Logo"
-                        ></v-img>
+                        <router-link :to="{name:'Home'}">
+                            <v-img
+                                max-width="171"
+                                max-height="29"
+                                contain
+                                class="flex-grow-0 mb-6"
+                                :src="require('@/assets/images/logo.png')"
+                                alt="Footer Logo"
+                            ></v-img>
+                        </router-link>
 
                         <h3>Get in Tuch</h3>
                         <v-flex class="pt-5 footer-social">
