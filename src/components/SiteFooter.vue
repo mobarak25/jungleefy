@@ -81,11 +81,22 @@
 
         <v-layout>
             <v-container>
-                <span class="copy d-block">
-                    &copy; Copyright
-                    <router-link to="/">Jungleebazaar.com</router-link>
-                    {{new Date().getFullYear()}}
-                </span>
+                <v-layout>
+                    <span class="copy d-block">
+                        &copy; Copyright
+                        <router-link to="/">Jungleebazaar.com</router-link>
+                        {{new Date().getFullYear()}}
+                    </span>
+
+                    <v-spacer></v-spacer>
+
+                    <v-img
+                        max-height="40"
+                        max-width="258"
+                        :src="require('@/assets/images/payment-methods.png')"
+                        alt="Payment Methods"
+                    ></v-img>
+                </v-layout>
             </v-container>
         </v-layout>
     </v-footer>
@@ -100,7 +111,7 @@ export default {
             { id: 2, text: "How to Bid" },
             { id: 3, text: "Auction Fees" },
             { id: 4, text: "Shipping Fees" },
-            { id: 5, text: "Auction FAQ's" }
+            { id: 5, text: "Auction FAQ's" },
         ],
         categories: [
             { id: 1, text: "Drop shipping" },
@@ -109,7 +120,7 @@ export default {
             { id: 4, text: "Warehouse Closeouts" },
             { id: 5, text: "Overstock Surplus" },
             { id: 6, text: "Wholesale Stock" },
-            { id: 7, text: "Manufacturer Stock" }
+            { id: 7, text: "Manufacturer Stock" },
         ],
         accountInfos: [
             { id: 1, text: "My Account" },
@@ -117,7 +128,7 @@ export default {
             { id: 3, text: "Addresses" },
             { id: 4, text: "Cancellation, Return & Refund Policy" },
             { id: 5, text: "Manage Your Content & Devices" },
-            { id: 6, text: "Help" }
+            { id: 6, text: "Help" },
         ],
         informations: [
             { id: 1, text: "About Us" },
@@ -126,9 +137,9 @@ export default {
             { id: 4, text: "Careers" },
             { id: 5, text: "Delivery Information" },
             { id: 6, text: "Privacy Policy" },
-            { id: 7, text: "Terms & Conditions" }
-        ]
-    })
+            { id: 7, text: "Terms & Conditions" },
+        ],
+    }),
 };
 </script>
 

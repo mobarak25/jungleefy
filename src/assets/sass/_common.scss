@@ -7,6 +7,7 @@ body,
 /*==============================*/
 /*=====   Common styles   ======*/
 /*==============================*/
+*{letter-spacing: normal !important;}
 a{color: map-get($colors, brand); text-decoration: none;}
 .v-application p,p{padding: 0; margin: 0;}
 .v-application a:hover{text-decoration:none;color: map-get($colors, brand)}

@@ -1,19 +1,22 @@
 <template>
     <v-main>
+        <!-- Banner Module -->
         <HomeBanner />
-        <SiteFooter />
+
+        <!-- How To Bid Module-->
+        <HowToBid />
     </v-main>
 </template>
 
 <script>
 import HomeBanner from "@/components/HomeBanner";
-import SiteFooter from "@/components/SiteFooter";
+import HowToBid from "@/components/HowToBid";
 export default {
     name: "Home",
 
     components: {
         HomeBanner,
-        SiteFooter
-    }
+        HowToBid,
+    },
 };
 </script>
