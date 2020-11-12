@@ -1,5 +1,5 @@
 <template>
-    <v-layout wrap class="how-do-bid">
+    <v-layout wrap class="how-do-bid" tag="section">
         <v-card flat tile class="card primary darken-1 white--text text-center" width="100%">
             <v-card-title class="d-block">How Do I Bid</v-card-title>
 
