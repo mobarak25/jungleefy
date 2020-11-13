@@ -22,12 +22,16 @@
                     <v-card elevation="2">
                         <v-img
                             class="white--text align-end"
-                            height="285px"
+                            max-height="285px"
                             :src="require('@/assets/images/products/product-1.jpg')"
                         >
-                            <v-card-text class="product-top-labels text-right">
+                            <v-card-text class="product-top-labels text-right pr-2 pt-2">
                                 <v-btn fab width="35" height="35" elevation="2">
                                     <v-icon class="grey--text">mdi-heart mdi-18px</v-icon>
+                                </v-btn>
+
+                                <v-btn color="brand" fab width="35" height="35" elevation="2">
+                                    <v-icon class="white--text">mdi-cart mdi-18px</v-icon>
                                 </v-btn>
                             </v-card-text>
 
@@ -42,10 +46,12 @@
                             </v-card-text>
                         </v-img>
 
-                        <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+                        <v-card-subtitle class="pb-0 font-weight-light">Vehicle</v-card-subtitle>
 
                         <v-card-text class="text--primary">
-                            <div>Whitehaven Beach</div>
+                            <div class="product-title">
+                                <a href="#">Nikon COOLPIX B500 Digital Camera (Black)</a>
+                            </div>
 
                             <div>Whitsunday Island, Whitsunday Islands</div>
                         </v-card-text>
@@ -78,6 +84,12 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
+    .v-btn:not(:last-child) {
+        margin-right: rem-calc(10px);
+    }
+}
+.product-title {
+    @include font(primary, 18px, 22px, medium);
 }
 // @import "@/assets/sass/footer.scss";
 </style>
