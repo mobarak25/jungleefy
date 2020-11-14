@@ -1,4 +1,5 @@
 .banner-wrapper{
+     padding-bottom: rem-calc(84px);
     position: relative;
     .banner-caption{
         .v-btn{
@@ -8,17 +9,16 @@
                 span{
                     @include font(false, 18px, 18px, false);
                 }
-                
             }
         }
         h2{
             padding: rem-calc(4px 0 7px);
-            @include font(vulcan, 86px, 100px, semi-bold)
+            @include font(primary, 86px, 100px, semi-bold)
         }
         p{
             padding-left: rem-calc(25px);
             position: relative;
-            @include font(vulcan, 25px, 38px, semi-bold);
+            @include font(primary, 25px, 38px, semi-bold);
 
             &:before{
                 @include sudo(4px, 60px, left ,0, top, 11px, brand);

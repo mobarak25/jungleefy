@@ -1,0 +1,80 @@
+.home-sections-title{
+    h2{
+        position: relative;
+        padding-bottom: rem-calc(8px);
+        margin-bottom: rem-calc(16px);
+        @include font(primary, 22px, 33px, medium);
+
+        &:before{
+            @include sudo(50px, 2px, left, 0, bottom, 0, brand);
+        }
+
+        .v-btn.v-btn--outlined.v-btn--text{
+            border-color: map-get($colors, brand);
+        }
+    }
+}
+
+
+.product-box{
+    padding-top: 4px;
+}
+.product-top-labels {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .v-btn:not(:last-child) {
+        margin-right: rem-calc(10px);
+    }
+}
+
+.product-information{
+    padding-bottom: rem-calc(22px);
+}
+.product-title {
+    padding-bottom: rem-calc(10px);
+    @include font(primary, 18px, 22px, medium);
+}
+
+.product-price-box{
+    .product-price{
+        padding-right: rem-calc(10px);
+        display: inline-block;
+        @include font(brand, 22px, 28px, medium);
+    }
+    .bidding-status{
+        @include font(gray, 14px, 28px, light);
+    }
+}
+.product-location{
+    padding-left: rem-calc(17px);
+    position: relative;
+    @include font(gray, 14px, 20px, false);
+
+    i.v-icon{
+        @include absolute(false, false, left,-2px,top,0);
+        @include font(gray, 17px, 20px, false);  
+    }
+}
+.auction-time-holder{
+    .time-title{
+        padding-right: rem-calc(10px);
+        display: inline-block;
+        @include font(gray, 14px, 18px, light); 
+    }
+    .time-value{
+        display: inline-block;
+        @include font(secondary, 16px, 18px, medium);
+    }
+}
+.auction-bid-holder{
+    .bid-title{
+        padding-right: rem-calc(10px);
+        display: inline-block;
+        @include font(primary, 14px, 18px, light); 
+    }
+    .bid-value{
+        display: inline-block;
+        @include font(secondary, 16px, 18px, medium);
+    }
+}
