@@ -49,28 +49,28 @@
                                             tag="span"
                                             dark
                                             color="primary"
-                                            class="py-1 px-2 font-weight-light text-center d-inline-block align-center"
+                                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
                                         >Used</v-sheet>
                                         <v-sheet
                                             v-else-if="product.status=='New'"
                                             tag="span"
                                             dark
                                             color="brand"
-                                            class="py-1 px-2 font-weight-light text-center d-inline-block align-center"
+                                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
                                         >New</v-sheet>
                                         <v-sheet
                                             v-else-if="product.status=='Lot'"
                                             tag="span"
                                             dark
                                             color="primary"
-                                            class="py-1 px-2 font-weight-light text-center d-inline-block align-center"
+                                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
                                         >Lot</v-sheet>
                                         <v-sheet
                                             v-else-if="product.status=='Shop Woner'"
                                             tag="span"
                                             dark
                                             color="primary"
-                                            class="py-1 px-2 font-weight-light text-center d-inline-block align-center"
+                                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
                                         >Shop Woner</v-sheet>
                                     </v-card-text>
                                 </v-img>
@@ -123,20 +123,23 @@
 
                 <v-col lg="3">
                     <v-flex class="product-box">
-                        <v-card elevation="5">
+                        <v-card elevation="5" :to="{name:'About'}">
                             <v-img
                                 contain
                                 class="white--text align-end"
                                 :src="require('@/assets/images/sell-banner.png')"
                             >
-                                <v-card-text class="pb-3">
-                                    <v-sheet
-                                        tag="span"
+                                <v-flex class="sell-btn-wrap">
+                                    <v-btn
                                         dark
-                                        color="primary"
-                                        class="py-1 px-2 font-weight-light text-center d-inline-block align-center"
-                                    >Used</v-sheet>
-                                </v-card-text>
+                                        color="brand"
+                                        depressed
+                                        tile
+                                        class="sell-btn text-none"
+                                    >
+                                        <v-icon>mdi-plus-thick</v-icon>Post your Ad
+                                    </v-btn>
+                                </v-flex>
                             </v-img>
                         </v-card>
                     </v-flex>

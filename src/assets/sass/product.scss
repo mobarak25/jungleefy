@@ -78,3 +78,16 @@
         @include font(secondary, 16px, 18px, medium);
     }
 }
+
+
+.sell-btn-wrap{
+    padding: rem-calc(0 0 70px 30px);
+    .sell-btn.v-btn{
+        height: 46px;
+        @include font(false, 16px, 22px, semi-bold);
+
+        i{
+            @include font(false, 18px, 22px, false);
+        }
+    }
+}
