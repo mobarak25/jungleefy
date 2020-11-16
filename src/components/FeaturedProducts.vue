@@ -3,7 +3,7 @@
         <v-container>
             <v-img
                 class="align-top"
-                :src="require('@/assets/images/big-featured-image.jpg')"
+                :src="require('@/assets'+'/images/big-featured-image.jpg')"
                 alt="Featured image"
             >
                 <v-layout wrap>
