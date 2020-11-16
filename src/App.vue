@@ -19,6 +19,18 @@ export default {
     },
 
     data: () => ({}),
+
+    mounted() {
+        // let url = "http://localhost:8080/data/auctionproduct.json";
+        // this.$http
+        //     .get(url)
+        //     .then((res) => {
+        //         console.log(res.data);
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+    },
 };
 </script>
 
