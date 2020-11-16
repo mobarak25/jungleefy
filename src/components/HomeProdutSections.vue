@@ -11,31 +11,13 @@
                         rounded
                         text
                         color="primary"
-                        class="color text-none"
+                        class="text-none bg-white"
                         :to="{name:options.url}"
                     >Show All</v-btn>
                 </h2>
             </v-flex>
 
-            <product-card :product-data="filteredProducts"></product-card>
-
-            <v-col lg="3">
-                <v-flex class="product-box">
-                    <v-card elevation="5" :to="{name:'About'}">
-                        <v-img
-                            contain
-                            class="white--text align-end"
-                            :src="require('@/assets/images/sell-banner.png')"
-                        >
-                            <v-flex class="sell-btn-wrap">
-                                <v-btn dark color="brand" depressed tile class="sell-btn text-none">
-                                    <v-icon>mdi-plus-thick</v-icon>Post your Ad
-                                </v-btn>
-                            </v-flex>
-                        </v-img>
-                    </v-card>
-                </v-flex>
-            </v-col>
+            <product-card :product-data="filteredProducts" :sell-btn="options.postAd"></product-card>
         </v-container>
     </v-layout>
 </template>
@@ -54,7 +36,11 @@ export default {
     }),
     computed: {
         filteredProducts: function () {
-            return this.options.products.slice(0, 7);
+            if (this.options.url == "AllFeaturedAuctions") {
+                return this.options.products.slice(0, 7);
+            } else {
+                return this.options.products.slice(0, 4);
+            }
         },
     },
 };
@@ -62,6 +48,27 @@ export default {
 
 <style lang="scss">
 @import "@/assets/sass/product.scss";
+
+.home-product-sections {
+    padding-top: rem-calc(25px);
+}
+.home-sections-title {
+    h2 {
+        position: relative;
+        padding-bottom: rem-calc(8px);
+        margin-bottom: rem-calc(16px);
+        @include font(primary, 22px, 33px, medium);
+
+        &:before {
+            @include sudo(50px, 2px, left, 0, bottom, 0, brand);
+        }
+
+        .v-btn.v-btn--outlined.v-btn--text {
+            background-color: map-get($colors, light);
+            border-color: map-get($colors, brand);
+        }
+    }
+}
 </style>
 
 

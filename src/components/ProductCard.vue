@@ -1,5 +1,6 @@
 <template>
     <div class="row">
+        <!-- Product section -->
         <v-col lg="3" v-for="product in products" :key="product.id">
             <v-flex class="product-box">
                 <v-card elevation="3">
@@ -8,6 +9,7 @@
                             class="white--text align-end"
                             max-height="285px"
                             :src="require('@/assets/images/products/'+ product.image)"
+                            alt="Products"
                         >
                             <v-card-text class="product-top-labels text-right pr-2 pt-2">
                                 <v-btn fab width="35" height="35" elevation="2">
@@ -89,6 +91,26 @@
                 </v-card>
             </v-flex>
         </v-col>
+
+        <!-- Post your add section -->
+        <v-col v-if="sellBtn" lg="3">
+            <v-flex class="product-box">
+                <v-card elevation="5" :to="{name:'About'}">
+                    <v-img
+                        contain
+                        class="white--text align-end"
+                        :src="require('@/assets/images/sell-banner.png')"
+                        alt="Sell button image"
+                    >
+                        <v-flex class="sell-btn-wrap">
+                            <v-btn dark color="brand" depressed tile class="sell-btn text-none">
+                                <v-icon>mdi-plus-thick</v-icon>Post your Ad
+                            </v-btn>
+                        </v-flex>
+                    </v-img>
+                </v-card>
+            </v-flex>
+        </v-col>
     </div>
 </template>
 
@@ -96,6 +118,7 @@
 export default {
     name: "ProductCard",
     props: {
+        sellBtn: Boolean,
         productData: Array,
     },
     data() {
@@ -108,5 +131,3 @@ export default {
     },
 };
 </script>
-
-<style lang="stylus" scoped></style>
