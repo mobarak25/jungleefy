@@ -1,0 +1,61 @@
+{
+    "title": "Auctions closing soon",
+    "url": "AllAuctionsClosing",
+    "postAd": false,
+    "products": [
+        {
+            "id": 1,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-1.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "Used"
+        },
+        {
+            "id": 2,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-2.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "New"
+        },
+        {
+            "id": 3,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-1.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "Lot"
+        },
+        {
+            "id": 4,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-1.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "Shop Woner"
+        },
+        {
+            "id": 5,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-1.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "Shop Woner"
+        },
+        {
+            "id": 6,
+            "title": "Nikon COOLPIX B500 Digital Camera (Black)",
+            "category": "Electronics",
+            "price": "TK 5000",
+            "image": "product-1.jpg",
+            "location": "Sekertack | Mohammadpur, Dhaka",
+            "status": "Shop Woner"
+        }
+    ]
+}
