@@ -16,25 +16,40 @@
                         <v-btn depressed dark tile color="brand">Shop Now</v-btn>
                     </v-flex>
                     <v-flex class="home-featured-right flex-grow-0">
-                        <v-slide-group class active-class="success" show-arrows>
-                            <v-slide-item v-for="n in 15" :key="n" v-slot="{ active, toggle }">
-                                <v-card
-                                    :color="active ? undefined : 'grey lighten-1'"
-                                    class="ma-4"
-                                    height="200"
-                                    width="173"
-                                    @click="toggle"
-                                >
-                                    <v-row class="fill-height" align="center" justify="center">
-                                        <v-scale-transition>
-                                            <v-icon
-                                                v-if="active"
-                                                color="white"
-                                                size="48"
-                                                v-text="'mdi-close-circle-outline'"
-                                            ></v-icon>
-                                        </v-scale-transition>
-                                    </v-row>
+                        <v-slide-group show-arrows class="slide-item-wrap">
+                            <v-slide-item
+                                v-for="product in featuredProducts.products"
+                                :key="product.id"
+                            >
+                                <v-card class="slide-item py-2" width="173">
+                                    <router-link :to="{name:'Home'}">
+                                        <v-img
+                                            contain
+                                            max-height="130"
+                                            :src="require('@/assets/images/products/'+ product.image)"
+                                            alt="Products"
+                                        ></v-img>
+                                    </router-link>
+                                    <v-card-text class="price" v-text="product.price"></v-card-text>
+                                    <v-card-subtitle
+                                        class="discount-price"
+                                        v-text="product.discount_price"
+                                    ></v-card-subtitle>
+                                    <v-card-title class="featured-product-title">
+                                        <a href v-text="product.title"></a>
+                                    </v-card-title>
+                                    <v-card-text class="d-flex align-center rating">
+                                        <v-rating
+                                            dense
+                                            readonly
+                                            v-model="rating"
+                                            color="yellow darken-3"
+                                            background-color="grey"
+                                            empty-icon="$ratingFull"
+                                            size="15"
+                                        ></v-rating>
+                                        <span class="d-block ml-1">{{ rating }} (653)</span>
+                                    </v-card-text>
                                 </v-card>
                             </v-slide-item>
                         </v-slide-group>
@@ -45,33 +60,36 @@
     </v-flex>
 </template>
 
+<script>
+export default {
+    name: "FeaturedProducts",
+    data() {
+        return {
+            rating: 4.2,
+            featuredProducts: "",
+        };
+    },
+
+    methods: {
+        getProduct() {
+            let url = "http://localhost:8080/data/featuredProducts.json";
+            this.$http
+                .get(url)
+                .then((res) => {
+                    this.featuredProducts = res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+    },
+
+    mounted() {
+        this.getProduct();
+    },
+};
+</script>
+
 <style lang="scss">
-.home-featured-wrap{
-    padding-top: rem-calc(30px);
-    
-    .home-featured-left {
-        width: 26.5%;
-        padding: rem-calc(65px 44px 0);
-
-        h3 {
-            padding-bottom: rem-calc(15px);
-            @include font(primary, 25px, 26px, semi-bold);
-        }
-        .sub-title {
-            padding-bottom: rem-calc(29px);
-            color: darken(map-get($colors, gray), 9);
-            @include font(false, 22px, 26px, semi-bold);
-        }
-        .v-btn{
-            width: 125px;
-            height: 48px;
-            @include font(false, 16px, 48px, semi-bold);
-        }
-    }
-
-    .home-featured-right {
-        width: 73.5%;
-        padding: rem-calc(50px 0 0);
-    }
-}
+@import "@/assets/sass/home_feature_product.scss";
 </style>

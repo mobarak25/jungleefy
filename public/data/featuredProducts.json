@@ -1,0 +1,102 @@
+{
+    "title": "Featured Products",
+    "url": "AllFeaturedProducts",
+    "products": [
+        {
+            "id": 1,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 2,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-2.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 3,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 4,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-2.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 5,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 6,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-2.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 7,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 8,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-2.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 9,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 10,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-2.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 11,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        },
+        {
+            "id": 12,
+            "title": "HOLSEM Digital Air Fryer with Rapid Air Circulation System",
+            "price": "TK 2515",
+            "discount_price": "TK 16,500 (15% off)",
+            "image": "features-product-1.jpg",
+            "ratings": ""
+        }
+    ]
+}

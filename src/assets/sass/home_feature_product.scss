@@ -1,0 +1,73 @@
+.home-featured-wrap{
+    padding-top: rem-calc(30px);
+    
+    .home-featured-left {
+        width: 25%;
+        padding: rem-calc(65px 44px 0);
+
+        h3 {
+            padding-bottom: rem-calc(15px);
+            @include font(primary, 25px, 26px, semi-bold);
+        }
+        .sub-title {
+            padding-bottom: rem-calc(29px);
+            color: darken(map-get($colors, gray), 9);
+            @include font(false, 22px, 26px, semi-bold);
+        }
+        .v-btn{
+            width: 125px;
+            height: 48px;
+            @include font(false, 16px, 48px, semi-bold);
+        }
+    }
+
+    .home-featured-right {
+        width: 75%;
+        padding: rem-calc(50px 20px 0);
+        .slide-item-wrap{
+            .v-slide-group__next, 
+            .v-slide-group__prev {
+                min-width: auto;
+                z-index: 5;
+                @include border-radius(5px);
+                transform: translateY(-50%);
+                background-color: rgba(136,136,136,0.4);
+                @include absolute(40px, 40px,left,auto, top, 50%);
+            }
+            .v-slide-group__next{
+                right: -20px;
+            }
+            .v-slide-group__prev{
+                left: -20px;
+            }
+            .v-icon{
+                 color:map-get($colors, light);
+            }
+        }
+
+        .slide-item{
+            margin: rem-calc(0 10px 10px);
+
+            .price{
+                padding: rem-calc(10px 12px 0);
+                @include font(brand, 16px, 21px, medium);
+            }
+            .discount-price{
+                padding: rem-calc(0 12px);
+                @include font(false, 12px, 21px, light);
+            }
+            .featured-product-title{
+                padding: rem-calc(7px 12px 10px);
+                @include font(primary, 13px, 18px, false);
+            }
+            .rating{
+            padding: rem-calc(0 12px);
+                .v-icon{padding: 0;}
+                span{
+                    padding-top: 2px;
+                    @include font(primary, 12px, 13px, false);
+                }
+            }
+        }
+    }
+}
