@@ -8,7 +8,7 @@
 
         <featured-products></featured-products>
 
-        <!-- Featured Auctions  Section-->
+        <!-- Auctions Closing  Section-->
         <home-produt-sections :options="auctionsClosing"></home-produt-sections>
 
         <!-- Featured Auctions  Section-->
