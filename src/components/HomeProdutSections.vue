@@ -36,14 +36,11 @@ export default {
     }),
     computed: {
         filteredProducts: function () {
-            console.log(this.options.products);
             if (this.options.url == "AllFeaturedAuctions") {
                 return this.options.products.slice(0, 7);
             } else {
                 return this.options.products.slice(0, 4);
             }
-
-            // return this.options.products
         },
     },
 };

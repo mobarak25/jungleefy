@@ -1,5 +1,8 @@
 <template>
     <v-main>
+        <span
+            class="width ellipse two-lines"
+        >some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some texts</span>
         <!-- Banner Section -->
         <HomeBanner />
 
@@ -10,6 +13,12 @@
 
         <!-- Auctions Closing  Section-->
         <home-produt-sections :options="auctionsClosing"></home-produt-sections>
+
+        <!-- Home Popular Category-->
+        <home-popular-category></home-popular-category>
+
+        <!-- Home Seller Section-->
+        <home-seller-section></home-seller-section>
 
         <!-- Featured Auctions  Section-->
         <home-produt-sections :options="trendingProducts"></home-produt-sections>
@@ -23,6 +32,8 @@
 import HomeBanner from "@/components/HomeBanner";
 import HomeProdutSections from "@/components/HomeProdutSections";
 import FeaturedProducts from "@/components/FeaturedProducts";
+import HomePopularCategory from "@/components/HomePopularCategory";
+import HomeSellerSection from "@/components/HomeSellerSection";
 import HowToBid from "@/components/HowToBid";
 export default {
     name: "Home",
@@ -32,6 +43,8 @@ export default {
         HomeProdutSections,
         FeaturedProducts,
         HowToBid,
+        HomePopularCategory,
+        HomeSellerSection,
     },
     data: () => ({
         featuredAuctions: {},
@@ -84,3 +97,21 @@ export default {
     },
 };
 </script>
+
+<style>
+.ellipse {
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.two-lines {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+.width {
+    border: 1px solid hotpink;
+}
+</style>

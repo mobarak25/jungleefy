@@ -58,7 +58,14 @@
             }
             .featured-product-title{
                 padding: rem-calc(7px 12px 10px);
-                @include font(primary, 13px, 18px, false);
+                @include font(primary, 13px, 13px, false);
+          overflow: hidden;
+          text-overflow: ellipsis;
+                -webkit-line-clamp: 2;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          white-space: normal;
+
             }
             .rating{
             padding: rem-calc(0 12px);

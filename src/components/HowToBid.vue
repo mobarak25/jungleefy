@@ -25,6 +25,7 @@ export default {
 
 <style lang="scss">
 .how-do-bid {
+    padding-top: rem-calc(48px);
     .card {
         padding: rem-calc(24px 0 55px);
 

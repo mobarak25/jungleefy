@@ -4,13 +4,13 @@
         <v-col lg="3" v-for="product in products" :key="product.id">
             <v-flex class="product-box">
                 <v-card elevation="3">
-                    <a href="#">
-                        <v-img
-                            class="white--text align-end"
-                            max-height="285px"
-                            :src="require('@/assets/images/products/'+ product.image)"
-                            alt="Products"
-                        >
+                    <v-img
+                        :title="product.title"
+                        max-height="285px"
+                        :src="require('@/assets/images/products/'+ product.image)"
+                        alt="Products"
+                    >
+                        <router-link to="/" class="white--text fill-height d-flex align-end">
                             <v-card-text class="product-top-labels text-right pr-2 pt-2">
                                 <v-btn fab width="35" height="35" elevation="2">
                                     <v-icon class="grey--text">mdi-heart mdi-18px</v-icon>
@@ -51,8 +51,8 @@
                                     class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
                                 >Shop Woner</v-sheet>
                             </v-card-text>
-                        </v-img>
-                    </a>
+                        </router-link>
+                    </v-img>
 
                     <v-card-subtitle class="pb-2 font-weight-light" v-text="product.category"></v-card-subtitle>
 

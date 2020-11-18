@@ -1,5 +1,5 @@
 <template>
-    <v-flex class="home-featured-wrap">
+    <v-layout class="home-featured-wrap" tag="section">
         <v-container>
             <v-img
                 class="align-top"
@@ -57,7 +57,7 @@
                 </v-layout>
             </v-img>
         </v-container>
-    </v-flex>
+    </v-layout>
 </template>
 
 <script>
