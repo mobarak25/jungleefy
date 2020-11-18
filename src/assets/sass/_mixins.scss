@@ -64,6 +64,19 @@
 	-moz-border-radius: $radius;
 }
 
+@mixin truncate-clamp($line:false){
+	overflow: hidden;
+	white-space: normal;
+	display: -webkit-box;
+	@if $line {
+		-webkit-line-clamp: $line;
+	}@else{
+		-webkit-line-clamp:1;
+	}
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+}
+
 /* class generator
 ============================================================*/
 $max: 30;

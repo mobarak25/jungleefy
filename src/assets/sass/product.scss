@@ -16,6 +16,10 @@
 .product-title {
     padding-bottom: rem-calc(10px);
     @include font(primary, 18px, 22px, medium);
+
+    a{  
+        @include truncate-clamp(2);
+    }
 }
 
 .product-price-box{

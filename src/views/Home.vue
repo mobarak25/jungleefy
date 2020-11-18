@@ -1,8 +1,5 @@
 <template>
     <v-main>
-        <span
-            class="width ellipse two-lines"
-        >some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some textssome texts some texts some texts some texts some texts some texts some texts</span>
         <!-- Banner Section -->
         <HomeBanner />
 
@@ -97,21 +94,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.ellipse {
-    white-space: nowrap;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.two-lines {
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-}
-.width {
-    border: 1px solid hotpink;
-}
-</style>
