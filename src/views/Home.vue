@@ -43,54 +43,26 @@ export default {
         HomePopularCategory,
         HomeSellerSection,
     },
-    data: () => ({
-        featuredAuctions: {},
-        auctionsClosing: {},
-        trendingProducts: {},
-    }),
+    data: () => ({}),
 
-    methods: {
-        getFeaturedAuctions() {
-            let url = "http://localhost:8080/data/featuredAuctions.json";
-            this.$http
-                .get(url)
-                .then((res) => {
-                    this.featuredAuctions = res.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+    computed: {
+        featuredAuctions() {
+            return this.$store.state.featuredAuctions;
         },
-
-        getAuctionsClosing() {
-            let url = "http://localhost:8080/data/auctionsClosingProducts.json";
-            this.$http
-                .get(url)
-                .then((res) => {
-                    this.auctionsClosing = res.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+        trendingProducts() {
+            return this.$store.state.trendingProducts;
         },
-
-        getTrendingProducts() {
-            let url = "http://localhost:8080/data/trendingProducts.json";
-            this.$http
-                .get(url)
-                .then((res) => {
-                    this.trendingProducts = res.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+        auctionsClosing() {
+            return this.$store.state.auctionsClosing;
         },
     },
 
+    methods: {},
+
     mounted() {
-        this.getFeaturedAuctions();
-        this.getAuctionsClosing();
-        this.getTrendingProducts();
+        this.$store.dispatch("getFeaturedAuctions");
+        this.$store.dispatch("getAuctionsClosingProdducts");
+        this.$store.dispatch("getTrendingProducts");
     },
 };
 </script>

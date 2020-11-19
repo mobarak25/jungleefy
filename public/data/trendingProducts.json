@@ -8,6 +8,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": "TK 5230",
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Used"
@@ -17,6 +18,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": null,
             "image": "product-2.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "New"
@@ -26,6 +28,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": "TK 5200",
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Lot"
@@ -35,6 +38,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": null,
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Shop Woner"
@@ -44,6 +48,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": null,
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Shop Woner"
@@ -53,6 +58,7 @@
             "title": "Nikon COOLPIX B500 Digital Camera (Black)",
             "category": "Electronics",
             "price": "TK 5000",
+            "oldPrice": null,
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Shop Woner"

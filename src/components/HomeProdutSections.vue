@@ -17,7 +17,7 @@
                 </h2>
             </v-flex>
 
-            <product-card :product-data="filteredProducts" :sell-btn="options.postAd"></product-card>
+            <product-card :product-data="options"></product-card>
         </v-container>
     </v-layout>
 </template>
@@ -30,18 +30,6 @@ export default {
     },
     props: {
         options: Object,
-    },
-    data: () => ({
-        color: "brand",
-    }),
-    computed: {
-        filteredProducts: function () {
-            if (this.options.url == "AllFeaturedAuctions") {
-                return this.options.products.slice(0, 7);
-            } else {
-                return this.options.products.slice(0, 4);
-            }
-        },
     },
 };
 </script>

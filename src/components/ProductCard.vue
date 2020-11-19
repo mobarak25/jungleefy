@@ -64,7 +64,14 @@
 
                             <div class="product-price-box pb-2">
                                 <v-sheet tag="span" class="product-price" v-text="product.price"></v-sheet>
-                                <v-sheet tag="span" class="bidding-status">Bid Start</v-sheet>
+
+                                <v-sheet
+                                    v-if="product.oldPrice"
+                                    tag="span"
+                                    class="bidding-status text-decoration-line-through"
+                                    v-text="product.oldPrice"
+                                ></v-sheet>
+                                <v-sheet v-else tag="span" class="bidding-status">Bid Start</v-sheet>
                             </div>
 
                             <div class="product-location">
@@ -93,7 +100,7 @@
         </v-col>
 
         <!-- Post your add section -->
-        <v-col v-if="sellBtn" lg="3">
+        <v-col v-if="productData.postAd" lg="3">
             <v-flex class="product-box">
                 <v-card elevation="5" :to="{name:'About'}">
                     <v-img
@@ -118,16 +125,23 @@
 export default {
     name: "ProductCard",
     props: {
-        sellBtn: Boolean,
-        productData: Array,
+        productData: {},
     },
     data() {
         return {
-            products: [],
+            getProps: {},
         };
     },
-    mounted() {
-        this.products = this.productData;
+    computed: {
+        products() {
+            if (this.productData.products) {
+                if (this.productData.url == "AllFeaturedAuctions") {
+                    return this.productData.products.slice(0, 7);
+                }
+                return this.productData.products.slice(0, 4);
+            }
+            return [];
+        },
     },
 };
 </script>

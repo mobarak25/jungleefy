@@ -1,5 +1,8 @@
 .product-box{
     padding-top: 4px;
+    .v-sheet.v-card{
+        @include border-radius(10px);
+    }
 }
 .product-top-labels {
     position: absolute;
@@ -35,6 +38,7 @@
 .product-location{
     padding-left: rem-calc(17px);
     position: relative;
+    @include truncate-clamp(1);
     @include font(gray, 14px, 20px, false);
 
     i.v-icon{
