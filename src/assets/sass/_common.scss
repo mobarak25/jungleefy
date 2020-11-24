@@ -29,8 +29,7 @@ button{
 /*=====  Main structure  =======*/
 /*==============================*/
 
-@include media(other){
-	
+@include media(container){
 	.container{
 		max-width: 1614px;
 	}

@@ -95,25 +95,38 @@ $unit: 'px'; // Feel free to change the unit.
 
 //media screen
 @mixin media($name){
-	@if ($name == "other") {
-        @media (min-width: 1600px){
-            @content 
-        }
-    }@if ($name == "xl") {
-        @media (max-width: 1199px){
-            @content 
-        }
-    }@if ($name == "lg") {
-        @media (max-width: 991px){
-            @content 
-        }
-    }@if ($name == "md") {
-        @media (max-width: 767px){
-            @content 
-        }
-    }@if ($name == "sm") {
-        @media (max-width: 576px){
-            @content 
-        }
-    }
+
+	@if(type-of($name) == number){
+		@media (max-width: $name){
+			@content 
+		}
+	}
+	@else if(type-of($name) == string){
+
+		@if ($name == "container") {
+			@media (min-width: 1600px){
+				@content 
+			}
+		}
+		@if ($name == "xl") {
+			@media (max-width: 1904px){
+				@content 
+			}
+		}
+		@else if ($name == "lg") {
+			@media (max-width: 1263px){
+				@content 
+			}
+		}
+		@else if ($name == "md") {
+			@media (max-width: 960px){
+				@content 
+			}
+		}
+		@else if ($name == "sm") {
+			@media (max-width: 576px){
+				@content 
+			}
+		}
+	}
 }

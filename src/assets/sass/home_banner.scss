@@ -1,5 +1,6 @@
 .banner-wrapper{
     padding-bottom: rem-calc(47px);
+    
     position: relative;
     .banner-caption{
         .v-btn{
@@ -13,7 +14,11 @@
         }
         h2{
             padding: rem-calc(4px 0 7px);
-            @include font(primary, 86px, 100px, semi-bold)
+            @include font(primary, 86px, 100px, semi-bold);
+
+            @include media(1599px){
+                @include font(false, 60px, 66px, false)
+            }
         }
         p{
             padding-left: rem-calc(25px);
@@ -38,6 +43,7 @@
             }
         }
     }
+    
 }
 
 .banner-wrapper .banner-truck{
@@ -67,3 +73,6 @@
         transform: rotateY(0deg);
     }
 }
+
+
+

@@ -109,7 +109,7 @@ header{
 }
 .select-box {
     margin-right: rem-calc(20px);
-    width: 104px;
+    width: 107px;
     overflow: hidden;
     position: relative;
 
@@ -158,4 +158,54 @@ header{
         background: rgb(43,48,55);
         background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
     }
+}
+
+@include media(1599px){
+    .top-header-left {
+        width: 37%;
+    }
+    .top-header-mid {
+        width: 37.5%;
+    }
+    .select-box{
+        margin-right: rem-calc(5px);
+    }
+    .select-box-wrapper{
+        padding-right: 0;
+    }
+}
+
+@include media(lg){
+    .site-search{
+        .site-search-btn {
+            width: 50px;
+        }
+        .site-search-box {
+            width: calc(100% - 50px);
+        }
+    } 
+    .top-header-left {
+        width: 45%;
+    }
+    .top-header-mid {
+        width: 35%;
+    }
+    .top-header-right {
+        width: 20%;
+    }
+    .select-box {
+        width: 93px;
+        .v-input__slot{
+            padding: 0 5px !important;
+        }
+    }
+    .top-header-widgets{ 
+        span{
+            display: none;
+            &.sign-text{
+                display: none;
+            }
+        }
+    }
+
 }

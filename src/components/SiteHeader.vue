@@ -36,10 +36,10 @@
                                         dark
                                         solo
                                         append-icon="mdi-chevron-down"
-                                        :items="locations"
-                                        label="Location"
+                                        :items="Categories"
+                                        label="Category"
                                         hide-details
-                                        v-model="selectedLocation"
+                                        v-model="selectedCategory"
                                         background-color="primary"
                                     ></v-select>
                                 </v-flex>
@@ -63,13 +63,14 @@
                                     ></v-autocomplete>
                                 </v-flex>
                                 <button class="site-search-btn" type="submit">
-                                    <i class="icofont-search"></i> Search
+                                    <i class="icofont-search"></i>
+                                    <span class="pl-1 d-none d-lg-inline-block">Search</span>
                                 </button>
                             </v-flex>
                         </v-flex>
 
                         <!-- Top header right -->
-                        <v-layout justify-end class="top-header-right">
+                        <v-layout justify-end class="top-header-right align-center">
                             <v-flex class="top-header-widgets flex-grow-0">
                                 <a href="#">
                                     <v-flex class="header-widgets-icon">
@@ -139,7 +140,9 @@ export default {
         offset: false,
 
         selectedLocation: "",
+        selectedCategory: "",
         locations: ["Dhaka", "India", "pakistan"],
+        Categories: ["Categories1", "Categories2", "Categories3"],
 
         items: ["foo", "bar", "fizz", "buzz"],
         values: [],
