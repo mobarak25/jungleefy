@@ -109,7 +109,7 @@ $unit: 'px'; // Feel free to change the unit.
 			}
 		}
 		@if ($name == "xl") {
-			@media (max-width: 1904px){
+			@media (max-width: 1903px){
 				@content 
 			}
 		}
@@ -119,12 +119,12 @@ $unit: 'px'; // Feel free to change the unit.
 			}
 		}
 		@else if ($name == "md") {
-			@media (max-width: 960px){
+			@media (max-width: 959px){
 				@content 
 			}
 		}
 		@else if ($name == "sm") {
-			@media (max-width: 576px){
+			@media (max-width: 599px){
 				@content 
 			}
 		}

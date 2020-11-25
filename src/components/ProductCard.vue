@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <!-- Product section -->
-        <v-col lg="3" v-for="product in products" :key="product.id">
+        <v-col lg="3" md="4" v-for="product in products" :key="product.id">
             <v-flex class="product-box">
                 <v-card elevation="3">
                     <v-img

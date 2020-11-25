@@ -3,6 +3,8 @@
         padding: rem-calc(44px 0 44px);
 
         .footer-social .v-btn{
+            width: 48px;
+            height: 48px;
             background-color: map-get($colors, primary);
             border-color:  darken(map-get($colors, primary), 7);
 
@@ -53,6 +55,34 @@
             
             &:hover{
                 color: map-get($colors, brand);
+            }
+        }
+    }
+}
+
+@include media(lg){
+    .site-footer{
+        .footer-top{
+            padding: rem-calc(44px 0 44px);
+
+            .footer-social .v-btn{
+                width: 40px;
+                height: 40px;
+
+                &:not(:last-child){
+                    margin-right: rem-calc(5px);
+                }
+            }
+        }
+
+        .footer-box{
+            h3{
+                @include font(false, 18px, 24px, false);
+            }
+            ul{
+                li{
+                    @include font(false, 14px, 20px, false);
+                }
             }
         }
     }

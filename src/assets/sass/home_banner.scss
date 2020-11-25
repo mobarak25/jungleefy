@@ -4,6 +4,7 @@
     position: relative;
     .banner-caption{
         .v-btn{
+           
             height: 35px;
             line-height: 35px;
             .v-btn__content{
@@ -15,10 +16,6 @@
         h2{
             padding: rem-calc(4px 0 7px);
             @include font(primary, 86px, 100px, semi-bold);
-
-            @include media(1599px){
-                @include font(false, 60px, 66px, false)
-            }
         }
         p{
             padding-left: rem-calc(25px);
@@ -49,10 +46,10 @@
 .banner-wrapper .banner-truck{
     @include font(brand, 24px, 24px, false);
     @include absolute(false,false,left, 0, bottom, -3px);
-    animation: pulse 50s linear infinite;
+    animation: moving-truck 50s linear infinite;
     z-index: 9999;
 }
-@keyframes pulse{
+@keyframes moving-truck{
     0% {
         left: 0;
     }
@@ -73,6 +70,103 @@
         transform: rotateY(0deg);
     }
 }
+
+@include media(1599px){
+    .banner-wrapper{
+        .banner-caption{
+            h2{
+                @include font(false, 60px, 80px, false);
+            }
+            p{
+            @include font(false, 20px, 30px, false);
+
+            &:before{
+                @include sudo(4px, 50px, left ,0, top, 8px, brand);
+            }
+        }
+        }
+
+    }
+}
+
+@include media(lg){
+    .banner-wrapper{
+        .banner-caption{
+            .v-btn {
+                height: 32px;
+                line-height: 32px;
+            }
+            h2{
+                br{display: none;}
+                @include font(false, 40px, 50px, false);
+            }
+            p{
+                br{display: none;}
+                @include font(false, 20px, 30px, false);
+
+                &:before{
+                    @include sudo(4px, 50px, left ,0, top, 8px, brand);
+                }
+            }
+            .banner-btns{
+                .v-btn {
+                    height: 2.6rem;
+                }
+            }
+        }
+
+    }
+}
+
+@include media(md){
+    .banner-wrapper{
+        .banner-caption{
+            .v-btn {
+                height: 25px;
+                line-height: 25px;
+            }
+            h2{
+                
+                padding-top: rem-calc(10px);
+                @include font(false, 20px, 26px, false);
+            }
+            p{
+                
+                padding-left: rem-calc(10px);
+                @include font(false, 16px, 20px, false);
+
+                &:before{
+                    @include sudo(false, 100%, left ,0, top, 0px, brand);
+                }
+            }
+            .banner-btns{
+                padding-top: rem-calc(15px);
+                .v-btn {
+                    height: 2.3rem;
+                }
+            }
+        }
+
+    }
+}
+
+@include media(sm){
+    .banner-wrapper{
+        .banner-caption{
+            padding: rem-calc(30px 0);
+
+            .banner-btns{
+                .v-btn {
+                     height: 2rem;
+                     margin-bottom: rem-calc(4px);
+                    @include font(false, 14px, 14px, false);
+                }
+            }
+        }
+
+    }
+}
+
 
 
 

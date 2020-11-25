@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar flat prominent height="40" tag="div" class="pa-0 primary">
+    <v-toolbar flat height="auto" tag="div" class="pa-0 primary">
         <v-container class="py-0">
             <div class="btm-header d-flex wrap justify-between align-center">
                 <nav class="main-menu d-flex wrap justify-center align-center">
@@ -52,14 +52,14 @@ export default {
                         { id: 3, name: "X Alexander" },
                         { id: 4, name: "X Monica" },
                         { id: 5, name: "X Monalisa" },
-                        { id: 6, name: "X Alexander" }
-                    ]
+                        { id: 6, name: "X Alexander" },
+                    ],
                 },
                 { id: 5, name: "Overstock Surplus", hasChild: false },
                 { id: 6, name: "Wholesale Stock", hasChild: false },
-                { id: 7, name: "Manufacturer Stock", hasChild: false }
-            ]
+                { id: 7, name: "Manufacturer Stock", hasChild: false },
+            ],
         };
-    }
+    },
 };
 </script>

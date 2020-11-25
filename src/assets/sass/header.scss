@@ -30,7 +30,7 @@ header{
         background-color: map-get($colors , brand);
 
         i{
-            @include font(false, 20px, 22px,false);
+            @include font(light, 27px, 27px,false);
         }
 
         &:hover{
@@ -80,15 +80,21 @@ header{
     border: 1px solid #fff;
     @include border-radius(50%);
 
-    i{
-        line-height: 16px;
+    i.v-icon{
         @include center(false, false);
         color: map-get($colors , light);
 
-        &.icofont-heart-alt{
-            top: 14px;
+        &.mdi-cards-heart{
+            @include font(false, 17px, 17px, false);
         }
-        &.down-arrow{
+        &.mdi-cart{
+            @include font(false, 16px, 16px, false);
+        }
+        &.mdi-account{
+            @include font(false, 20px, 20px, false);
+        }
+        &.mdi-chevron-down{
+            @include font(false, 19px, 19px, false);
             left: calc(100% + 5px);
             transform: translateY(-50%); 
         }
@@ -121,6 +127,14 @@ header{
         height: 16px;
         min-width: 13px;
         width: 13px;
+    }
+}
+.btm-header-wrapper{
+    .v-toolbar{
+        height: auto;
+        .v-toolbar__content{
+            height: auto;
+        }
     }
 }
 .main-menu{

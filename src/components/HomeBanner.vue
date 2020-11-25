@@ -9,7 +9,7 @@
                 <v-container class="py-0">
                     <v-btn href="#" tile depressed class="brand white--text">
                         START FROM
-                        <span>TK 200</span>
+                        <span class="d-none d-sm-block">TK 200</span>
                     </v-btn>
                     <h2>
                         BEST Deal
@@ -40,7 +40,7 @@ export default {
 
     data() {
         return {};
-    }
+    },
 };
 </script>
 

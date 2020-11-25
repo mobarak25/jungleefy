@@ -2,8 +2,8 @@
     <v-footer color="secondary" dark padless class="d-block site-footer">
         <v-layout class="footer-top">
             <v-container>
-                <v-row no-gutters>
-                    <v-col class="footer-box">
+                <v-row>
+                    <v-col class="footer-box py-0">
                         <router-link :to="{name:'Home'}">
                             <v-img
                                 max-width="171"
@@ -16,23 +16,14 @@
                         </router-link>
 
                         <h3>Get in Tuch</h3>
-                        <v-flex class="pt-5 footer-social">
-                            <v-btn
-                                height="48"
-                                width="48"
-                                fab
-                                outlined
-                                text
-                                tile
-                                v-for="icon in icons"
-                                :key="icon"
-                            >
+                        <v-flex class="pt-5 footer-social d-flex">
+                            <v-btn fab outlined text tile v-for="icon in icons" :key="icon">
                                 <v-icon>{{icon}}</v-icon>
                             </v-btn>
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box">
+                    <v-col class="footer-box py-0">
                         <h3>How it Works</h3>
                         <v-flex>
                             <ul>
@@ -43,7 +34,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box">
+                    <v-col class="footer-box py-0">
                         <h3>Categories</h3>
                         <v-flex>
                             <ul>
@@ -54,7 +45,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box">
+                    <v-col class="footer-box py-0">
                         <h3>My Account</h3>
                         <v-flex>
                             <ul>
@@ -65,7 +56,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box">
+                    <v-col class="footer-box py-0">
                         <h3>Information</h3>
                         <v-flex>
                             <ul>
