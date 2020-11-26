@@ -1,12 +1,11 @@
 <template>
     <div class="row">
         <!-- Product section -->
-        <v-col lg="3" md="4" v-for="product in products" :key="product.id">
+        <v-col cols="6" lg="3" sm="4" v-for="product in products" :key="product.id">
             <v-flex class="product-box">
                 <v-card elevation="3">
                     <v-img
                         :title="product.title"
-                        max-height="285px"
                         :src="require('@/assets/images/products/'+ product.image)"
                         alt="Products"
                     >
@@ -54,7 +53,10 @@
                         </router-link>
                     </v-img>
 
-                    <v-card-subtitle class="pb-2 font-weight-light" v-text="product.category"></v-card-subtitle>
+                    <v-card-subtitle
+                        class="product-sub-title font-weight-light"
+                        v-text="product.category"
+                    ></v-card-subtitle>
 
                     <v-card-text class="text--primary pb-0">
                         <v-flex class="product-information">
@@ -82,7 +84,7 @@
 
                     <v-divider></v-divider>
 
-                    <v-card-text>
+                    <v-card-text class="product-bottom">
                         <v-layout class="justify-space-between">
                             <v-sheet class="auction-time-holder">
                                 <span class="time-title">Time Left:</span>
@@ -100,23 +102,22 @@
         </v-col>
 
         <!-- Post your add section -->
-        <v-col v-if="productData.postAd" lg="3">
-            <v-flex class="product-box">
-                <v-card elevation="5" :to="{name:'About'}">
-                    <v-img
-                        contain
-                        class="white--text align-end"
-                        :src="require('@/assets/images/sell-banner.png')"
-                        alt="Sell button image"
+        <v-col v-if="productData.postAd" lg="3" sm="4">
+            <v-sheet height="100%" class="product-box">
+                <v-card height="100%" elevation="5" :to="{name:'About'}">
+                    <v-sheet
+                        height="100%"
+                        class="d-flex align-end"
+                        :style="{'background-image': 'url(' + require('@/assets/images/sell-banner.png') + ')','background-size':'100% 100%'}"
                     >
                         <v-flex class="sell-btn-wrap">
                             <v-btn dark color="brand" depressed tile class="sell-btn text-none">
                                 <v-icon>mdi-plus-thick</v-icon>Post your Ad
                             </v-btn>
                         </v-flex>
-                    </v-img>
+                    </v-sheet>
                 </v-card>
-            </v-flex>
+            </v-sheet>
         </v-col>
     </div>
 </template>

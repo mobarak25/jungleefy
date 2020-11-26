@@ -104,7 +104,7 @@ $unit: 'px'; // Feel free to change the unit.
 	@else if(type-of($name) == string){
 
 		@if ($name == "container") {
-			@media (min-width: 1600px){
+			@media (min-width: 1640px){
 				@content 
 			}
 		}

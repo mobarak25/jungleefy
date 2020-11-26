@@ -2,6 +2,10 @@
     padding-top: 4px;
     .v-sheet.v-card{
         @include border-radius(10px);
+
+        .product-sub-title{
+            padding-bottom: rem-calc(8px);
+        }
     }
 }
 .product-top-labels {
@@ -13,9 +17,7 @@
     }
 }
 
-.product-information{
-    padding-bottom: rem-calc(22px);
-}
+
 .product-title {
     padding-bottom: rem-calc(10px);
     @include font(primary, 18px, 22px, medium);
@@ -77,6 +79,59 @@
 
         i{
             @include font(false, 18px, 22px, false);
+        }
+    }
+}
+
+@include media(1639px){
+    .v-sheet.v-card{
+        .product-sub-title{
+            padding: rem-calc(7px 16px);
+        }
+        .product-title {
+            padding-bottom: rem-calc(7px);
+            @include font(primary, 17px, 22px, medium);
+        }
+    }
+
+    .product-price-box{
+        .product-price{
+            @include font(brand, 19px, 24px, medium);
+        }
+        .bidding-status{
+            @include font(gray, 14px, 20px, light);
+        }
+    }
+    .product-information{
+        padding-bottom: rem-calc(15px);
+    }
+    .product-bottom{
+        padding: rem-calc(12px 16px);
+
+        .auction-time-holder{
+            .time-title{
+                padding-right: rem-calc(5px);
+                @include font(false, 13px, 15px, false);
+            }
+            .time-value{
+                @include font(false, 15px, 16px, false);
+            }
+        }
+
+        .auction-bid-holder{
+            .bid-title{
+                padding-right: rem-calc(5px);
+                @include font(false, 13px, 15px, false); 
+            }
+            .bid-value{
+                @include font(false, 15px, 16px, false);
+            }
+        }
+    }
+
+    .sell-btn-wrap{
+        .sell-btn.v-btn{
+            height: 38px;
         }
     }
 }

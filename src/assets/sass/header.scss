@@ -174,7 +174,7 @@ header{
     }
 }
 
-@include media(1599px){
+@include media(container){
     .top-header-left {
         width: 37%;
     }
