@@ -9,7 +9,7 @@
             "category": "Electronics",
             "price": "TK 5000",
             "oldPrice": "TK 5230",
-            "image": "product-1.jpg",
+            "image": "product-12.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Used"
         },
@@ -19,7 +19,7 @@
             "category": "Electronics",
             "price": "TK 5000",
             "oldPrice": null,
-            "image": "product-2.jpg",
+            "image": "product-13.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "New"
         },
@@ -29,7 +29,7 @@
             "category": "Electronics",
             "price": "TK 5000",
             "oldPrice": "TK 5200",
-            "image": "product-1.jpg",
+            "image": "product-14.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Lot"
         },
@@ -39,7 +39,7 @@
             "category": "Electronics",
             "price": "TK 5000",
             "oldPrice": null,
-            "image": "product-1.jpg",
+            "image": "product-15.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
             "status": "Shop Woner"
         },

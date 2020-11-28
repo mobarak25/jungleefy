@@ -91,6 +91,7 @@
 
 @include media(lg){
     .banner-wrapper{
+        padding-bottom:rem-calc(30px);
         .banner-caption{
             .v-btn {
                 height: 32px;
@@ -120,6 +121,7 @@
 
 @include media(md){
     .banner-wrapper{
+         padding-bottom:rem-calc(15px);
         .banner-caption{
             .v-btn {
                 height: 25px;

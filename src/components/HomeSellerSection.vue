@@ -34,7 +34,7 @@ export default {
     padding: rem-calc(55px 0 0);
 
     .home-seller-box {
-        padding-left: 7.5%;
+        padding: rem-calc(30px 30px 30px 120px);
 
         h2 {
             padding-bottom: rem-calc(10px);
@@ -49,6 +49,32 @@ export default {
             width: 175px;
             height: 48px;
             @include font(false, 16px, 22px, medium);
+        }
+    }
+
+    @include media(lg) {
+        padding: rem-calc(30px 0 0);
+
+        .home-seller-box {
+            padding: rem-calc(30px);
+
+            h2 {
+                padding-bottom: rem-calc(10px);
+                @include font(false, 30px, 30px, false);
+            }
+            .seller-text {
+                br {
+                    display: none;
+                }
+                padding: rem-calc(0 0 20px);
+                display: block;
+                @include font(false, 20px, 26px, false);
+            }
+            .v-btn {
+                width: 175px;
+                height: 48px;
+                @include font(false, 16px, 22px, medium);
+            }
         }
     }
 }

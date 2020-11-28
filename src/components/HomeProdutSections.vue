@@ -57,6 +57,14 @@ export default {
         }
     }
 }
+
+@include media(479px) {
+    .home-sections-title {
+        h2 {
+            font-size: 18px !important;
+        }
+    }
+}
 </style>
 
 

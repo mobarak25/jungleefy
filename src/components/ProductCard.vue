@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <!-- Product section -->
-        <v-col cols="6" lg="3" sm="4" v-for="product in products" :key="product.id">
+        <v-col class="product-items" lg="3" sm="4" v-for="product in products" :key="product.id">
             <v-flex class="product-box">
                 <v-card elevation="3">
                     <v-img
@@ -11,16 +11,16 @@
                     >
                         <router-link to="/" class="white--text fill-height d-flex align-end">
                             <v-card-text class="product-top-labels text-right pr-2 pt-2">
-                                <v-btn fab width="35" height="35" elevation="2">
-                                    <v-icon class="grey--text">mdi-heart mdi-18px</v-icon>
+                                <v-btn fab elevation="2">
+                                    <v-icon class="grey--text">mdi-heart</v-icon>
                                 </v-btn>
 
-                                <v-btn color="brand" fab width="35" height="35" elevation="2">
-                                    <v-icon class="white--text">mdi-cart mdi-18px</v-icon>
+                                <v-btn color="brand" fab elevation="2">
+                                    <v-icon class="white--text">mdi-cart</v-icon>
                                 </v-btn>
                             </v-card-text>
 
-                            <v-card-text class="pb-3">
+                            <v-card-text class="pb-3 product-btm-labels">
                                 <v-sheet
                                     v-if="product.status=='Used'"
                                     tag="span"
@@ -85,7 +85,7 @@
                     <v-divider></v-divider>
 
                     <v-card-text class="product-bottom">
-                        <v-layout class="justify-space-between">
+                        <v-layout class="justify-space-between flex-wrap">
                             <v-sheet class="auction-time-holder">
                                 <span class="time-title">Time Left:</span>
                                 <span class="time-value">1 Dey, 6 Hours</span>

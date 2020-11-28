@@ -9,14 +9,22 @@
     }
 }
 .product-top-labels {
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include absolute(false, false, right,0, top,0);
+    .v-btn{
+        width: rem-calc(35px);
+        height: rem-calc(35px);
+
+        i.mdi{
+            @include font(false, 18px, 35px, false);
+        }
+    }
     .v-btn:not(:last-child) {
         margin-right: rem-calc(10px);
     }
 }
-
+.product-information{
+    padding-bottom: rem-calc(20px);
+}
 
 .product-title {
     padding-bottom: rem-calc(10px);
@@ -90,16 +98,16 @@
         }
         .product-title {
             padding-bottom: rem-calc(7px);
-            @include font(primary, 17px, 22px, medium);
+            @include font(false, 17px, 22px, false);
         }
     }
 
     .product-price-box{
         .product-price{
-            @include font(brand, 19px, 24px, medium);
+            @include font(false, 19px, 24px, false);
         }
         .bidding-status{
-            @include font(gray, 14px, 20px, light);
+            @include font(false, 14px, 20px, false);
         }
     }
     .product-information{
@@ -133,5 +141,76 @@
         .sell-btn.v-btn{
             height: 38px;
         }
+    }
+}
+
+
+@include media(md){
+    .product-btm-labels{
+        span{
+            line-height:rem-calc(18px) ;
+        }
+    }
+
+    .product-top-labels {
+        .v-btn{
+            width:  rem-calc(25px);
+            height:  rem-calc(25px);
+
+            i.mdi{
+                @include font(false, 15px, 25px, false);
+            }
+        }
+        .v-btn:not(:last-child) {
+            margin-right: rem-calc(5px);
+        }
+    }
+    .v-sheet.v-card{
+        .product-sub-title{
+            padding: rem-calc(10px 16px 5px);
+            line-height: 16px;
+        }
+        .product-title {
+            padding-bottom: rem-calc(7px);
+            @include font(false, 14px, 20px, false);
+        }
+    }
+
+    .product-price-box{
+        .product-price{
+            @include font(false, 16px, 20px, false);
+        }
+    }
+    .product-information{
+        padding-bottom: rem-calc(10px);
+    }
+    .product-bottom{
+        padding: rem-calc(8px 16px);
+
+        .auction-time-holder{
+            width: 100%;
+            .time-value{
+                @include font(false, 12px, 15px, false);
+            }
+        }
+        .auction-bid-holder{
+            width: 100%;
+        }
+    }
+}
+
+@include media(599px){
+    .product-items{
+        width: 50%;
+    }
+}
+@include media(374px){
+    .product-items{
+        width: 100%;
+    }
+
+    .product-bottom{
+        .auction-time-holder{width: auto;}
+        .auction-bid-holder{width: auto;}
     }
 }
