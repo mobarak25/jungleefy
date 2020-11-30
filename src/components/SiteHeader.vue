@@ -1,5 +1,5 @@
 <template>
-    <v-layout tag="header" d-block class="white--text">
+    <v-layout d-block tag="header" class="white--text flex-grow-0">
         <v-layout class="top-header-wrapper">
             <v-container class="py-0">
                 <v-layout class="top-header mx-0 wrap">

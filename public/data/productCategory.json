@@ -64,43 +64,98 @@
     "categories": [
         {
             "id": 1,
-            "title": "Drop shipping",
+            "title": "Bulk selling",
             "image": "category-1.jpg"
         },
         {
             "id": 2,
-            "title": "Drop shipping",
+            "title": "Warehouse Products",
             "image": "category-2.jpg"
         },
         {
             "id": 3,
-            "title": "Drop shipping",
+            "title": "Overstock Surplus",
             "image": "category-3.jpg"
         },
         {
             "id": 4,
-            "title": "Drop shipping",
+            "title": "Wholesale Stock",
             "image": "category-4.jpg"
         },
         {
             "id": 5,
-            "title": "Drop shipping",
+            "title": "Manufacturer Stock",
             "image": "category-5.jpg"
         },
         {
             "id": 6,
-            "title": "Drop shipping",
+            "title": "Jewellery",
             "image": "category-6.jpg"
         },
         {
             "id": 7,
-            "title": "Drop shipping",
-            "image": "category-1.jpg"
+            "title": "Furniture",
+            "image": "category-7.jpg"
         },
         {
             "id": 8,
-            "title": "Drop shipping",
-            "image": "category-2.jpg"
+            "title": "AntiquesElectronics",
+            "image": "category-8.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Home & Living",
+            "image": "category-9.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Vehicles",
+            "image": "category-10.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Food & Agriculture",
+            "image": "category-11.jpg"
+        },
+        {
+            "id": 12,
+            "title": "Pets & Animals",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 13,
+            "title": "Education",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 14,
+            "title": "Property",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 15,
+            "title": "Business & Industry",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 16,
+            "title": "Fashion, Health & Beauty",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 17,
+            "title": "Sports & Kids",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 18,
+            "title": "Pets & Animals",
+            "image": "category-12.jpg"
+        },
+        {
+            "id": 19,
+            "title": "Jobs",
+            "image": "category-12.jpg"
         }
     ]
 }

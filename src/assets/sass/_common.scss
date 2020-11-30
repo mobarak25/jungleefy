@@ -11,6 +11,7 @@ body,
 a{color: map-get($colors, brand); text-decoration: none;}
 .v-application p,p{padding: 0; margin: 0;}
 .v-application a:hover{text-decoration:none;color: map-get($colors, brand)}
+.v-application--is-ltr .v-input--selection-controls__input {margin-right: 12px;}
 h1,h2,h3,h4,h5,h6,p,div,ul,address{margin: 0;}
 ul{list-style: none; padding: 0; margin: 0;}
 button{
@@ -25,6 +26,7 @@ button{
 .pointer{cursor: pointer;}
 
 
+
 /*==============================*/
 /*=====  Main structure  =======*/
 /*==============================*/
@@ -33,6 +35,9 @@ button{
 	.container{
 		max-width: 1614px;
 	}
+}
+.site-content-wrap{
+    padding: rem-calc(35px 0);
 }
 
 /*==============================*/
@@ -47,42 +52,3 @@ button{
     align-items: center !important;
 }
 
-/*==============================*/
-/*=bootstrap dropdown animation=*/
-/*==============================*/
-.animate {
-    animation-name: slideIn;
-    -webkit-animation-name: slideIn;
-    animation-duration: 0.3s;
-    -webkit-animation-duration: 0.3s;
-    animation-fill-mode: both;
-    -webkit-animation-fill-mode: both;
-}
-@keyframes slideIn {
-    0% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
-    100% {
-        transform:translateY(0rem);
-        opacity: 1;
-    }
-    0% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
-}
-@-webkit-keyframes slideIn {
-    0% {
-        -webkit-transform: transform;
-        -webkit-opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        -webkit-opacity: 1;
-    }
-    0% {
-        -webkit-transform: translateY(1rem);
-        -webkit-opacity: 0;
-    }
-}

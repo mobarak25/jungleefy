@@ -17,7 +17,14 @@
             </v-flex>
 
             <v-row>
-                <v-col lg="2" v-for="category in popularCategories" :key="category.id">
+                <v-col
+                    lg="2"
+                    md="3"
+                    sm="4"
+                    v-for="category in AllCategory.popularCategories"
+                    :key="category.id"
+                    class="home-category-item"
+                >
                     <router-link to="/">
                         <v-flex class="category-box">
                             <v-img
@@ -44,23 +51,16 @@ export default {
 
     data: () => ({
         color: "brand",
-        popularCategories: [],
     }),
-    methods: {
-        getCategories() {
-            let url = "http://localhost:8080/data/productCategory.json";
-            this.$http
-                .get(url)
-                .then((result) => {
-                    this.popularCategories = result.data.popularCategories;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+
+    computed: {
+        AllCategory() {
+            return this.$store.state.productCategories;
         },
     },
+
     mounted() {
-        this.getCategories();
+        this.$store.dispatch("getProductCategories");
     },
 };
 </script>
@@ -68,6 +68,12 @@ export default {
 <style lang="scss">
 .home-category-sections {
     padding-top: rem-calc(25px);
+
+    @include media(sm) {
+        .home-category-item {
+            max-width: 50%;
+        }
+    }
 }
 .home-sections-title {
     h2 {
@@ -97,7 +103,9 @@ export default {
         background-color: rgba(34, 34, 34, 0.6);
 
         h3 {
+            padding: rem-calc(0 5px);
             @include font(light, 16px, 22px, semi-bold);
+            text-align: center;
         }
     }
 }

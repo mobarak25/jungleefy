@@ -102,7 +102,7 @@
         </v-col>
 
         <!-- Post your add section -->
-        <v-col v-if="productData.postAd" lg="3" sm="4">
+        <v-col v-if="productData.postAd" class="product-items" lg="3" sm="4">
             <v-sheet height="100%" class="product-box">
                 <v-card height="100%" elevation="5" :to="{name:'About'}">
                     <v-sheet

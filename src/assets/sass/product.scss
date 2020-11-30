@@ -15,7 +15,7 @@
         height: rem-calc(35px);
 
         i.mdi{
-            @include font(false, 18px, 35px, false);
+            @include font(false, 18px, 18px, false);
         }
     }
     .v-btn:not(:last-child) {
@@ -197,11 +197,20 @@
             width: 100%;
         }
     }
+    .sell-btn-wrap{
+        padding: rem-calc(0 0 70px 10px);
+    }
 }
 
 @include media(599px){
     .product-items{
         width: 50%;
+    }
+    .sell-btn-wrap{
+        padding: rem-calc(0 0 70px 10px);
+        .sell-btn.v-btn{
+            @include font(false, 14px, 22px, false);
+        }
     }
 }
 @include media(374px){
@@ -212,5 +221,9 @@
     .product-bottom{
         .auction-time-holder{width: auto;}
         .auction-bid-holder{width: auto;}
+    }
+    .sell-btn-wrap{
+       padding: 104% 0 50px 16px;
+        
     }
 }

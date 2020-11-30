@@ -25,7 +25,7 @@
                             <v-icon class="brand--text pl-2">mdi-trending-neutral</v-icon>
                         </v-btn>
 
-                        <v-btn href="#" tile depressed class="white brand--text">Browse auctions</v-btn>
+                        <v-btn href="#" tile depressed class="white brand--text">Delivery Available</v-btn>
                     </v-flex>
                 </v-container>
             </v-flex>

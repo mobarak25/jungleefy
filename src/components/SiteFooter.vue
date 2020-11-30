@@ -3,7 +3,7 @@
         <v-layout class="footer-top">
             <v-container>
                 <v-row>
-                    <v-col class="footer-box py-0">
+                    <v-col class="footer-box">
                         <router-link :to="{name:'Home'}">
                             <v-img
                                 max-width="171"
@@ -23,7 +23,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box py-0">
+                    <v-col class="footer-box">
                         <h3>How it Works</h3>
                         <v-flex>
                             <ul>
@@ -34,7 +34,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box py-0">
+                    <v-col class="footer-box">
                         <h3>Categories</h3>
                         <v-flex>
                             <ul>
@@ -45,7 +45,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box py-0">
+                    <v-col class="footer-box">
                         <h3>My Account</h3>
                         <v-flex>
                             <ul>
@@ -56,7 +56,7 @@
                         </v-flex>
                     </v-col>
 
-                    <v-col class="footer-box py-0">
+                    <v-col class="footer-box">
                         <h3>Information</h3>
                         <v-flex>
                             <ul>
@@ -74,7 +74,7 @@
 
         <v-layout>
             <v-container>
-                <v-layout>
+                <v-layout class="flex-wrap">
                     <span class="copy d-block">
                         &copy; Copyright
                         <router-link to="/">Jungleebazaar.com</router-link>

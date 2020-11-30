@@ -12,6 +12,7 @@ export default new Vuetify({
                 primary: '#353a44',   // header-bg
                 secondary: '#30353d', // footer-bg
                 brand: '#ff9900',     // logo-color
+                site_bg: '#f1f3f6',   // site-bg
                 success: '#4caf50',
                 info: '#2196f3',
                 warning: '#fb8c00',
