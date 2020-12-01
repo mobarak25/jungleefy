@@ -1,0 +1,69 @@
+.product-sidebar {
+    width: 273px;
+    padding: rem-calc(0 38px 0 30px);
+}
+.product-sidebar-box {
+    padding: rem-calc(20px 0 16px 0);
+    border-bottom: 1px solid lighten(map-get($colors, grey), 40);
+    .v-card__title {
+        padding: rem-calc(0 0 4px);
+        @include font(primary, 18px, 24px, medium);
+    }
+    .v-input--selection-controls {
+        margin: rem-calc(8px 0);
+    }
+    .v-label {
+        @include font(primary, 14px, 14px, false);
+    }
+    .v-icon {
+        color: map-get($colors, gery);
+    }
+    .v-expansion-panel-content__wrap {
+        padding: 0;
+    }
+    .v-expansion-panel-header {
+        min-height: 0;
+    }
+    .v-list-item {
+        padding: rem-calc(6px 5px);
+        min-height: 0;
+        @include font(primary, 14px, 20px, false);
+    }
+    .min-order{
+        padding: 0;
+        margin: 0;
+
+        .v-input {
+            max-width: 160px;
+            input {
+                max-height: 30px;
+                @include font(primary, 14px, 28px, false);
+            }
+            fieldset{
+                border: 1px solid #e5e5e5;
+                border-radius: 0;
+            }
+        }
+        .v-btn{
+            padding: 0;
+            min-width: 37px;
+            height: 30px;
+            background-color: #f3f3f3;
+            border-color: #e5e5e5;
+            @include font(primary, 15px, 37px, false);
+        }
+    }
+}
+
+
+.product-sidebar-category {
+    .v-expansion-panel-content {
+        margin-left: rem-calc(-5px);
+        margin-right: rem-calc(-5px);
+    }
+
+    .mdi-checkbox-blank-circle {
+        margin-right: rem-calc(5px);
+        @include font(primary, 6px, 20px, false);
+    }
+}
