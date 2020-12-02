@@ -4,6 +4,7 @@
         <v-flex class="product-sidebar-box">
             <v-card-title>Filters</v-card-title>
             {{selected}}
+            <v-divider></v-divider>
             <v-checkbox
                 v-for="filter in filters"
                 :key="filter.id"
@@ -59,39 +60,57 @@
         <v-flex class="product-sidebar-box">
             <v-card-title>Min. Order</v-card-title>
             <v-layout class="min-order" justify-space-between>
-                <v-text-field solo flat outlined value="5000" :rules="[numberRule]"></v-text-field>
+                <v-text-field
+                    solo
+                    flat
+                    hide-details="auto"
+                    outlined
+                    value="5000"
+                    :rules="[numberRule]"
+                ></v-text-field>
                 <v-btn outlined depressed tile>OK</v-btn>
             </v-layout>
         </v-flex>
 
         <!-- Price Section -->
         <v-flex class="product-sidebar-box">
-            <v-card-title>Min. Order</v-card-title>
+            <v-card-title>Price</v-card-title>
 
-            <v-range-slider v-model="range" :max="max" :min="min" hide-details class="align-center">
-                <template v-slot:prepend>
-                    <v-text-field
-                        :value="range[0]"
-                        class="mt-0 pt-0"
-                        hide-details
-                        single-line
-                        type="number"
-                        style="width: 60px"
-                        @change="$set(range, 0, $event)"
-                    ></v-text-field>
-                </template>
-                <template v-slot:append>
-                    <v-text-field
-                        :value="range[1]"
-                        class="mt-0 pt-0"
-                        hide-details
-                        single-line
-                        type="number"
-                        style="width: 60px"
-                        @change="$set(range, 1, $event)"
-                    ></v-text-field>
-                </template>
-            </v-range-slider>
+            <v-range-slider
+                color="brand"
+                v-model="range"
+                :max="max"
+                :min="min"
+                hide-details
+                class="align-center"
+            ></v-range-slider>
+            <v-divider class="mb-5"></v-divider>
+            <v-layout align-center class="min-order">
+                <v-text-field
+                    solo
+                    flat
+                    outlined
+                    :value="range[0]"
+                    hide-details
+                    single-line
+                    type="number"
+                    style="width: 60px"
+                    @change="$set(range, 0, $event)"
+                ></v-text-field>
+                <span class="px-1">-</span>
+                <v-text-field
+                    solo
+                    flat
+                    outlined
+                    :value="range[1]"
+                    hide-details
+                    single-line
+                    type="number"
+                    style="width: 60px"
+                    @change="$set(range, 1, $event)"
+                ></v-text-field>
+                <v-btn class="ml-1" outlined depressed tile>OK</v-btn>
+            </v-layout>
         </v-flex>
     </v-card>
 </template>
@@ -107,10 +126,13 @@ export default {
                 if (!isNaN(parseFloat(v)) && v >= 0) return true;
                 return "Value must be a Number";
             },
+
             min: 0,
             max: 100,
-            range: [20, 70],
-            panel: [0],
+            range: [0, 100],
+
+            panel: [0], //panel for opening category Dropdown
+
             selected: ["All Product"],
             filters: [
                 { id: 1, title: "All Product" },

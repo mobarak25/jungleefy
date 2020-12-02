@@ -25,6 +25,16 @@ button{
 }
 .pointer{cursor: pointer;}
 
+/* Removing input type number spin arrow Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number] {
+	-moz-appearance: textfield;/* Firefox */
+}
+
 
 
 /*==============================*/

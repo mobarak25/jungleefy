@@ -26,7 +26,8 @@
                 </nav>
 
                 <a class="post-promotion" href="#">
-                    <i class="icofont-plus"></i> Post Your Ad
+                    <i class="icofont-plus"></i>
+                    Post Your Ad
                 </a>
             </div>
         </v-container>
