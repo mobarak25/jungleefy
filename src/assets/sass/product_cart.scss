@@ -1,6 +1,7 @@
 .product-box{
     padding-top: 4px;
-    .v-sheet.v-card{
+    .product-mid{
+        border-bottom: 1px solid #dddd;
         @include border-radius(10px);
 
         .product-sub-title{
@@ -90,6 +91,17 @@
         }
     }
 }
+
+
+/*========style for product list view==========*/
+.product_list_items{
+.product-card{
+    display: flex;
+}
+}
+
+
+
 
 @include media(1639px){
     .v-sheet.v-card{
@@ -225,5 +237,14 @@
     .sell-btn-wrap{
        padding: 104% 0 50px 16px;
         
+    }
+}
+
+.product_list_items{
+    flex:100%;
+    max-width: 100%;
+
+    .product-box{
+
     }
 }

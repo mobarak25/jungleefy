@@ -10,7 +10,8 @@ export default new Vuex.Store({
     featuredAuctions: {},
     trendingProducts: {},
     auctionsClosing: {},
-    productCategories: {}
+    productCategories: {},
+    allProduct: {}
   },
   mutations: {
     SET_AUCTION_PRODUCTS(state, products) {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     },
     SET_PRODUCT_CATAGORIES(state, categories) {
       state.productCategories = categories;
+    },
+    SET_PRODUCTS(state, allProducts) {
+      state.allProduct = allProducts;
     }
   },
   actions: {
@@ -62,6 +66,16 @@ export default new Vuex.Store({
       axios.get(url)
         .then(result => {
           commit('SET_PRODUCT_CATAGORIES', result.data)
+        }).catch(error => {
+          console.log(error);
+        })
+
+    },
+    getProducts({ commit }) {
+      let url = "http://localhost:8080/data/products.json";
+      axios.get(url)
+        .then(result => {
+          commit('SET_PRODUCTS', result.data)
         }).catch(error => {
           console.log(error);
         })

@@ -35,15 +35,64 @@
                                     </v-flex>
                                 </v-flex>
 
-                                <v-flex>
-                                    <v-icon>mdi-format-list-bulleted</v-icon>
-                                    <v-icon>mdi-view-grid-outline</v-icon>
+                                <v-flex class="view-indicator">
+                                    <a
+                                        :class="{active:listView}"
+                                        @click="listView = true"
+                                        href="javascript:;"
+                                    >
+                                        <v-icon>mdi-format-list-bulleted</v-icon>
+                                    </a>
+                                    <a
+                                        :class="{ active: !listView }"
+                                        @click="listView = false"
+                                        href="javascript:;"
+                                    >
+                                        <v-icon>mdi-view-grid-outline</v-icon>
+                                    </a>
                                 </v-flex>
                             </v-flex>
                         </v-sheet>
                     </v-layout>
+                    <v-flex class="products-wraper">
+                        <v-row>
+                            <v-col
+                                class="product-items"
+                                :class="{product_list_items:listView}"
+                                lg="3"
+                                sm="4"
+                                v-for="product in getAllProduct.products"
+                                :key="product.id"
+                            >
+                                <product-card :product="product"></product-card>
+                            </v-col>
 
-                    <product-card></product-card>
+                            <!-- Post your add section -->
+                            <v-col v-if="getAllProduct.postAd" class="product-items" lg="3" sm="4">
+                                <v-sheet height="100%" class="product-box">
+                                    <v-card height="100%" elevation="5" :to="{name:'About'}">
+                                        <v-sheet
+                                            height="100%"
+                                            class="d-flex align-end"
+                                            :style="{'background-image': 'url(' + require('@/assets/images/sell-banner.png') + ')','background-size':'100% 100%'}"
+                                        >
+                                            <v-flex class="sell-btn-wrap">
+                                                <v-btn
+                                                    dark
+                                                    color="brand"
+                                                    depressed
+                                                    tile
+                                                    class="sell-btn text-none"
+                                                >
+                                                    <v-icon>mdi-plus-thick</v-icon>Post your Ad
+                                                </v-btn>
+                                            </v-flex>
+                                        </v-sheet>
+                                    </v-card>
+                                </v-sheet>
+                            </v-col>
+                        </v-row>
+                    </v-flex>
                 </v-card>
             </v-flex>
         </v-container>
@@ -65,8 +114,19 @@ export default {
 
     data() {
         return {
+            listView: false,
             items: ["Date:Newest on top", "Foo", "Bar", "Fizz", "Buzz"],
         };
+    },
+
+    computed: {
+        getAllProduct() {
+            return this.$store.state.allProduct;
+        },
+    },
+
+    mounted() {
+        this.$store.dispatch("getProducts");
     },
 };
 </script>
@@ -117,5 +177,21 @@ export default {
             }
         }
     }
+
+    .view-indicator {
+        padding-left: rem-calc(46px);
+
+        .active {
+            .v-icon {
+                color: map-get($colors, brand);
+            }
+        }
+        .v-icon {
+            margin-left: rem-calc(7px);
+        }
+    }
+}
+.products-wraper {
+    padding-top: rem-calc(15px);
 }
 </style>

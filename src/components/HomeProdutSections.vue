@@ -17,7 +17,42 @@
                 </h2>
             </v-flex>
 
-            <product-card :product-data="options"></product-card>
+            <v-row>
+                <v-col
+                    class="product-items"
+                    lg="3"
+                    sm="4"
+                    v-for="product in options.products"
+                    :key="product.id"
+                >
+                    <product-card :product="product"></product-card>
+                </v-col>
+
+                <!-- Post your add section -->
+                <v-col v-if="options.postAd" class="product-items" lg="3" sm="4">
+                    <v-sheet height="100%" class="product-box">
+                        <v-card height="100%" elevation="5" :to="{name:'About'}">
+                            <v-sheet
+                                height="100%"
+                                class="d-flex align-end"
+                                :style="{'background-image': 'url(' + require('@/assets/images/sell-banner.png') + ')','background-size':'100% 100%'}"
+                            >
+                                <v-flex class="sell-btn-wrap">
+                                    <v-btn
+                                        dark
+                                        color="brand"
+                                        depressed
+                                        tile
+                                        class="sell-btn text-none"
+                                    >
+                                        <v-icon>mdi-plus-thick</v-icon>Post your Ad
+                                    </v-btn>
+                                </v-flex>
+                            </v-sheet>
+                        </v-card>
+                    </v-sheet>
+                </v-col>
+            </v-row>
         </v-container>
     </v-layout>
 </template>
@@ -35,7 +70,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/sass/product.scss";
+@import "@/assets/sass/product_cart.scss";
 
 .home-product-sections {
     padding-top: rem-calc(25px);
