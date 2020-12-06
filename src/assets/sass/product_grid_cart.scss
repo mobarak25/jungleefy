@@ -1,13 +1,8 @@
 .product-box{
     padding-top: 4px;
-    .product-mid{
-        border-bottom: 1px solid #dddd;
-        @include border-radius(10px);
-
-        .product-sub-title{
-            padding-bottom: rem-calc(8px);
-        }
-    }
+}
+.product-sub-title{
+    padding-bottom: rem-calc(8px);
 }
 .product-top-labels {
     @include absolute(false, false, right,0, top,0);
@@ -91,17 +86,6 @@
         }
     }
 }
-
-
-/*========style for product list view==========*/
-.product_list_items{
-.product-card{
-    display: flex;
-}
-}
-
-
-
 
 @include media(1639px){
     .v-sheet.v-card{
@@ -237,14 +221,5 @@
     .sell-btn-wrap{
        padding: 104% 0 50px 16px;
         
-    }
-}
-
-.product_list_items{
-    flex:100%;
-    max-width: 100%;
-
-    .product-box{
-
     }
 }

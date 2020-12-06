@@ -51,37 +51,32 @@
                 </router-link>
             </v-img>
 
-            <v-sheet class="product-mid">
-                <v-card-subtitle
-                    class="product-sub-title font-weight-light"
-                    v-text="product.category"
-                ></v-card-subtitle>
+            <v-card-subtitle class="product-sub-title font-weight-light" v-text="product.category"></v-card-subtitle>
 
-                <v-card-text class="text--primary pb-0">
-                    <v-flex class="product-information">
-                        <div class="product-title">
-                            <a href="#" v-text="product.title"></a>
-                        </div>
+            <v-card-text class="text--primary pb-0">
+                <v-flex class="product-information">
+                    <div class="product-title">
+                        <a href="#" v-text="product.title"></a>
+                    </div>
 
-                        <div class="product-price-box pb-2">
-                            <v-sheet tag="span" class="product-price" v-text="product.price"></v-sheet>
+                    <div class="product-price-box pb-2">
+                        <v-sheet tag="span" class="product-price" v-text="product.price"></v-sheet>
 
-                            <v-sheet
-                                v-if="product.oldPrice"
-                                tag="span"
-                                class="bidding-status text-decoration-line-through"
-                                v-text="product.oldPrice"
-                            ></v-sheet>
-                            <v-sheet v-else tag="span" class="bidding-status">Bid Start</v-sheet>
-                        </div>
+                        <v-sheet
+                            v-if="product.oldPrice"
+                            tag="span"
+                            class="bidding-status text-decoration-line-through"
+                            v-text="product.oldPrice"
+                        ></v-sheet>
+                        <v-sheet v-else tag="span" class="bidding-status">Bid Start</v-sheet>
+                    </div>
 
-                        <div class="product-location">
-                            <v-icon>mdi-map-marker</v-icon>Sekertack | Mohammadpur, Dhaka
-                        </div>
-                    </v-flex>
-                </v-card-text>
-            </v-sheet>
-
+                    <div class="product-location">
+                        <v-icon>mdi-map-marker</v-icon>Sekertack | Mohammadpur, Dhaka
+                    </div>
+                </v-flex>
+            </v-card-text>
+            <v-divider></v-divider>
             <v-card-text class="product-bottom">
                 <v-layout class="justify-space-between flex-wrap">
                     <v-sheet class="auction-time-holder">
@@ -111,3 +106,6 @@ export default {
     mounted() {},
 };
 </script>
+<style lang="scss">
+@import "@/assets/sass/product_grid_cart.scss";
+</style>

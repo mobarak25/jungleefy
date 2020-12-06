@@ -64,11 +64,18 @@
                                 v-for="product in getAllProduct.products"
                                 :key="product.id"
                             >
-                                <product-card :product="product"></product-card>
+                                <product-grid-card v-if="!listView" :product="product"></product-grid-card>
+
+                                <product-list-card v-if="listView" :product="product"></product-list-card>
                             </v-col>
 
                             <!-- Post your add section -->
-                            <v-col v-if="getAllProduct.postAd" class="product-items" lg="3" sm="4">
+                            <v-col
+                                v-if="getAllProduct.postAd && !listView"
+                                class="product-items"
+                                lg="3"
+                                sm="4"
+                            >
                                 <v-sheet height="100%" class="product-box">
                                     <v-card height="100%" elevation="5" :to="{name:'About'}">
                                         <v-sheet
@@ -102,14 +109,16 @@
 <script>
 import ProductSidebar from "@/components/ProductSidebar";
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
-import ProductCard from "@/components/ProductCard";
+import ProductGridCard from "@/components/ProductGridCard";
+import ProductListCard from "@/components/ProductListCard";
 
 export default {
     name: "Products",
     components: {
         ProductSidebar,
         SiteBreadcrumb,
-        ProductCard,
+        ProductGridCard,
+        ProductListCard,
     },
 
     data() {

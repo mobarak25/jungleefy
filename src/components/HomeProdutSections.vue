@@ -25,7 +25,7 @@
                     v-for="product in options.products"
                     :key="product.id"
                 >
-                    <product-card :product="product"></product-card>
+                    <product-grid-card :product="product"></product-grid-card>
                 </v-col>
 
                 <!-- Post your add section -->
@@ -57,11 +57,11 @@
     </v-layout>
 </template>
 <script>
-import ProductCard from "./ProductCard";
+import ProductGridCard from "./ProductGridCard";
 export default {
     name: "HomeProductSections",
     components: {
-        ProductCard,
+        ProductGridCard,
     },
     props: {
         options: Object,
@@ -70,8 +70,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/sass/product_cart.scss";
-
 .home-product-sections {
     padding-top: rem-calc(25px);
 }
