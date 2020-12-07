@@ -1,5 +1,9 @@
 .product-box{
     padding-top: 4px;
+
+    .v-sheet.v-card{
+        @include border-radius(10px);
+    }
 }
 .product-sub-title{
     padding-bottom: rem-calc(8px);

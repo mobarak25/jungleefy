@@ -8,17 +8,29 @@
                 alt="Products"
             >
                 <router-link to="/" class="white--text fill-height d-flex align-end">
-                    <v-card-text class="product-top-labels text-right pr-2 pt-2">
-                        <v-btn fab elevation="2">
-                            <v-icon class="grey--text">mdi-heart</v-icon>
-                        </v-btn>
+                    <v-card-text class="product-top-labels py-2 px-4 d-flex justify-space-between">
+                        <v-flex class="flex-grow-0">
+                            <v-sheet
+                                v-if="product.type=='Auction'"
+                                tag="span"
+                                dark
+                                color="brand"
+                                class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                            >Auction</v-sheet>
+                        </v-flex>
 
-                        <v-btn color="brand" fab elevation="2">
-                            <v-icon class="white--text">mdi-cart</v-icon>
-                        </v-btn>
+                        <v-flex class="flex-grow-0">
+                            <v-btn fab elevation="2">
+                                <v-icon class="grey--text">mdi-heart</v-icon>
+                            </v-btn>
+
+                            <v-btn color="brand" fab elevation="2">
+                                <v-icon class="white--text">mdi-cart</v-icon>
+                            </v-btn>
+                        </v-flex>
                     </v-card-text>
 
-                    <v-card-text class="pb-3 product-btm-labels">
+                    <v-card-text class="pb-3 px-4 product-btm-labels">
                         <v-sheet
                             v-if="product.status=='Used'"
                             tag="span"
@@ -51,7 +63,17 @@
                 </router-link>
             </v-img>
 
-            <v-card-subtitle class="product-sub-title font-weight-light" v-text="product.category"></v-card-subtitle>
+            <v-card-subtitle
+                class="product-sub-title d-flex justify-space-between font-weight-light"
+            >
+                <span v-text="product.category"></span>
+
+                <v-sheet class="share-product-wrap share-product-grid">
+                    <v-icon class="grey--text">mdi-share</v-icon>
+
+                    <product-social></product-social>
+                </v-sheet>
+            </v-card-subtitle>
 
             <v-card-text class="text--primary pb-0">
                 <v-flex class="product-information">
@@ -95,8 +117,12 @@
 </template>
 
 <script>
+import ProductSocial from "@/components/ProductSocial";
 export default {
     name: "ProductCard",
+    components: {
+        ProductSocial,
+    },
     props: {
         product: {},
     },

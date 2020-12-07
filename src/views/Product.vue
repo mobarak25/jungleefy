@@ -2,11 +2,14 @@
     <v-flex class="site-content-wrap site_bg">
         <v-container class="py-0">
             <v-flex wrap class="d-flex justify-space-between">
+                <!-- sidebar sections -->
                 <product-sidebar></product-sidebar>
 
                 <v-card tile class="portlet">
+                    <!-- breadcrumb sections -->
                     <site-breadcrumb></site-breadcrumb>
 
+                    <!-- Sort by sections -->
                     <v-layout
                         class="product-top-filter d-flex flex-grow-0 flex-wrap justify-space-between"
                     >
@@ -26,7 +29,7 @@
                                         <v-select
                                             hide-details
                                             :items="items"
-                                            label="Date:Newest on top"
+                                            label="Date: Newest on top"
                                             dense
                                             solo
                                             flat
@@ -54,6 +57,8 @@
                             </v-flex>
                         </v-sheet>
                     </v-layout>
+
+                    <!-- Products sections -->
                     <v-flex class="products-wraper">
                         <v-row>
                             <v-col
@@ -167,11 +172,6 @@ export default {
             max-width: 180px;
             margin-left: rem-calc(8px);
             .v-input {
-                input {
-                    height: 25px;
-                    padding: 0;
-                    @include font(primary, 14px, 25px, false);
-                }
                 fieldset {
                     border: 1px solid #e5e5e5;
                     border-radius: 0;

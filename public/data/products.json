@@ -10,7 +10,8 @@
             "price": "TK 5000",
             "image": "product-8.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Used"
+            "status": "Used",
+            "type": "Auction"
         },
         {
             "id": 2,
@@ -19,7 +20,8 @@
             "price": "TK 5000",
             "image": "product-2.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "New"
+            "status": "New",
+            "type": "Auction"
         },
         {
             "id": 3,
@@ -28,7 +30,8 @@
             "price": "TK 5000",
             "image": "product-10.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Lot"
+            "status": "Lot",
+            "type": "Auction"
         },
         {
             "id": 4,
@@ -37,7 +40,8 @@
             "price": "TK 5000",
             "image": "product-11.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Shop Woner"
+            "status": "Shop Woner",
+            "type": "Auction"
         },
         {
             "id": 5,

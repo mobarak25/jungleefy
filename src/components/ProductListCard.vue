@@ -9,6 +9,18 @@
                 class="product-image"
             >
                 <router-link to="/" class="white--text fill-height d-flex align-end">
+                    <v-card-text class="product-top-labels py-2 px-4 d-flex justify-space-between">
+                        <v-flex class="flex-grow-0">
+                            <v-sheet
+                                v-if="product.type=='Auction'"
+                                tag="span"
+                                dark
+                                color="brand"
+                                class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                            >Auction</v-sheet>
+                        </v-flex>
+                    </v-card-text>
+
                     <v-card-text class="pb-3 product-btm-labels">
                         <v-sheet
                             v-if="product.status=='Used'"
@@ -78,13 +90,10 @@
                     <v-btn color="brand" fab elevation="2">
                         <v-icon class="white--text">mdi-cart</v-icon>
                     </v-btn>
-                    <v-btn fab depressed class="share-product-wrap">
+                    <v-btn fab class="share-product-wrap">
                         <v-icon class="grey--text">mdi-share</v-icon>
-                        <v-card class="share-product">
-                            <a href="#" v-for="social in socials" :key="social.name">
-                                <v-icon :class="social.class">{{social.name}}</v-icon>
-                            </a>
-                        </v-card>
+
+                        <product-social></product-social>
                     </v-btn>
                 </v-card-text>
                 <div class="product-price-box pb-2">
@@ -103,36 +112,17 @@
 </template>
 
 <script>
+import ProductSocial from "@/components/ProductSocial";
 export default {
     name: "ProductCard",
+    components: {
+        ProductSocial,
+    },
     props: {
         product: {},
     },
     data() {
-        return {
-            socials: [
-                {
-                    name: "mdi-facebook",
-                    class: "facebook",
-                },
-                {
-                    name: "mdi-pinterest",
-                    class: "pinterest",
-                },
-                {
-                    name: "mdi-linkedin",
-                    class: "linkedin",
-                },
-                {
-                    name: "mdi-instagram",
-                    class: "instagram",
-                },
-                {
-                    name: "mdi-twitter",
-                    class: "twitter",
-                },
-            ],
-        };
+        return {};
     },
     mounted() {},
 };
