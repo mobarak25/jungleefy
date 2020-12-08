@@ -1,7 +1,7 @@
 <template>
     <!-- Product section -->
     <v-flex class="product-box">
-        <v-card class="product-card" elevation="3">
+        <v-card elevation="3" class="product-card">
             <v-img
                 :title="product.title"
                 :src="require('@/assets/images/products/'+ product.image)"

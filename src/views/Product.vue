@@ -105,6 +105,20 @@
                             </v-col>
                         </v-row>
                     </v-flex>
+
+                    <!-- Products Pagination sections -->
+                    <v-flex class="product-pagination d-flex justify-end">
+                        <pagination></pagination>
+                    </v-flex>
+                </v-card>
+            </v-flex>
+
+            <v-flex wrap class="d-flex justify-end">
+                <v-card tile elevation="0" class="mt-4 portlet py-4">
+                    <v-card-text class="pa-0 black--text text-center please-contact">
+                        If you want to Buy or Sell then create you post? please
+                        <router-link :to="{name:'Contact'}">Contact</router-link>
+                    </v-card-text>
                 </v-card>
             </v-flex>
         </v-container>
@@ -116,6 +130,7 @@ import ProductSidebar from "@/components/ProductSidebar";
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
 import ProductGridCard from "@/components/ProductGridCard";
 import ProductListCard from "@/components/ProductListCard";
+import Pagination from "@/components/Pagination";
 
 export default {
     name: "Products",
@@ -124,6 +139,7 @@ export default {
         SiteBreadcrumb,
         ProductGridCard,
         ProductListCard,
+        Pagination,
     },
 
     data() {
@@ -202,5 +218,19 @@ export default {
 }
 .products-wraper {
     padding-top: rem-calc(15px);
+}
+.please-contact {
+    @include font(false, 16px, 22px, false);
+    a {
+        color: map-get($colors, brand);
+        font-weight: map-get($font-weight, bold);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.product-pagination {
+    padding: rem-calc(40px 0 37px);
 }
 </style>
