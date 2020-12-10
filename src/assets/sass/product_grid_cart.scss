@@ -22,6 +22,9 @@
         margin-right: rem-calc(10px);
     }
 }
+.product-btm-labels{
+    @include absolute(false, false, left,0, bottom,0);
+}
 .product-information{
     padding-bottom: rem-calc(20px);
 }

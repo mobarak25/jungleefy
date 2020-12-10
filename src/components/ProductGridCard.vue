@@ -7,60 +7,59 @@
                 :src="require('@/assets/images/products/'+ product.image)"
                 alt="Products"
             >
-                <router-link to="/" class="white--text fill-height d-flex align-end">
-                    <v-card-text class="product-top-labels py-2 px-4 d-flex justify-space-between">
-                        <v-flex class="flex-grow-0">
-                            <v-sheet
-                                v-if="product.type=='Auction'"
-                                tag="span"
-                                dark
-                                color="brand"
-                                class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
-                            >Auction</v-sheet>
-                        </v-flex>
-
-                        <v-flex class="flex-grow-0">
-                            <v-btn fab elevation="2">
-                                <v-icon class="grey--text">mdi-heart</v-icon>
-                            </v-btn>
-
-                            <v-btn color="brand" fab elevation="2">
-                                <v-icon class="white--text">mdi-cart</v-icon>
-                            </v-btn>
-                        </v-flex>
-                    </v-card-text>
-
-                    <v-card-text class="pb-3 px-4 product-btm-labels">
+                <router-link :to="{name:'ProductDetails'}" class="fill-height d-block"></router-link>
+                <v-card-text class="product-top-labels py-2 px-4 d-flex justify-space-between">
+                    <v-flex class="flex-grow-0">
                         <v-sheet
-                            v-if="product.status=='Used'"
-                            tag="span"
-                            dark
-                            color="primary"
-                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
-                        >Used</v-sheet>
-                        <v-sheet
-                            v-else-if="product.status=='New'"
+                            v-if="product.type=='Auction'"
                             tag="span"
                             dark
                             color="brand"
                             class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
-                        >New</v-sheet>
-                        <v-sheet
-                            v-else-if="product.status=='Lot'"
-                            tag="span"
-                            dark
-                            color="primary"
-                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
-                        >Lot</v-sheet>
-                        <v-sheet
-                            v-else-if="product.status=='Shop Woner'"
-                            tag="span"
-                            dark
-                            color="primary"
-                            class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
-                        >Shop Woner</v-sheet>
-                    </v-card-text>
-                </router-link>
+                        >Auction</v-sheet>
+                    </v-flex>
+
+                    <v-flex class="flex-grow-0">
+                        <v-btn fab elevation="2">
+                            <v-icon class="grey--text">mdi-heart</v-icon>
+                        </v-btn>
+
+                        <v-btn color="brand" fab elevation="2">
+                            <v-icon class="white--text">mdi-cart</v-icon>
+                        </v-btn>
+                    </v-flex>
+                </v-card-text>
+
+                <v-card-text class="pb-3 px-4 product-btm-labels">
+                    <v-sheet
+                        v-if="product.status=='Used'"
+                        tag="span"
+                        dark
+                        color="primary"
+                        class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                    >Used</v-sheet>
+                    <v-sheet
+                        v-else-if="product.status=='New'"
+                        tag="span"
+                        dark
+                        color="brand"
+                        class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                    >New</v-sheet>
+                    <v-sheet
+                        v-else-if="product.status=='Lot'"
+                        tag="span"
+                        dark
+                        color="primary"
+                        class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                    >Lot</v-sheet>
+                    <v-sheet
+                        v-else-if="product.status=='Shop Woner'"
+                        tag="span"
+                        dark
+                        color="primary"
+                        class="py-1 px-3 font-weight-light text-center d-inline-block align-center"
+                    >Shop Woner</v-sheet>
+                </v-card-text>
             </v-img>
 
             <v-card-subtitle
@@ -78,7 +77,7 @@
             <v-card-text class="text--primary pb-0">
                 <v-flex class="product-information">
                     <div class="product-title">
-                        <a href="#" v-text="product.title"></a>
+                        <router-link :to="{name:'ProductDetails'}" v-text="product.title"></router-link>
                     </div>
 
                     <div class="product-price-box pb-2">
