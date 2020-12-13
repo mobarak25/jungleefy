@@ -92,7 +92,12 @@
                     <v-btn fab class="share-product-wrap">
                         <v-icon class="grey--text">mdi-share</v-icon>
 
-                        <product-social></product-social>
+                        <!-- Product-Social -->
+                        <v-flex class="share-productIn">
+                            <v-card class="share-product">
+                                <product-social></product-social>
+                            </v-card>
+                        </v-flex>
                     </v-btn>
                 </v-card-text>
                 <div class="product-price-box pb-2">
@@ -121,16 +126,12 @@ export default {
         product: {},
     },
     data() {
-        return {
-
-            
-        };
+        return {};
     },
     mounted() {},
 };
 </script>
 
 <style lang="scss">
-
 @import "@/assets/sass/product_list_cart.scss";
 </style>

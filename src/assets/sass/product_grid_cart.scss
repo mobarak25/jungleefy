@@ -1,20 +1,20 @@
-.product-box{
+.product-box {
     padding-top: 4px;
 
-    .v-sheet.v-card{
+    .v-sheet.v-card {
         @include border-radius(10px);
     }
 }
-.product-sub-title{
+.product-sub-title {
     padding-bottom: rem-calc(8px);
 }
 .product-top-labels {
-    @include absolute(false, false, right,0, top,0);
-    .v-btn{
+    @include absolute(false, false, right, 0, top, 0);
+    .v-btn {
         width: rem-calc(35px);
         height: rem-calc(35px);
 
-        i.mdi{
+        i.mdi {
             @include font(false, 18px, 18px, false);
         }
     }
@@ -22,10 +22,10 @@
         margin-right: rem-calc(10px);
     }
 }
-.product-btm-labels{
-    @include absolute(false, false, left,0, bottom,0);
+.product-btm-labels {
+    @include absolute(false, false, left, 0, bottom, 0);
 }
-.product-information{
+.product-information {
     padding-bottom: rem-calc(20px);
 }
 
@@ -33,70 +33,113 @@
     padding-bottom: rem-calc(10px);
     @include font(primary, 18px, 22px, medium);
 
-    a{  
+    a {
         @include truncate-clamp(2);
     }
 }
 
-.product-price-box{
-    .product-price{
+.product-price-box {
+    .product-price {
         padding-right: rem-calc(10px);
         display: inline-block;
         @include font(brand, 22px, 28px, medium);
     }
-    .bidding-status{
+    .bidding-status {
         @include font(gray, 14px, 28px, light);
     }
 }
-.product-location{
+.product-location {
     padding-left: rem-calc(17px);
     position: relative;
     @include truncate-clamp(1);
     @include font(gray, 14px, 20px, false);
 
-    i.v-icon{
-        @include absolute(false, false, left,-2px,top,0);
-        @include font(gray, 17px, 20px, false);  
+    i.v-icon {
+        @include absolute(false, false, left, -2px, top, 0);
+        @include font(gray, 17px, 20px, false);
     }
 }
-.auction-time-holder{
-    .time-title{
+.auction-time-holder {
+    .time-title {
         padding-right: rem-calc(10px);
         display: inline-block;
-        @include font(gray, 14px, 18px, light); 
+        @include font(gray, 14px, 18px, light);
     }
-    .time-value{
+    .time-value {
         display: inline-block;
         @include font(secondary, 16px, 18px, medium);
     }
 }
-.auction-bid-holder{
-    .bid-title{
+.auction-bid-holder {
+    .bid-title {
         padding-right: rem-calc(10px);
         display: inline-block;
-        @include font(primary, 14px, 18px, light); 
+        @include font(primary, 14px, 18px, light);
     }
-    .bid-value{
+    .bid-value {
         display: inline-block;
         @include font(secondary, 16px, 18px, medium);
     }
 }
 
-.sell-btn-wrap{
+.sell-btn-wrap {
     padding: rem-calc(0 0 70px 30px);
-    .sell-btn.v-btn{
+    .sell-btn.v-btn {
         height: 46px;
         @include font(false, 16px, 22px, semi-bold);
 
-        i{
+        i {
             @include font(false, 18px, 22px, false);
         }
     }
 }
 
-@include media(1639px){
-    .v-sheet.v-card{
-        .product-sub-title{
+.share-product-wrap {
+    position: relative;
+
+    .share-product {
+        width: 30px;
+        border-radius: 0 !important;
+    }
+
+    &.share-product-grid {
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 0 16px rgba(62, 62, 60, 0.4);
+
+        .mdi-share {
+            font-size: 18px;
+            line-height: 20px;
+            margin-top: -6px;
+        }
+        &::after {
+            @include sudo(0, 0, left, 100%, top, 50%, false);
+            transform: translateY(-50%);
+            border-top: 4px solid transparent;
+            border-left: 8px solid #fff;
+            border-bottom: 4px solid transparent;
+        }
+    }
+
+    .share-productIn {
+        max-width: none;
+        padding-left: 10px;
+        display: none;
+        z-index: 3;
+        @include absolute(false, false, left, 100%, top, 0);
+    }
+
+    &:hover .share-productIn {
+        display: block;
+    }
+}
+
+@include media(1639px) {
+    .v-sheet.v-card {
+        .product-sub-title {
             padding: rem-calc(7px 16px);
         }
         .product-title {
@@ -105,62 +148,61 @@
         }
     }
 
-    .product-price-box{
-        .product-price{
+    .product-price-box {
+        .product-price {
             @include font(false, 19px, 24px, false);
         }
-        .bidding-status{
+        .bidding-status {
             @include font(false, 14px, 20px, false);
         }
     }
-    .product-information{
+    .product-information {
         padding-bottom: rem-calc(15px);
     }
-    .product-bottom{
+    .product-bottom {
         padding: rem-calc(12px 16px);
 
-        .auction-time-holder{
-            .time-title{
+        .auction-time-holder {
+            .time-title {
                 padding-right: rem-calc(5px);
                 @include font(false, 13px, 15px, false);
             }
-            .time-value{
+            .time-value {
                 @include font(false, 15px, 16px, false);
             }
         }
 
-        .auction-bid-holder{
-            .bid-title{
+        .auction-bid-holder {
+            .bid-title {
                 padding-right: rem-calc(5px);
-                @include font(false, 13px, 15px, false); 
+                @include font(false, 13px, 15px, false);
             }
-            .bid-value{
+            .bid-value {
                 @include font(false, 15px, 16px, false);
             }
         }
     }
 
-    .sell-btn-wrap{
-        .sell-btn.v-btn{
+    .sell-btn-wrap {
+        .sell-btn.v-btn {
             height: 38px;
         }
     }
 }
 
-
-@include media(md){
-    .product-btm-labels{
-        span{
-            line-height:rem-calc(18px) ;
+@include media(md) {
+    .product-btm-labels {
+        span {
+            line-height: rem-calc(18px);
         }
     }
 
     .product-top-labels {
-        .v-btn{
-            width:  rem-calc(25px);
-            height:  rem-calc(25px);
+        .v-btn {
+            width: rem-calc(25px);
+            height: rem-calc(25px);
 
-            i.mdi{
+            i.mdi {
                 @include font(false, 15px, 25px, false);
             }
         }
@@ -168,8 +210,8 @@
             margin-right: rem-calc(5px);
         }
     }
-    .v-sheet.v-card{
-        .product-sub-title{
+    .v-sheet.v-card {
+        .product-sub-title {
             padding: rem-calc(10px 16px 5px);
             line-height: 16px;
         }
@@ -179,54 +221,57 @@
         }
     }
 
-    .product-price-box{
-        .product-price{
+    .product-price-box {
+        .product-price {
             @include font(false, 16px, 20px, false);
         }
     }
-    .product-information{
+    .product-information {
         padding-bottom: rem-calc(10px);
     }
-    .product-bottom{
+    .product-bottom {
         padding: rem-calc(8px 16px);
 
-        .auction-time-holder{
+        .auction-time-holder {
             width: 100%;
-            .time-value{
+            .time-value {
                 @include font(false, 12px, 15px, false);
             }
         }
-        .auction-bid-holder{
+        .auction-bid-holder {
             width: 100%;
         }
     }
-    .sell-btn-wrap{
+    .sell-btn-wrap {
         padding: rem-calc(0 0 70px 10px);
     }
 }
 
-@include media(599px){
-    .product-items{
+@include media(599px) {
+    .product-items {
         width: 50%;
     }
-    .sell-btn-wrap{
+    .sell-btn-wrap {
         padding: rem-calc(0 0 70px 10px);
-        .sell-btn.v-btn{
+        .sell-btn.v-btn {
             @include font(false, 14px, 22px, false);
         }
     }
 }
-@include media(374px){
-    .product-items{
+@include media(374px) {
+    .product-items {
         width: 100%;
     }
 
-    .product-bottom{
-        .auction-time-holder{width: auto;}
-        .auction-bid-holder{width: auto;}
+    .product-bottom {
+        .auction-time-holder {
+            width: auto;
+        }
+        .auction-bid-holder {
+            width: auto;
+        }
     }
-    .sell-btn-wrap{
-       padding: 104% 0 50px 16px;
-        
+    .sell-btn-wrap {
+        padding: 104% 0 50px 16px;
     }
 }

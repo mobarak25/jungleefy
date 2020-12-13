@@ -1,59 +1,90 @@
 body,
-.v-application{
-	@include font(text-color, 16px, 22px, regular);
-	font-family:'Poppins', sans-serif;
-	background-color: #fafafa;
+.v-application {
+    @include font(text-color, 16px, 22px, regular);
+    font-family: "Poppins", sans-serif;
+    background-color: #fafafa;
 }
 /*==============================*/
 /*=====   Common styles   ======*/
 /*==============================*/
-*{letter-spacing: normal !important;}
-a{color: map-get($colors, brand); text-decoration: none;}
-.v-application p,p{padding: 0; margin: 0;}
-.v-application a:hover{text-decoration:none;color: map-get($colors, brand)}
-.v-application--is-ltr .v-input--selection-controls__input {margin-right: 12px;}
-h1,h2,h3,h4,h5,h6,p,div,ul,address{margin: 0;}
-ul{list-style: none; padding: 0; margin: 0;}
-button{
-	padding: 0; 
-	margin: 0; 
-	border: 0;
-	&:focus{outline: 0;}
+* {
+    letter-spacing: normal !important;
 }
-.v-btn{
+a {
+    color: map-get($colors, brand);
+    text-decoration: none;
+}
+.v-application p,
+p {
+    padding: 0;
+    margin: 0;
+}
+.v-application a:hover {
+    text-decoration: none;
+    color: map-get($colors, brand);
+}
+.v-application--is-ltr .v-input--selection-controls__input {
+    margin-right: 12px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+ul,
+address {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    &:focus {
+        outline: 0;
+    }
+}
+.v-btn {
     letter-spacing: normal;
 }
-.pointer{cursor: pointer;}
+.pointer {
+    cursor: pointer;
+}
 
 /* Removing input type number spin arrow Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
-input[type=number] {
-	-moz-appearance: textfield;/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
 }
-
-
 
 /*==============================*/
 /*=====  Main structure  =======*/
 /*==============================*/
 
-@include media(container){
-	.container{
-		max-width: 1614px;
-	}
+@include media(container) {
+    .container {
+        max-width: 1614px;
+    }
 }
-.site-content-wrap{
+.site-content-wrap {
     padding: rem-calc(35px 0);
 }
 
 /*==============================*/
 /*==vuetify inputs auto height==*/
 /*==============================*/
-.v-text-field.v-text-field--solo .v-input__control{
+.v-text-field.v-text-field--solo .v-input__control {
     min-height: auto !important;
 }
 .v-text-field .v-input__control .v-input__slot {
@@ -61,4 +92,3 @@ input[type=number] {
     display: flex !important;
     align-items: center !important;
 }
-

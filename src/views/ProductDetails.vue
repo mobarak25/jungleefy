@@ -57,23 +57,156 @@
                             <v-sheet class="quantity d-flex align-center">
                                 <span class="quantity-title">Quantity</span>
 
-                                <v-flex class="quantity-holder d-flex flex-grow-0">
-                                    <v-icon @click="decrease()">mdi-minus</v-icon>
-                                    <v-text-field
-                                        v-model.number="quantity"
-                                        step="1"
-                                        @keyup="checkingZero()"
-                                        solo
-                                        flat
-                                        hide-details
-                                        type="number"
-                                    ></v-text-field>
-                                    <v-icon @click="increase()">mdi-plus</v-icon>
-                                </v-flex>
+                                <!-- Quantity-Holder -->
+                                <quantity-holder></quantity-holder>
                             </v-sheet>
+
+                            <v-layout wrap class="btn-holder justify-space-between">
+                                <v-flex class="btn-box">
+                                    <v-btn
+                                        href="#"
+                                        block
+                                        tile
+                                        depressed
+                                        class="primary white--text text-none"
+                                    >Buy Now</v-btn>
+                                </v-flex>
+                                <v-flex class="btn-box">
+                                    <v-btn
+                                        href="#"
+                                        block
+                                        tile
+                                        depressed
+                                        class="brand white--text text-none"
+                                    >Add to Cart</v-btn>
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout class="share-product align-center">
+                                <span>Share:</span>
+                                <!-- Product-Social -->
+                                <product-social></product-social>
+                            </v-layout>
                         </v-flex>
-                        <v-flex class="product-details-info">fsd</v-flex>
+                        <v-flex class="product-details-info">
+                            <v-card outlined>
+                                <v-flex class="delivery-option">
+                                    <v-card-title class="pa-0 pb-3 d-flex justify-space-between">
+                                        Delivery Options
+                                        <v-tooltip right>
+                                            <template v-slot:activator="{ on, attrs }">
+                                                <v-icon
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                                >mdi-information-outline</v-icon>
+                                            </template>
+                                            <span class="tooltip-info">
+                                                Lorem ipsum, dolor sit
+                                                <br />amet consectetur
+                                                <br />adipisicing elit.
+                                                <br />Dolorem facilis unde
+                                                <br />fugiat eum iure sequi
+                                            </span>
+                                        </v-tooltip>
+                                    </v-card-title>
+
+                                    <v-card-text class="pa-0 pb-3 d-flex justify-space-between">
+                                        <span>
+                                            4/6, block c
+                                            <br />Mohammadpur, Dhaka
+                                        </span>
+                                        <span class="grey--text text--darken-2">Change</span>
+                                    </v-card-text>
+
+                                    <v-card-text
+                                        class="pa-0 pb-2 d-flex justify-space-between align-center"
+                                    >
+                                        <span>
+                                            Home Delivery
+                                            <br />
+                                            <span
+                                                class="grey--text text--darken-3 font-weight-medium"
+                                            >4 - 7</span>
+                                        </span>
+                                        <span
+                                            class="grey--text text--darken-3 font-weight-medium"
+                                        >TK 50</span>
+                                    </v-card-text>
+
+                                    <v-card-text class="pa-0 pb-2">Cash on Delivery Available</v-card-text>
+                                </v-flex>
+
+                                <v-divider></v-divider>
+                                <v-flex class="delivery-option">
+                                    <v-card-title
+                                        class="pa-0 pb-3 text-decoration-underline"
+                                    >Seller information</v-card-title>
+
+                                    <v-card-text class="pa-0 pb-2">
+                                        <a href="#" class="brand--text pr-6">owen2015</a>
+                                        <span class="grey--text text--darken-3">Review</span>
+
+                                        <span class="brand--text">
+                                            (538
+                                            <v-icon class="brand--text star">mdi-star</v-icon>)
+                                        </span>
+                                    </v-card-text>
+                                </v-flex>
+
+                                <v-divider></v-divider>
+                                <v-flex class="delivery-option">
+                                    <v-card-title class="pa-0 pb-3 d-flex justify-space-between">
+                                        Return & Warranty
+                                        <v-tooltip right>
+                                            <template v-slot:activator="{ on, attrs }">
+                                                <v-icon
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                                >mdi-information-outline</v-icon>
+                                            </template>
+                                            <span class="tooltip-info">
+                                                Lorem ipsum, dolor sit
+                                                <br />amet consectetur
+                                                <br />adipisicing elit.
+                                                <br />Dolorem facilis unde
+                                                <br />fugiat eum iure sequi
+                                            </span>
+                                        </v-tooltip>
+                                    </v-card-title>
+
+                                    <v-card-text class="pa-0 pb-2">
+                                        <span class="grey--text text--darken-3">7 Days Returns</span>
+                                        <br />
+                                        <span>Change of mind is not applicable</span>
+                                        <br />
+                                        <span>Warranty not available</span>
+                                    </v-card-text>
+                                </v-flex>
+
+                                <v-divider></v-divider>
+                                <v-flex class="delivery-option">
+                                    <v-card-title class="pa-0 pb-3">Payments Method</v-card-title>
+
+                                    <v-card-text class="pa-0 pb-2">
+                                        <v-img
+                                            :src="require('@/assets/images/payment-methods.png')"
+                                            alt="Pyment Method"
+                                            max-width="260"
+                                        ></v-img>
+                                    </v-card-text>
+                                </v-flex>
+                            </v-card>
+                        </v-flex>
                     </v-layout>
+
+                    <!-- Product Information sections -->
+                    <product-information></product-information>
+
+                    <!-- Related Products sections -->
+                    <related-products></related-products>
+
+                    <!-- Reviews And Rattings sections -->
+                    <reviews-and-ratings></reviews-and-ratings>
                 </v-sheet>
             </v-card>
 
@@ -89,42 +222,27 @@
 
 <script>
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
+import QuantityHolder from "@/components/QuantityHolder";
+import ProductSocial from "@/components/ProductSocial";
+import ProductInformation from "@/components/ProductInformation";
+import RelatedProducts from "@/components/RelatedProducts";
+import ReviewsAndRatings from "@/components/ReviewsAndRatings";
 
 export default {
     name: "Products",
     components: {
         SiteBreadcrumb,
+        QuantityHolder,
+        ProductSocial,
+        ProductInformation,
+        RelatedProducts,
+        ReviewsAndRatings,
     },
 
     data() {
         return {
             rating: 4,
-            quantity: 1,
         };
-    },
-
-    methods: {
-        increase() {
-            this.quantity++;
-        },
-        decrease() {
-            if (this.quantity > 1) {
-                this.quantity--;
-            }
-        },
-
-        checkingZero() {
-            if (
-                Number(this.quantity) === this.quantity &&
-                this.quantity % 1 !== 0
-            ) {
-                this.quantity = Math.floor(this.quantity);
-            }
-
-            if (this.quantity <= 1) {
-                parseInt((this.quantity = 1));
-            }
-        },
     },
 };
 </script>

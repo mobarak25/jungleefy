@@ -70,7 +70,12 @@
                 <v-sheet class="share-product-wrap share-product-grid">
                     <v-icon class="grey--text">mdi-share</v-icon>
 
-                    <product-social></product-social>
+                    <!-- Product-Social -->
+                    <v-flex class="share-productIn">
+                        <v-card class="share-product">
+                            <product-social></product-social>
+                        </v-card>
+                    </v-flex>
                 </v-sheet>
             </v-card-subtitle>
 

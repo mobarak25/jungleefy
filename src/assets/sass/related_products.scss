@@ -1,0 +1,36 @@
+.related-products-slider {
+    padding: rem-calc(50px 0);
+
+    h2 {
+        padding-bottom: rem-calc(42px);
+        text-align: center;
+        @include font(false, 22px, 26px, medium);
+    }
+    .v-slide-group__wrapper {
+        margin: rem-calc(0 110px);
+        .v-slide-group__content {
+            padding-right: 10px;
+        }
+    }
+    .slide-item-wrap {
+        .v-slide-group__next,
+        .v-slide-group__prev {
+            min-width: auto;
+            z-index: 5;
+            @include border-radius(50%);
+            transform: translateY(-50%);
+            background-color: #fff;
+            @include absolute(30px, 30px, left, auto, top, 50%);
+            border: 3px solid #a4a4a4;
+        }
+        .v-slide-group__next {
+            right: 0;
+        }
+        .v-slide-group__prev {
+            left: 0;
+        }
+    }
+    .slide-item {
+        margin: rem-calc(0 15px);
+    }
+}

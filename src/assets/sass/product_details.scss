@@ -81,30 +81,61 @@
         padding-right: rem-calc(50px);
         @include font(grey, 15px, 20px, false);
     }
-    .quantity-holder {
-        width: 115px;
-        text-align: center;
-        border: 1px solid #dbdbdb;
-        .v-icon {
-            padding-right: 3px;
-            padding-left: 3px;
-
-            &:focus::after {
-                display: none;
+    .btn-holder {
+        padding-top: rem-calc(55px);
+        .btn-box {
+            max-width: 47.8%;
+            .v-btn {
+                height: 40px;
+                @include font(false, 16px, 20px, false);
             }
         }
+    }
+    .share-product {
+        padding: rem-calc(0 30px);
+        margin-top: rem-calc(40px);
+        background-color: #f7f8f8;
+        span {
+            padding-right: rem-calc(10px);
+        }
+        .share-product-box {
+            width: 100%;
 
-        .mdi-minus {
-            border-right: 1px solid #dbdbdb;
-        }
-        .mdi-plus {
-            border-left: 1px solid #dbdbdb;
-        }
-        input {
-            text-align: center;
+            a {
+                padding: rem-calc(0 8px);
+                display: inline-block;
+                border: none;
+                i {
+                    @include font(false, 25px, 40px, false);
+                }
+            }
         }
     }
 }
+
 .product-details-info {
     max-width: 410px;
+
+    .delivery-option {
+        padding: rem-calc(16px 30px);
+
+        .v-card__title {
+            color: darken(map-get($colors, grey), 30);
+            @include font(false, 15px, 22px, medium);
+        }
+        .v-card__text {
+            color: map-get($colors, grey);
+            @include font(false, 15px, 21px, false);
+
+            .star {
+                font-size: 14px;
+            }
+        }
+    }
+}
+.v-tooltip__content {
+    line-height: 15px;
+    .tooltip-info {
+        @include font(false, 12px, 12px, light);
+    }
 }
