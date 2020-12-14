@@ -1,0 +1,103 @@
+.review-ratings-wrap {
+    padding: 0;
+    margin: 0;
+    .writing-info {
+        padding: rem-calc(22px 0 14px);
+        @include font(grey, 14px, 22px, false);
+
+        .v-icon {
+            font-size: 18px;
+        }
+    }
+
+    h2 {
+        padding: rem-calc(10px 30px);
+        @include font(primary, 17px, 26px, medium);
+        background-color: lighten(map-get($colors, grey), 40);
+    }
+    .review-area {
+        max-width: 700px;
+
+        .review-box {
+            padding: rem-calc(10px 35px 13px);
+            .v-label {
+                @include font(grey, 15px, 20px, false);
+            }
+            .v-textarea textarea {
+                min-height: 110px;
+                @include font(grey, 14px, 18px, false);
+            }
+            .v-btn {
+                @include font(false, 16px, 22px, medium);
+            }
+        }
+    }
+    .rating-area {
+        max-width: 644px;
+
+        .avarage-rating {
+            padding: rem-calc(0 0 30px);
+            strong {
+                padding-right: rem-calc(8px);
+                @include font(primary, 35px, 60px, medium);
+            }
+            span {
+                @include font(grey, 12px, 12px, false);
+            }
+        }
+        .rating-items {
+            .rating-items-left {
+                width: 270px;
+            }
+            .rating-items-right {
+                span {
+                    width: 35px;
+                    @include font(grey, 12px, 12px, false);
+                }
+            }
+        }
+    }
+}
+
+.review-commant-wrap {
+    padding: rem-calc(30px 0 0);
+}
+.review-commant-item {
+    &:not(:last-child) {
+        padding-bottom: rem-calc(35px);
+        margin-bottom: rem-calc(35px);
+        border-bottom: 1px solid lighten(map-get($colors, grey), 43);
+    }
+}
+.review-commant-left {
+    width: 230px;
+    .v-avatar {
+        margin-bottom: rem-calc(10px);
+    }
+
+    span {
+        display: block;
+        @include font(false, 14px, 18px, false);
+    }
+}
+.review-commant-right {
+    width: calc(100% - 234px);
+    p {
+        @include font(grey, 14px, 22px, false);
+    }
+    .thumbs {
+        padding: rem-calc(8px 0 0);
+
+        .v-btn {
+            width: 28px;
+            min-width: 28px;
+            height: 26px;
+            &:not(:last-child) {
+                margin-right: rem-calc(12px);
+            }
+            .v-icon {
+                font-size: 18px;
+            }
+        }
+    }
+}
