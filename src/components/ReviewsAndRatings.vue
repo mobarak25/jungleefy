@@ -56,15 +56,15 @@
             <!-- Rating Area -->
             <v-flex class="rating-area">
                 <v-flex class="avarage-rating d-flex align-center">
-                    <strong>5.0</strong>
+                    <strong v-text="ratingAvg"></strong>
 
                     <v-sheet>
-                        <span v-html="commentItems.length + ' Ratings'"></span>
+                        <span v-text="totalPersonReted + ' Ratings'"></span>
                         <v-rating
                             dense
                             readonly
                             half-increments
-                            v-model="avarageRating"
+                            v-model="ratingAvg"
                             background-color="orange lighten-3"
                             color="brand"
                             size="16"
@@ -90,7 +90,7 @@
                         ></v-rating>
                     </v-sheet>
                     <v-sheet class="rating-items-right d-flex flex-grow-1 align-center">
-                        <span v-html="ratingItem.bar_value+'%'"></span>
+                        <span v-html="ratingItem.totalRating"></span>
                         <v-flex>
                             <v-progress-linear
                                 height="8"
@@ -98,7 +98,7 @@
                                 class="flex-grow-1"
                                 background-color="grey lighten-4"
                                 color="brand lighten-1"
-                                :value="ratingItem.bar_value"
+                                :value="getBarTotal(ratingItem)"
                             ></v-progress-linear>
                         </v-flex>
                     </v-sheet>
@@ -110,7 +110,7 @@
 
         <v-flex class="review-commant-wrap">
             <v-flex
-                v-for="commentItem in commentItems"
+                v-for="commentItem in commentItems.slice(0, 5)"
                 :key="commentItem.id"
                 class="review-commant-item d-flex flex-wrap justify-space-between"
             >
@@ -163,15 +163,15 @@ export default {
         return {
             rating: 0,
             commentText: "",
-            avarageRating: 5,
+            recentComments: [],
             rules: [(v) => v.length <= 200 || "Max 200 characters"],
 
             ratingItems: [
-                { id: 1, star_count: 5, bar_value: 70 },
-                { id: 2, star_count: 4, bar_value: 55 },
-                { id: 3, star_count: 3, bar_value: 35 },
-                { id: 4, star_count: 2, bar_value: 20 },
-                { id: 5, star_count: 1, bar_value: 10 },
+                { id: 1, star_count: 5, totalRating: 2, bar_value: 0 },
+                { id: 2, star_count: 4, totalRating: 5, bar_value: 0 },
+                { id: 3, star_count: 3, totalRating: 1, bar_value: 0 },
+                { id: 4, star_count: 2, totalRating: 3, bar_value: 0 },
+                { id: 5, star_count: 1, totalRating: 2, bar_value: 0 },
             ],
 
             commentItems: [
@@ -179,16 +179,16 @@ export default {
                     id: 1,
                     name: "Fahim Ahmed",
                     image: "john.jpg",
-                    rating: 2,
+                    rating: 5,
                     date: "02 June 2020",
                     desc:
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                 },
                 {
                     id: 2,
-                    name: "Md. Mobarak Ali",
-                    image: "",
-                    rating: 3.5,
+                    name: "Fahim Ahmed",
+                    image: "john.jpg",
+                    rating: 5,
                     date: "02 June 2020",
                     desc:
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -196,19 +196,45 @@ export default {
             ],
         };
     },
-
+    computed: {
+        totalPersonReted() {
+            var total = 0;
+            this.ratingItems.forEach((element) => {
+                total += element.totalRating;
+            });
+            return total;
+        },
+        ratingTotalCount() {
+            var total = 0;
+            this.ratingItems.forEach((element) => {
+                total += element.totalRating * element.star_count;
+            });
+            return total;
+        },
+        ratingAvg() {
+            return (this.ratingTotalCount / this.totalPersonReted).toFixed(2);
+        },
+    },
     methods: {
         submitcomments() {
             this.commentItems.unshift({
-                id: "3",
+                id: this.commentItems.length + 1,
                 name: "Md. Mobarak Ali",
                 image: "",
                 rating: this.rating,
                 date: "02 June 2020",
                 desc: this.commentText,
             });
+            this.ratingItems.find((element) => {
+                if (element.star_count == Math.ceil(this.rating)) {
+                    element.totalRating += 1;
+                }
+            });
             this.rating = 0;
             this.commentText = "";
+        },
+        getBarTotal(item) {
+            return Math.ceil((item.totalRating * 100) / this.totalPersonReted);
         },
     },
 };
