@@ -23,7 +23,6 @@
                     track-by="$index"
                 >{{val.title}}</option>
             </select>
-            {{parentCat}}
         </div>
 
         <div v-if="subLoad" class="col-lg-3 col-xl-3">
@@ -36,14 +35,14 @@
             >
                 <option
                     v-for="val in subObj"
-                    :value="val.id"
+                    :value="[val.id, val.title]"
                     :key="val.id"
                     track-by="$index"
                 >{{val.title}}</option>
             </select>
         </div>
 
-        <!-- <div v-if="subSubLoad" class="col-lg-3 col-xl-3">
+        <div v-if="subSubLoad" class="col-lg-3 col-xl-3">
             <select v-model="subSubCat" class="form-control" name id size="4">
                 <option
                     v-for="val in subSubObj"
@@ -52,7 +51,7 @@
                     track-by="$index"
                 >{{val.title}}</option>
             </select>
-        </div>-->
+        </div>
     </div>
 </template>
 
@@ -70,7 +69,7 @@ export default {
             subLoad: false,
             subSubLoad: false,
             parentCat: [],
-            subCat: "",
+            subCat: [],
             subSubCat: "",
         };
     },
@@ -98,17 +97,18 @@ export default {
             this.selectedCategories = [];
             this.selectedCategories.push(catId[1]);
         },
-        // changeSubCat: function (catId) {
-        //     this.subSubLoad = false;
-        //     this.getCategoryObj(this.url + "/" + catId + ".json").then(
-        //         (data) => {
-        //             this.subSubObj = data.categories;
-        //             if (Object.keys(this.subSubObj).length) {
-        //                 this.subSubLoad = true;
-        //             }
-        //         }
-        //     );
-        // },
+        changeSubCat: function (catId) {
+            this.subSubLoad = false;
+            this.getCategoryObj(this.url + "/" + catId[0] + ".json").then(
+                (data) => {
+                    this.subSubObj = data.categories;
+                    if (Object.keys(this.subSubObj).length) {
+                        this.subSubLoad = true;
+                    }
+                }
+            );
+            this.selectedCategories.push(catId[1]);
+        },
         getCategoryObj: function (route) {
             return axios
                 .get(route)
