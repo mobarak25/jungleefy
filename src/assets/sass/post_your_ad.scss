@@ -1,0 +1,64 @@
+.post-ad-wrap {
+    max-width: 1326px;
+    margin: 0 auto;
+}
+.choose-option {
+    max-width: 1166px;
+    padding: rem-calc(83px 0 77px);
+    margin: 0 auto;
+    h4 {
+        @include font(primary, 26px, 41px, medium);
+    }
+}
+.choose-option-box {
+    padding: rem-calc(71px 0 0);
+}
+.options-in {
+    max-width: 543px;
+    padding-left: rem-calc(53px);
+    position: relative;
+}
+.options {
+    height: 160px;
+    border: 1px solid lighten(map-get($colors, grey), 25);
+    a {
+        padding-left: rem-calc(105px);
+    }
+    span {
+        @include font(primary, 25px, 30px, medium);
+    }
+    &.active,
+    &:hover {
+        border-color: map-get($colors, brand);
+        background-color: lighten(map-get($colors, grey), 45);
+    }
+    .options-icon {
+        @include absolute(105px, 105px, left, 0, top, 50%);
+        transform: translateY(-50%);
+        @include border-radius(50%);
+        background-color: map-get($colors, light);
+        border: 1px solid lighten(map-get($colors, grey), 25);
+    }
+    &.active .options-icon,
+    &:hover .options-icon {
+        border-color: map-get($colors, brand);
+    }
+}
+.options-details {
+    max-width: 1166px;
+    margin: 0 auto;
+    padding: rem-calc(68px 0 90px);
+}
+.options-details-box {
+    max-width: 543px;
+
+    h4 {
+        padding: rem-calc(10px 25px);
+        @include font(primary, 21px, 30px, medium);
+        background-color: lighten(map-get($colors, grey), 45);
+    }
+    p {
+        padding: rem-calc(15px 25px 0);
+        @include font(primary, 15px, 28px, false);
+    }
+}

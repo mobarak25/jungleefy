@@ -25,10 +25,10 @@
                     <a class="more-menu" href="#">More..</a>
                 </nav>
 
-                <a class="post-promotion" href="#">
+                <router-link :to="{name:'postYourAd'}" class="post-promotion">
                     <i class="icofont-plus"></i>
                     Post Your Ad
-                </a>
+                </router-link>
             </div>
         </v-container>
     </v-toolbar>

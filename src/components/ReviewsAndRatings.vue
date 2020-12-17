@@ -64,7 +64,7 @@
                             dense
                             readonly
                             half-increments
-                            v-model="ratingAvg"
+                            :value="ratingAvg"
                             background-color="orange lighten-3"
                             color="brand"
                             size="16"
@@ -212,7 +212,11 @@ export default {
             return total;
         },
         ratingAvg() {
-            return (this.ratingTotalCount / this.totalPersonReted).toFixed(2);
+            var avarage = (
+                this.ratingTotalCount / this.totalPersonReted
+            ).toFixed(1);
+
+            return parseFloat(avarage);
         },
     },
     methods: {

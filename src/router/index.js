@@ -44,11 +44,18 @@ const routes = [
       import(/* webpackChunkName: "ProductDetails" */ "../views/ProductDetails.vue")
   },
   {
-    path: "/Contact",
-    name: "Contact",
+    path: "/post-your-ad",
+    name: "postYourAd",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+      import(/* webpackChunkName: "PostYourAd" */ "../views/PostYourAd.vue")
   },
+  {
+    path: "/select-category-for-post-ad",
+    name: "postYourAdCategory",
+    component: () =>
+      import(/* webpackChunkName: "postYourAdCategory" */ "../views/postYourAdCategory.vue")
+  },
+
   {
     path: '/*',
     component: () =>
