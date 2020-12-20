@@ -9,124 +9,151 @@
     }
 }
 @mixin center($width, $height) {
-	@if $width {
-		width: $width;
-	}
-	@if $height {
-		height: $height;
-	}
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+    @if $width {
+        width: $width;
+    }
+    @if $height {
+        height: $height;
+    }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@mixin sudo ($width, $height, $leftRtiht, $leftRtiht-value, $topBtm, $topBtm-value, $color){
-	content: '';
-	width: $width;
-	height: $height;
-	position: absolute;
-	#{$leftRtiht}: $leftRtiht-value;
-	#{$topBtm}: $topBtm-value;
-	@if $color {
-		background-color: map-get($colors, $color);
-	}
+@mixin sudo(
+    $width,
+    $height,
+    $leftRtiht,
+    $leftRtiht-value,
+    $topBtm,
+    $topBtm-value,
+    $color
+) {
+    content: "";
+    width: $width;
+    height: $height;
+    position: absolute;
+    #{$leftRtiht}: $leftRtiht-value;
+    #{$topBtm}: $topBtm-value;
+    @if $color {
+        background-color: map-get($colors, $color);
+    }
 }
 
-@mixin absolute ($width, $height, $leftRtiht, $leftRtiht-value, $topBtm, $topBtm-value){
-	@if $width {
-		width: $width;
-	}
-	@if $height {
-		height: $height;
-	}
-	position: absolute;
-	#{$leftRtiht}: $leftRtiht-value;
-	#{$topBtm}: $topBtm-value;
+@mixin absolute(
+    $width,
+    $height,
+    $leftRtiht,
+    $leftRtiht-value,
+    $topBtm,
+    $topBtm-value
+) {
+    @if $width {
+        width: $width;
+    }
+    @if $height {
+        height: $height;
+    }
+    position: absolute;
+    #{$leftRtiht}: $leftRtiht-value;
+    #{$topBtm}: $topBtm-value;
 }
 
 //Cross browser CSS3 mixins
 @mixin box-shadow($left, $top, $radius, $blur, $color) {
-	box-shadow: $left $top $radius $blur $color;
-	-webkit-box-shadow: $left $top $radius $blur $color;
-	-moz-box-shadow: $left $top $radius $blur $color;
+    box-shadow: $left $top $radius $blur $color;
+    -webkit-box-shadow: $left $top $radius $blur $color;
+    -moz-box-shadow: $left $top $radius $blur $color;
 }
 
 @mixin transition($property, $duration, $easing: linear) {
-	transition: $property $duration $easing;
-	-webkit-transition: $property $duration $easing;
-	-moz-transition: $property $duration $easing;
+    transition: $property $duration $easing;
+    -webkit-transition: $property $duration $easing;
+    -moz-transition: $property $duration $easing;
 }
 
 @mixin border-radius($radius) {
-	border-radius: $radius;
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
 }
 
-@mixin truncate-clamp($line:false){
-	overflow: hidden;
-	white-space: normal;
-	display: -webkit-box;
-	@if $line {
-		-webkit-line-clamp: $line;
-	}@else{
-		-webkit-line-clamp:1;
-	}
-	text-overflow: ellipsis;
-	-webkit-box-orient: vertical;
+@mixin truncate-clamp($line: false) {
+    overflow: hidden;
+    white-space: normal;
+    display: -webkit-box;
+    @if $line {
+        -webkit-line-clamp: $line;
+    } @else {
+        -webkit-line-clamp: 1;
+    }
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
 }
 
 /* class generator
 ============================================================*/
 $max: 30;
 $offset: 5;
-$unit: 'px'; // Feel free to change the unit.
+$unit: "px"; // Feel free to change the unit.
 @mixin list-loop($className, $styleName) {
-  $i: 0;
-  @while $i <= $max {
-    #{$className + $i} { 
-      #{$styleName}: #{$i + $unit};
+    $i: 0;
+    @while $i <= $max {
+        #{$className + $i} {
+            #{$styleName}: #{$i + $unit};
+        }
+        $i: $i + $offset;
     }
-    $i: $i + $offset;
-  }
 }
 // @include list-loop('.p-l-', 'padding-left');
 
+@mixin scroll-y($width) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: #fff;
+        border: 1px solid map-get($colors, grey);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: map-get($colors, primary);
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: map-get($colors, brand);
+    }
+}
+
 //media screen
-@mixin media($name){
-
-	@if(type-of($name) == number){
-		@media (max-width: $name){
-			@content 
-		}
-	}
-	@else if(type-of($name) == string){
-
-		@if ($name == "container") {
-			@media (min-width: 1640px){
-				@content 
-			}
-		}
-		@if ($name == "xl") {
-			@media (max-width: 1903px){
-				@content 
-			}
-		}
-		@else if ($name == "lg") {
-			@media (max-width: 1263px){
-				@content 
-			}
-		}
-		@else if ($name == "md") {
-			@media (max-width: 959px){
-				@content 
-			}
-		}
-		@else if ($name == "sm") {
-			@media (max-width: 599px){
-				@content 
-			}
-		}
-	}
+@mixin media($name) {
+    @if (type-of($name) == number) {
+        @media (max-width: $name) {
+            @content;
+        }
+    } @else if(type-of($name) == string) {
+        @if ($name == "container") {
+            @media (min-width: 1640px) {
+                @content;
+            }
+        }
+        @if ($name == "xl") {
+            @media (max-width: 1903px) {
+                @content;
+            }
+        } @else if ($name == "lg") {
+            @media (max-width: 1263px) {
+                @content;
+            }
+        } @else if ($name == "md") {
+            @media (max-width: 959px) {
+                @content;
+            }
+        } @else if ($name == "sm") {
+            @media (max-width: 599px) {
+                @content;
+            }
+        }
+    }
 }
