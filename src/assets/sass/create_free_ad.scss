@@ -1,0 +1,45 @@
+.create-ad-wrap {
+    max-width: 1170px;
+}
+.create-ad {
+    padding: rem-calc(55px 60px);
+}
+.breadcrumb-holder {
+    margin-bottom: rem-calc(30px);
+    background-color: lighten(map-get($colors, grey), 45);
+}
+
+.pick-category {
+    padding: rem-calc(0 0 40px);
+    h3 {
+        @include font(primary, 17px, 22px, semi-bold);
+    }
+    ul {
+        padding-left: rem-calc(10px);
+        margin: 0;
+        li {
+            @include font(primary, 15px, 22px, false);
+            .v-icon {
+                font-size: 20px;
+            }
+            &:last-child {
+                .v-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+    .edit-category {
+        margin-left: rem-calc(15px);
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+input {
+    width: auto;
+    flex-grow: 1;
+    border: 1px solid red;
+}

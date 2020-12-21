@@ -5,28 +5,22 @@
 <script>
 export default {
     name: "SiteBreadcrumb",
+    props: {
+        options: Array,
+    },
 
     data() {
         return {
-            items: [
-                {
-                    text: "Home",
-                    disabled: false,
-                    href: "/",
-                },
-                {
-                    text: "Drop shipping",
-                    disabled: true,
-                    href: "breadcrumbs_link_1",
-                },
-            ],
+            items: [],
         };
+    },
+    mounted() {
+        this.items = this.options;
     },
 };
 </script>
 
 <style lang="scss">
-// @import "@/assets/sass/product_sidebar.scss";
 .v-breadcrumbs {
     padding: 0;
 

@@ -72,7 +72,12 @@
             </v-layout>
 
             <v-layout class="continue justify-end">
-                <v-btn href="#" tile depressed class="brand white--text text-none">Continue</v-btn>
+                <v-btn
+                    :to="{name:'createAFreeAd'}"
+                    tile
+                    depressed
+                    class="brand white--text text-none"
+                >Continue</v-btn>
             </v-layout>
         </v-flex>
     </v-card>
@@ -83,6 +88,9 @@ import axios from "axios";
 
 export default {
     name: "postYourAdSelectCategory",
+
+    props: ["url", "className"],
+
     data() {
         return {
             selectedCategories: [],
@@ -96,7 +104,11 @@ export default {
             subSubCat: "",
         };
     },
-    props: ["url", "className"],
+    created() {
+        this.selectedCategories = JSON.parse(
+            localStorage.getItem("selected-category-storage") || "[]"
+        );
+    },
     mounted() {
         this.getCategoryObj(this.url + ".json").then((data) => {
             this.parentObj = data.categories;
@@ -119,6 +131,10 @@ export default {
             );
             this.selectedCategories = [];
             this.selectedCategories.push(catId[1]);
+            localStorage.setItem(
+                "selected-category-storage",
+                JSON.stringify(this.selectedCategories)
+            );
         },
         changeSubCat: function (catId) {
             this.subSubLoad = false;
@@ -132,10 +148,18 @@ export default {
             );
             this.selectedCategories.splice(1, 2);
             this.selectedCategories.push(catId[1]);
+            localStorage.setItem(
+                "selected-category-storage",
+                JSON.stringify(this.selectedCategories)
+            );
         },
         changeSubSubCat(catId) {
             this.selectedCategories.splice(2, 1);
             this.selectedCategories.push(catId[1]);
+            localStorage.setItem(
+                "selected-category-storage",
+                JSON.stringify(this.selectedCategories)
+            );
         },
         getCategoryObj: function (route) {
             return axios
@@ -161,27 +185,29 @@ export default {
         @include font(primary, 23px, 28px, semi-bold);
         background-color: lighten(map-get($colors, grey), 40);
     }
-    h3 {
-        @include font(primary, 21px, 30px, regular);
-    }
+
     .pick-category {
         padding: rem-calc(0 0 40px);
-    }
-    ul {
-        padding-left: rem-calc(10px);
-        margin: 0;
-        li {
-            @include font(brand, 15px, 30px, false);
-            .v-icon {
-                font-size: 20px;
-            }
-            &:last-child {
+        h3 {
+            @include font(primary, 21px, 30px, regular);
+        }
+        ul {
+            padding-left: rem-calc(10px);
+            margin: 0;
+            li {
+                @include font(brand, 15px, 30px, false);
                 .v-icon {
-                    display: none;
+                    font-size: 20px;
+                }
+                &:last-child {
+                    .v-icon {
+                        display: none;
+                    }
                 }
             }
         }
     }
+
     .category-holder-wrap {
         margin: rem-calc(0 -15px);
     }

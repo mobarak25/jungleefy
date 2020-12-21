@@ -1,10 +1,15 @@
 import Vue from "vue";
+import { ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm';
+import { ValidationObserver } from 'vee-validate';
 import App from "./App.vue";
 import axios from "axios";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 var _ = require('lodash');
+
+Vue.component('ValidationProvider', ValidationProvider);
+Vue.component('ValidationObserver', ValidationObserver);
 
 // import "@/assets/css/icofont.min.css";
 
@@ -19,7 +24,7 @@ Vue.prototype.$assetsPath = "@/assets/";
 
 new Vue({
   router,
-  store, 
+  store,
   vuetify,
   render: h => h(App)
 }).$mount("#app");

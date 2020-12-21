@@ -7,7 +7,7 @@
 
                 <v-card tile class="portlet">
                     <!-- breadcrumb sections -->
-                    <site-breadcrumb></site-breadcrumb>
+                    <site-breadcrumb :options="breadcrumbItems"></site-breadcrumb>
 
                     <!-- Sort by sections -->
                     <v-layout
@@ -146,6 +146,18 @@ export default {
         return {
             listView: false,
             items: ["Date:Newest on top", "Foo", "Bar", "Fizz", "Buzz"],
+            breadcrumbItems: [
+                {
+                    text: "Home",
+                    disabled: false,
+                    href: "/",
+                },
+                {
+                    text: "Prosucts",
+                    disabled: true,
+                    href: "/",
+                },
+            ],
         };
     },
 

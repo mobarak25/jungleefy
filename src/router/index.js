@@ -20,25 +20,25 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/AllFeaturedAuctions",
+    path: "/all-featured-auctions",
     name: "AllFeaturedAuctions",
     component: () =>
       import(/* webpackChunkName: "product" */ "../views/Product.vue")
   },
   {
-    path: "/AllAuctionsClosing",
+    path: "/all-auctions-closing",
     name: "AllAuctionsClosing",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/AllTrendingProducts",
+    path: "/all-trending-products",
     name: "AllTrendingProducts",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/ProductDetails",
+    path: "/product-details",
     name: "ProductDetails",
     component: () =>
       import(/* webpackChunkName: "ProductDetails" */ "../views/ProductDetails.vue")
@@ -54,6 +54,12 @@ const routes = [
     name: "postYourAdCategory",
     component: () =>
       import(/* webpackChunkName: "postYourAdCategory" */ "../views/postYourAdCategory.vue")
+  },
+  {
+    path: "/create-a-free-ad",
+    name: "createAFreeAd",
+    component: () =>
+      import(/* webpackChunkName: "createAFreeAd" */ "../views/createAFreeAd.vue")
   },
 
   {
