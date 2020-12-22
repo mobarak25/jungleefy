@@ -102,13 +102,13 @@
                                 <v-row>
                                     <ValidationProvider
                                         tag="div"
-                                        class="col-md-6"
-                                        name="Product Type"
+                                        class="col-md-6 py-0"
+                                        name="product type"
                                         rules="required"
                                         :bails="false"
                                         v-slot="{ errors, classes }"
                                     >
-                                        <div class="control" :class="classes">
+                                        <div class="input-wrap" :class="classes">
                                             <v-flex class="input-label">Product Type</v-flex>
                                             <v-select
                                                 :items="product_types"
@@ -125,13 +125,13 @@
 
                                     <ValidationProvider
                                         tag="div"
-                                        class="col-md-6"
-                                        name="Product Quantity"
+                                        class="col-md-6 py-0"
+                                        name="product quantity"
                                         rules="required"
                                         :bails="false"
                                         v-slot="{ errors, classes }"
                                     >
-                                        <div class="control" :class="classes">
+                                        <div class="input-wrap" :class="classes">
                                             <v-flex class="input-label">Product Quantity</v-flex>
                                             <v-text-field
                                                 solo
@@ -150,14 +150,14 @@
                                 <!-- check auction -->
                                 <v-radio-group v-model="formData.auction" row hide-details>
                                     <v-row class="auction-check">
-                                        <v-col md="6">
+                                        <v-col md="6" class="py-0">
                                             <v-radio
                                                 color="brand"
                                                 label="Sale with Auction"
                                                 value="with_auction"
                                             ></v-radio>
                                         </v-col>
-                                        <v-col md="6">
+                                        <v-col md="6" class="py-0">
                                             <v-radio
                                                 color="brand"
                                                 label="Sale without  Auction"
@@ -169,18 +169,21 @@
 
                                 <v-flex
                                     v-if="formData.auction=='with_auction'"
-                                    class="with-auction"
+                                    class="with-auction mt-3"
                                 >
                                     <v-row>
                                         <ValidationProvider
                                             tag="div"
-                                            class="col-md-6"
+                                            class="col-md-6 py-0"
                                             name="Starting Price"
                                             rules="required"
                                             :bails="false"
                                             v-slot="{ errors, classes }"
                                         >
-                                            <div class="control d-flex flex-wrap" :class="classes">
+                                            <div
+                                                class="input-wrap d-flex flex-wrap"
+                                                :class="classes"
+                                            >
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Starting Price (TK)</v-flex>
@@ -196,33 +199,38 @@
                                                     ></v-text-field>
                                                     <span>{{ errors[0] }}</span>
                                                 </v-flex>
-                                                <v-tooltip right>
-                                                    <template v-slot:activator="{ on, attrs }">
-                                                        <v-icon
-                                                            v-bind="attrs"
-                                                            v-on="on"
-                                                        >mdi-information-outline</v-icon>
-                                                    </template>
-                                                    <span class="tooltip-info">
-                                                        Lorem ipsum, dolor sit
-                                                        <br />amet consectetur
-                                                        <br />adipisicing elit.
-                                                        <br />Dolorem facilis unde
-                                                        <br />fugiat eum iure sequi
-                                                    </span>
-                                                </v-tooltip>
+                                                <v-flex class="flex-grow-0">
+                                                    <v-tooltip right>
+                                                        <template v-slot:activator="{ on, attrs }">
+                                                            <v-icon
+                                                                v-bind="attrs"
+                                                                v-on="on"
+                                                            >mdi-information-outline</v-icon>
+                                                        </template>
+                                                        <span class="tooltip-info">
+                                                            Lorem ipsum, dolor sit
+                                                            <br />amet consectetur
+                                                            <br />adipisicing elit.
+                                                            <br />Dolorem facilis unde
+                                                            <br />fugiat eum iure sequi
+                                                        </span>
+                                                    </v-tooltip>
+                                                </v-flex>
                                             </div>
                                         </ValidationProvider>
 
                                         <ValidationProvider
                                             tag="div"
-                                            class="col-md-6"
+                                            class="col-md-6 py-0"
                                             name="Buy Now Price"
                                             rules="required"
                                             :bails="false"
                                             v-slot="{ errors, classes }"
                                         >
-                                            <div class="control d-flex flex-wrap" :class="classes">
+                                            <div
+                                                class="input-wrap d-flex flex-wrap"
+                                                :class="classes"
+                                            >
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Buy Now Price</v-flex>
@@ -238,33 +246,38 @@
                                                     ></v-text-field>
                                                     <span>{{ errors[0] }}</span>
                                                 </v-flex>
-                                                <v-tooltip right>
-                                                    <template v-slot:activator="{ on, attrs }">
-                                                        <v-icon
-                                                            v-bind="attrs"
-                                                            v-on="on"
-                                                        >mdi-information-outline</v-icon>
-                                                    </template>
-                                                    <span class="tooltip-info">
-                                                        Lorem ipsum, dolor sit
-                                                        <br />amet consectetur
-                                                        <br />adipisicing elit.
-                                                        <br />Dolorem facilis unde
-                                                        <br />fugiat eum iure sequi
-                                                    </span>
-                                                </v-tooltip>
+                                                <v-flex class="flex-grow-0">
+                                                    <v-tooltip right>
+                                                        <template v-slot:activator="{ on, attrs }">
+                                                            <v-icon
+                                                                v-bind="attrs"
+                                                                v-on="on"
+                                                            >mdi-information-outline</v-icon>
+                                                        </template>
+                                                        <span class="tooltip-info">
+                                                            Lorem ipsum, dolor sit
+                                                            <br />amet consectetur
+                                                            <br />adipisicing elit.
+                                                            <br />Dolorem facilis unde
+                                                            <br />fugiat eum iure sequi
+                                                        </span>
+                                                    </v-tooltip>
+                                                </v-flex>
                                             </div>
                                         </ValidationProvider>
 
                                         <ValidationProvider
                                             tag="div"
-                                            class="col-md-12"
+                                            class="col-md-12 py-0"
                                             name="Approximately Price"
                                             rules="required"
                                             :bails="false"
                                             v-slot="{ errors, classes }"
                                         >
-                                            <div class="control d-flex flex-wrap" :class="classes">
+                                            <div
+                                                class="input-wrap pb-0 d-flex flex-wrap"
+                                                :class="classes"
+                                            >
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Approximately Price (TK)</v-flex>
@@ -280,21 +293,75 @@
                                                     ></v-text-field>
                                                     <span>{{ errors[0] }}</span>
                                                 </v-flex>
-                                                <v-tooltip right>
-                                                    <template v-slot:activator="{ on, attrs }">
-                                                        <v-icon
-                                                            v-bind="attrs"
-                                                            v-on="on"
-                                                        >mdi-information-outline</v-icon>
-                                                    </template>
-                                                    <span class="tooltip-info">
-                                                        Lorem ipsum, dolor sit
-                                                        <br />amet consectetur
-                                                        <br />adipisicing elit.
-                                                        <br />Dolorem facilis unde
-                                                        <br />fugiat eum iure sequi
-                                                    </span>
-                                                </v-tooltip>
+                                                <v-flex class="flex-grow-0">
+                                                    <v-tooltip right>
+                                                        <template v-slot:activator="{ on, attrs }">
+                                                            <v-icon
+                                                                v-bind="attrs"
+                                                                v-on="on"
+                                                            >mdi-information-outline</v-icon>
+                                                        </template>
+                                                        <span class="tooltip-info">
+                                                            Lorem ipsum, dolor sit
+                                                            <br />amet consectetur
+                                                            <br />adipisicing elit.
+                                                            <br />Dolorem facilis unde
+                                                            <br />fugiat eum iure sequi
+                                                        </span>
+                                                    </v-tooltip>
+                                                </v-flex>
+                                            </div>
+                                        </ValidationProvider>
+                                    </v-row>
+                                </v-flex>
+
+                                <v-flex class="personal-information">
+                                    <h3>Location</h3>
+                                    <v-row>
+                                        <ValidationProvider
+                                            tag="div"
+                                            class="col-md-6 py-0"
+                                            name="region"
+                                            rules="required"
+                                            :bails="false"
+                                            v-slot="{ errors, classes }"
+                                        >
+                                            <div class="input-wrap" :class="classes">
+                                                <v-flex class="input-label">Region</v-flex>
+
+                                                <v-select
+                                                    :items="brands"
+                                                    label="Solo field"
+                                                    solo
+                                                    flat
+                                                    hide-details
+                                                    outlined
+                                                    v-model="formData.brand"
+                                                ></v-select>
+                                                <span>{{ errors[0] }}</span>
+                                            </div>
+                                        </ValidationProvider>
+
+                                        <ValidationProvider
+                                            tag="div"
+                                            class="col-md-6 py-0"
+                                            name="product quantity"
+                                            rules="required"
+                                            :bails="false"
+                                            v-slot="{ errors, classes }"
+                                        >
+                                            <div class="input-wrap" :class="classes">
+                                                <v-flex class="input-label">Product Quantity</v-flex>
+                                                <v-text-field
+                                                    solo
+                                                    flat
+                                                    hide-details
+                                                    outlined
+                                                    type="number"
+                                                    placeholder="Type Your Product Quantity"
+                                                    v-model="formData.quantity"
+                                                ></v-text-field>
+                                                <span>{{ errors[0] }}</span>
                                             </div>
                                         </ValidationProvider>
                                     </v-row>
