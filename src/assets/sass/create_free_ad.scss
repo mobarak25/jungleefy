@@ -3,6 +3,19 @@
 }
 .create-ad {
     padding: rem-calc(55px 60px);
+
+    .v-input {
+        input {
+            height: 43px;
+            max-height: 43px;
+            padding: 0;
+            @include font(primary, 15px, 43px, false);
+        }
+        fieldset {
+            border: 1px solid #dbdbdb;
+            border-radius: 0;
+        }
+    }
 }
 .breadcrumb-holder {
     margin-bottom: rem-calc(30px);
@@ -37,9 +50,58 @@
         }
     }
 }
+.v-input--selection-controls {
+    padding: 0;
+    margin: 0;
+}
+.conditions {
+    padding-bottom: rem-calc(23px);
 
-input {
-    width: auto;
-    flex-grow: 1;
-    border: 1px solid red;
+    h4 {
+        margin-right: rem-calc(25px);
+        @include font(primary, 16px, 22px, semi-bold);
+    }
+    .v-label {
+        color: map-get($colors, primary);
+    }
+}
+
+.auction-check {
+    .v-radio {
+        margin: 0 !important;
+        padding: rem-calc(15px);
+        background-color: lighten(map-get($colors, grey), 45);
+        border: 1px solid lighten(map-get($colors, grey), 40);
+        &.v-item--active {
+            border-color: lighten(map-get($colors, brand), 35);
+            background-color: lighten(map-get($colors, brand), 48);
+        }
+        .v-label {
+            @include font(primary, 18px, 22px, semi-bold);
+        }
+        &.v-item--active {
+            .v-label {
+                color: map-get($colors, brand);
+            }
+        }
+    }
+}
+
+.with-auction {
+    padding: rem-calc(15px);
+    border: 1px solid lighten(map-get($colors, brand), 35);
+    background-color: lighten(map-get($colors, brand), 48);
+}
+
+.v-input {
+    input {
+        height: 43px;
+        max-height: 43px;
+        padding: 0;
+        @include font(primary, 15px, 43px, false);
+    }
+    fieldset {
+        border: 1px solid #dbdbdb;
+        border-radius: 0;
+    }
 }
