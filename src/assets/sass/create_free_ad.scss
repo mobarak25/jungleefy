@@ -16,6 +16,11 @@
             border-radius: 0;
         }
     }
+    .publish-ad {
+        width: 200px;
+        height: 50px !important;
+        @include font(false, 18px, 22px, bold);
+    }
 }
 .breadcrumb-holder {
     margin-bottom: rem-calc(30px);
@@ -66,6 +71,57 @@
     }
 }
 
+.multi-image-uploader {
+    padding: rem-calc(15px);
+    margin: rem-calc(20px 0 35px);
+    border: 1px dashed lighten(map-get($colors, grey), 30);
+
+    h3 {
+        padding: rem-calc(0 0 5px);
+        @include font(primary, 15px, 22px, medium);
+    }
+    .drag-text,
+    .browse-text {
+        @include font(primary, 12px, 14px, medium);
+    }
+    div[editupload] {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .image-list-container {
+            padding-left: rem-calc(20px);
+            margin: 0;
+            max-width: 100%;
+            min-height: 50px;
+
+            .image-list-item {
+                width: 125px;
+                height: 100px;
+
+                .show-img {
+                    max-width: 100px;
+                    max-height: 90px;
+                }
+            }
+            .image-highlight {
+                border: 1px solid map-get($colors, brand);
+            }
+        }
+
+        .preview-image {
+            border-radius: 0;
+            height: 110px;
+        }
+        .image-overlay {
+            border-radius: 0;
+        }
+        .image-container {
+            height: 145px;
+            width: 165px;
+        }
+    }
+}
 .auction-check {
     .v-radio {
         margin: 0 !important;
@@ -88,13 +144,23 @@
 }
 
 .with-auction {
-    padding: rem-calc(15px);
+    padding: rem-calc(20px 15);
     border: 1px solid lighten(map-get($colors, brand), 35);
     background-color: lighten(map-get($colors, brand), 48);
+
+    .input-label {
+        padding-top: rem-calc(9px);
+        padding-right: rem-calc(10px);
+    }
 }
 
 .input-wrap {
     padding-bottom: rem-calc(12px);
+
+    .input-label {
+        padding-bottom: rem-calc(5px);
+        @include font(primary, 15px, 22px, false);
+    }
 
     &.invalid {
         span {
@@ -123,5 +189,16 @@
     }
     .mdi-information-outline {
         margin: rem-calc(10px 0 0 10px);
+    }
+}
+
+.personal-information {
+    padding: rem-calc(40px 0 0);
+
+    h3 {
+        padding: rem-calc(0 0 5px);
+        margin-bottom: rem-calc(16px);
+        @include font(brand, 20px, 22px, medium);
+        border-bottom: 1px solid lighten(map-get($colors, grey), 36);
     }
 }

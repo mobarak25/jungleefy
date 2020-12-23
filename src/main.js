@@ -1,4 +1,7 @@
 import Vue from "vue";
+// for multi image uploader
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload)
 import { ValidationProvider } from 'vee-validate/dist/vee-validate.full.esm';
 import { ValidationObserver } from 'vee-validate';
 import App from "./App.vue";
@@ -21,6 +24,8 @@ Vue.prototype._ = _;
 
 Vue.prototype.$appPath = "@/";
 Vue.prototype.$assetsPath = "@/assets/";
+
+
 
 new Vue({
   router,
