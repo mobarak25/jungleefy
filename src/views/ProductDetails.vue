@@ -4,90 +4,24 @@
             <v-card tile>
                 <v-sheet class="product-details-wrap">
                     <!-- breadcrumb sections -->
-                    <site-breadcrumb></site-breadcrumb>
+                    <site-breadcrumb :options="breadcrumb"></site-breadcrumb>
 
                     <v-layout wrap class="product-details-top">
+                        <!-- product details images -->
                         <v-flex class="product-details-images">
                             <v-img
                                 :src="require('@/assets/images/product-details.jpg')"
                                 alt="big image"
                             ></v-img>
                         </v-flex>
-                        <v-flex class="product-details-summery">
-                            <small class="category">Electronics</small>
-                            <h1
-                                class="product-title"
-                            >LG G Flex2 H950 4G LTE 32GB Rom 3GB Ram AT&T SmartPhone</h1>
 
-                            <ul>
-                                <li>
-                                    Condition:
-                                    <span>Used</span>
-                                </li>
-                                <li>
-                                    Brand:
-                                    <span>LG</span>
-                                </li>
-                            </ul>
+                        <!-- product details summery auction-->
+                        <product-details-summery-auction v-if="true"></product-details-summery-auction>
 
-                            <v-sheet class="d-flex align-center rating">
-                                <v-rating
-                                    dense
-                                    readonly
-                                    v-model="rating"
-                                    color="yellow darken-3"
-                                    background-color="grey"
-                                    empty-icon="$ratingFull"
-                                    size="15"
-                                ></v-rating>
-                                <span class="d-block ml-1">38 customer reviews</span>
-                            </v-sheet>
-                            <span class="availablity">
-                                Availablity:
-                                <span class="pieces">10 Pcs</span>
-                                <b>In Stock</b>
-                            </span>
+                        <!-- product details summery -->
+                        <product-details-summery v-if="false"></product-details-summery>
 
-                            <v-sheet class="price">
-                                <span class="price-payable">TK 4000</span>
-                                <span class="price-orginal">TK4500</span>
-                                <span class="price-offer">-20%</span>
-                            </v-sheet>
-
-                            <v-sheet class="quantity d-flex align-center">
-                                <span class="quantity-title">Quantity</span>
-
-                                <!-- Quantity-Holder -->
-                                <quantity-holder></quantity-holder>
-                            </v-sheet>
-
-                            <v-layout wrap class="btn-holder justify-space-between">
-                                <v-flex class="btn-box">
-                                    <v-btn
-                                        href="#"
-                                        block
-                                        tile
-                                        depressed
-                                        class="primary white--text text-none"
-                                    >Buy Now</v-btn>
-                                </v-flex>
-                                <v-flex class="btn-box">
-                                    <v-btn
-                                        href="#"
-                                        block
-                                        tile
-                                        depressed
-                                        class="brand white--text text-none"
-                                    >Add to Cart</v-btn>
-                                </v-flex>
-                            </v-layout>
-
-                            <v-layout class="share-product align-center">
-                                <span>Share:</span>
-                                <!-- Product-Social -->
-                                <product-social></product-social>
-                            </v-layout>
-                        </v-flex>
+                        <!-- product-details-info -->
                         <v-flex class="product-details-info">
                             <v-card outlined>
                                 <v-flex class="delivery-option">
@@ -222,8 +156,8 @@
 
 <script>
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
-import QuantityHolder from "@/components/QuantityHolder";
-import ProductSocial from "@/components/ProductSocial";
+import ProductDetailsSummeryAuction from "@/components/ProductDetailsSummeryAuction";
+import ProductDetailsSummery from "@/components/ProductDetailsSummery";
 import ProductInformation from "@/components/ProductInformation";
 import RelatedProducts from "@/components/RelatedProducts";
 import ReviewsAndRatings from "@/components/ReviewsAndRatings";
@@ -232,8 +166,8 @@ export default {
     name: "Products",
     components: {
         SiteBreadcrumb,
-        QuantityHolder,
-        ProductSocial,
+        ProductDetailsSummery,
+        ProductDetailsSummeryAuction,
         ProductInformation,
         RelatedProducts,
         ReviewsAndRatings,
@@ -242,6 +176,24 @@ export default {
     data() {
         return {
             rating: 4,
+            breadcrumb: [
+                {
+                    text: "Home",
+                    disabled: false,
+                    href: "/",
+                },
+                {
+                    text: "Electronics",
+                    disabled: false,
+                    href: "/",
+                },
+                {
+                    text:
+                        "LG G Flex2 H950 4G LTE 32GB Rom 3GB Ram AT&T SmartPhone",
+                    disabled: true,
+                    href: "/",
+                },
+            ],
         };
     },
 };

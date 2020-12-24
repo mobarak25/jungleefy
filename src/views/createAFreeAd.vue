@@ -26,7 +26,7 @@
                             >Edit</router-link>
                         </v-flex>
 
-                        <ValidationObserver v-slot="{ handleSubmit }">
+                        <ValidationObserver ref="form" v-slot="{ handleSubmit }">
                             <form @submit.prevent="handleSubmit(onSubmit)">
                                 <!-- Condition section-->
                                 <ValidationProvider
@@ -635,8 +635,30 @@
         </v-flex>
 
         <!-- success greeting popup -->
-        <v-dialog v-model="dialog" width="500">
-            <v-sheet>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-sheet>
+        <v-dialog content-class="success-popup" v-model="dialog" width="914">
+            <v-sheet class="popup-wrap">
+                <v-flex class="d-flex justify-center">
+                    <v-img
+                        max-width="72"
+                        max-height="66"
+                        :src="require('@/assets/images/success.png')"
+                        alt="success"
+                    ></v-img>
+                </v-flex>
+                <h3>Your Ad Has Been Published!</h3>
+                <span class="published d-block">
+                    View Your
+                    <router-link to="/">Published Ad</router-link>
+                </span>
+                <v-flex class="text-right">
+                    <v-btn to="/" tile depressed class="brand white--text text-none">Back to Home</v-btn>
+                </v-flex>
+                <img
+                    class="popup-hand"
+                    :src="require('@/assets/images/popup_hand.png')"
+                    alt="success"
+                />
+            </v-sheet>
         </v-dialog>
     </v-flex>
 </template>
@@ -728,9 +750,24 @@ export default {
             localStorage.getItem("selected-category-storage") || "[]"
         );
     },
+
     methods: {
         onSubmit() {
-            alert("Form has been submitted!");
+            this.$refs.form.validate().then((success) => {
+                if (!success) {
+                    return;
+                }
+
+                this.dialog = true;
+
+                // Resetting Values
+                this.formData.ad_title = "";
+
+                // Wait until the models are updated in the UI
+                this.$nextTick(() => {
+                    this.$refs.form.reset();
+                });
+            });
         },
         uploadImageSuccess(formData, index, fileList) {
             console.log("data", formData, index, fileList);

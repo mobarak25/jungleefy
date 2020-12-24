@@ -202,3 +202,34 @@
         border-bottom: 1px solid lighten(map-get($colors, grey), 36);
     }
 }
+
+//success message popub
+.success-popup {
+    border-radius: 0;
+    .popup-wrap {
+        position: relative;
+        text-align: center;
+        padding: rem-calc(140px 83px 114px);
+
+        h3 {
+            padding: rem-calc(43px 0 34px);
+            @include font(primary, 30px, 40px, regular);
+        }
+        .published {
+            padding: rem-calc(0 0 95px);
+            @include font(primary, 18px, 28px, false);
+            a {
+                text-decoration: underline;
+                font-weight: map-get($font-weight, semi-bold);
+            }
+        }
+        .v-btn {
+            height: rem-calc(43px);
+            width: rem-calc(175px);
+            @include font(false, 18px, 28px, semi-bold);
+        }
+        .popup-hand {
+            @include absolute(false, false, left, 0, bottom, 0);
+        }
+    }
+}
