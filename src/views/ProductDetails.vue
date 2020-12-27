@@ -85,6 +85,13 @@
                                             <v-icon class="brand--text star">mdi-star</v-icon>)
                                         </span>
                                     </v-card-text>
+                                    <v-card-text class="pa-0 pb-2">
+                                        <span
+                                            class="grey--text text--darken-3"
+                                        >100% Positive feedback</span>
+                                        <br />
+                                        <span>Shipping & Handling (Customer Pick-up)</span>
+                                    </v-card-text>
                                 </v-flex>
 
                                 <v-divider></v-divider>

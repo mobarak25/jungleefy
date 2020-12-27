@@ -61,6 +61,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "createAFreeAd" */ "../views/createAFreeAd.vue")
   },
+  {
+    path: "/total-bid",
+    name: "totalBid",
+    component: () =>
+      import(/* webpackChunkName: "totalBid" */ "../views/TotalBid.vue")
+  },
 
   {
     path: '/*',

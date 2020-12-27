@@ -120,8 +120,7 @@ export default {
             @include font(grey, 15px, 20px, false);
 
             span {
-                color: map-get($colors, primary);
-                font-weight: map-get($font-weight, medium);
+                @include font(primary, 17px, 20px, semi-bold);
             }
         }
     }

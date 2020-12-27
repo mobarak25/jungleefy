@@ -1,0 +1,126 @@
+.bid-history-wrap {
+    padding: rem-calc(25px);
+    margin: 0;
+    h2 {
+        padding: rem-calc(0 0 25px);
+        @include font(primary, 28px, 36px, semi-bold);
+    }
+}
+
+.bid-history-box {
+    border: 1px solid lighten(map-get($colors, grey), 40);
+    .time-holder {
+        margin: rem-calc(15px);
+    }
+}
+.table-top {
+    a {
+        padding: rem-calc(0 15px 38px);
+        @include font(false, 15px, 22px, false);
+        text-decoration: underline;
+    }
+}
+.v-data-table.bid-table > .v-data-table__wrapper > table > thead > tr > th {
+    @include font(primary, 15px, 22px, semi-bold);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.v-data-table.bid-table
+    > .v-data-table__wrapper
+    > table
+    > tbody
+    > tr
+    > td.col1 {
+    width: 38%;
+    @include font(false, 13px, 22px, false);
+}
+.v-data-table.bid-table
+    > .v-data-table__wrapper
+    > table
+    > tbody
+    > tr
+    > td.col2 {
+    width: 35%;
+    @include font(primary, 16px, 22px, semi-bold);
+}
+.v-data-table.bid-table
+    > .v-data-table__wrapper
+    > table
+    > tbody
+    > tr
+    > td.col3 {
+    width: 26%;
+    @include font(false, 13px, 22px, false);
+}
+.time-holder {
+    padding: rem-calc(14px);
+    margin-bottom: rem-calc(14px);
+    @include font(primary, 15px, 30px, false);
+    background-color: lighten(map-get($colors, grey), 42);
+
+    strong {
+        padding: rem-calc(0 10px);
+        display: inline-block;
+        @include font(false, 18px, 22px, semi-bold);
+        &:not(:last-child) {
+            border-right: 2px solid lighten(map-get($colors, grey), 20);
+        }
+    }
+}
+.same-amount {
+    padding: rem-calc(36px 20px 15px);
+    @include font(false, 14px, 22px, false);
+}
+.please-contact {
+    @include font(false, 16px, 22px, false);
+    a {
+        color: map-get($colors, brand);
+        font-weight: map-get($font-weight, bold);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.item-info-wrap {
+    border: 1px solid lighten(map-get($colors, grey), 40);
+}
+.item-info {
+    &:not(:first-child) {
+        padding: rem-calc(30px);
+    }
+
+    border-bottom: 1px solid lighten(map-get($colors, grey), 40);
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: rem-calc(0 0 15px);
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            @include font(false, 14px, 20px, false);
+
+            .info-text {
+                width: calc(100% - 120px);
+                display: block;
+            }
+        }
+    }
+}
+.item-image {
+    max-width: 160px;
+}
+.item-title {
+    padding: rem-calc(0 20px);
+
+    h3 {
+        padding-bottom: rem-calc(7px);
+        @include font(primary, 17px, 26px, medium);
+    }
+
+    a {
+        @include font(brand, 14px, 22px, false);
+    }
+}

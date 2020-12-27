@@ -154,44 +154,6 @@
     }
 }
 
-.input-wrap {
-    padding-bottom: rem-calc(12px);
-
-    .input-label {
-        padding-bottom: rem-calc(5px);
-        @include font(primary, 15px, 22px, false);
-    }
-
-    &.invalid {
-        span {
-            @include font(false, 12px, 14px, false);
-            color: #ff0000;
-        }
-    }
-    .v-input {
-        input {
-            height: 43px;
-            max-height: 43px;
-            padding: 0;
-            @include font(primary, 15px, 43px, false);
-        }
-        fieldset {
-            border: 1px solid #dbdbdb;
-            border-radius: 0;
-        }
-    }
-    &.invalid {
-        .v-input {
-            fieldset {
-                border-color: #ff0000;
-            }
-        }
-    }
-    .mdi-information-outline {
-        margin: rem-calc(10px 0 0 10px);
-    }
-}
-
 .personal-information {
     padding: rem-calc(40px 0 0);
 

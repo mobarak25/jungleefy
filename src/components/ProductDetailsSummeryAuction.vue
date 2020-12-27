@@ -3,7 +3,7 @@
         <v-flex class="product-details-box">
             <small class="category">
                 Electronics
-                <v-btn ripple="none" fab elevation="5" width="30" height="30">
+                <v-btn fab elevation="5" width="30" height="30">
                     <v-icon>mdi-heart</v-icon>
                 </v-btn>
             </small>
@@ -28,23 +28,49 @@
             <strong>10 Seconds</strong>
         </v-flex>
 
-        <v-flex>
-            Active Bidders:
-            <span class="d-inline-block mr-2">07</span>
-            <a href="#">
-                Total Bid:
-                <span>10</span>
-            </a>
+        <ul>
+            <li>
+                Active Bidders:
+                <span class="d-inline-block mr-2">07</span>
+                <router-link :to="{name:'totalBid'}" class="all-bidders">
+                    Total Bid:
+                    <span v-text="totalBid"></span>
+                </router-link>
+            </li>
+
+            <li>
+                Current Bid:
+                <span class="current-Bid">TK 25,000</span>
+            </li>
+
+            <li>
+                (approximate Price:
+                <span>TK20,100</span>)
+            </li>
+            <li>You will review this before it's final</li>
+        </ul>
+        <v-flex class="place-bid-wrap">
+            <v-flex class="bid-label">Enter your available bid (It’s Free)</v-flex>
+
+            <!-- bidding form here -->
+            <bidding-form></bidding-form>
+
+            <v-flex class="automatic-bid">
+                <a href="#">Place an automatic bid</a>
+                <v-tooltip right>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon v-bind="attrs" v-on="on">mdi-information-outline</v-icon>
+                    </template>
+                    <span class="tooltip-info">
+                        Lorem ipsum, dolor sit
+                        <br />amet consectetur
+                        <br />adipisicing elit.
+                        <br />Dolorem facilis unde
+                        <br />fugiat eum iure sequi
+                    </span>
+                </v-tooltip>
+            </v-flex>
         </v-flex>
-        <v-flex>
-            Current Bid:
-            <span>TK 25,000</span>
-        </v-flex>
-        <v-flex>
-            (approximate Price:
-            <span>TK20,100</span>)
-        </v-flex>
-        <v-flex>You will review this before it's final</v-flex>
 
         <v-layout class="share-product align-center">
             <span>Share:</span>
@@ -56,13 +82,37 @@
 
 <script>
 import ProductSocial from "@/components/ProductSocial";
+import BiddingForm from "@/components/BiddingForm";
 export default {
     name: "ProductDetailsSummeryAuction",
     components: {
         ProductSocial,
+        BiddingForm,
     },
     data() {
-        return {};
+        return {
+            getbidItem: [],
+            abc: "asdfasdf",
+        };
+    },
+
+    computed: {
+        totalBid() {
+            console.log("asdf");
+            var totalBidCounter = this.getbidItem.length;
+            return totalBidCounter;
+        },
+    },
+    mounted() {
+        window.Fire.$on("BidInserted", () => {
+            this.getbidItem = JSON.parse(localStorage.getItem("auction-bids"));
+        });
+    },
+
+    created() {
+        this.getbidItem = JSON.parse(
+            localStorage.getItem("auction-bids") || "[]"
+        );
     },
 };
 </script>
@@ -102,14 +152,27 @@ export default {
             @include font(grey, 15px, 20px, false);
 
             span {
-                color: map-get($colors, primary);
-                font-weight: map-get($font-weight, medium);
+                @include font(primary, 17px, 20px, semi-bold);
+
+                &.current-Bid {
+                    @include font(brand, 22px, 22px, semi-bold);
+                }
+            }
+
+            .all-bidders {
+                text-decoration: underline;
+
+                &:hover {
+                    color: map-get($colors, brand);
+                    text-decoration: none;
+                }
             }
         }
     }
 
     .time-holder {
         padding: rem-calc(14px);
+        margin-bottom: rem-calc(14px);
         @include font(primary, 15px, 30px, false);
         background-color: lighten(map-get($colors, grey), 42);
 
@@ -119,6 +182,33 @@ export default {
             @include font(false, 18px, 22px, semi-bold);
             &:not(:last-child) {
                 border-right: 2px solid lighten(map-get($colors, grey), 20);
+            }
+        }
+    }
+
+    .place-bid-wrap {
+        padding: rem-calc(15px 20px);
+        background-color: lighten(map-get($colors, grey), 42);
+
+        .bid-label {
+            padding-bottom: rem-calc(5px);
+            @include font(grey, 15px, 20px, false);
+        }
+
+        .automatic-bid {
+            padding-top: rem-calc(5px);
+            a {
+                margin-right: rem-calc(20px);
+                display: inline-block;
+                @include font(grey, 15px, 20px, false);
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                    color: map-get($colors, brand);
+                }
+            }
+            .v-icon {
+                font-size: 20px;
             }
         }
     }
