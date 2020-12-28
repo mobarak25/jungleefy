@@ -1,0 +1,100 @@
+.login-register-bg {
+    padding: rem-calc(120px 0);
+}
+.login-logup-wrap {
+    max-width: 605px;
+    padding: rem-calc(0 65px 50px);
+
+    .v-card__title {
+        padding: rem-calc(35px 0 4px);
+        @include font(primary, 32px, 45px, false);
+    }
+    .v-card__subtitle {
+        padding: rem-calc(0);
+        margin: rem-calc(0);
+        text-align: center;
+        @include font(primary, 14px, 22px, false);
+    }
+
+    .login-logup-form {
+        padding: rem-calc(28px 0 0);
+
+        .v-input--selection-controls {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: underline;
+            @include font(grey, 16px, 22px, false);
+            &:hover {
+                text-decoration: none;
+                color: map-get($colors, brand);
+            }
+        }
+        .login-logup-btn {
+            height: 48px;
+            @include font(false, 15px, 22px, false);
+        }
+    }
+
+    .login-form {
+        .input-wrap {
+            padding: rem-calc(0 0 35px);
+        }
+        .remember {
+            margin-top: rem-calc(-15px);
+            padding-bottom: rem-calc(44px);
+        }
+    }
+
+    .or-section {
+        padding-top: rem-calc(30px);
+        .or-text {
+            text-align: center;
+            position: relative;
+            @include font(grey, 15px, 15px, semi-bold);
+
+            &:before {
+                @include sudo(calc(50% - 35px), 1px, left, 0, top, 50%, false);
+                background-color: lighten(map-get($colors, grey), 35);
+            }
+            &:after {
+                @include sudo(calc(50% - 35px), 1px, right, 0, top, 50%, false);
+                background-color: lighten(map-get($colors, grey), 35);
+            }
+        }
+        .sign-with {
+            padding-bottom: rem-calc(24px);
+            @include font(false, 14px, 18px, false);
+        }
+        .account-text {
+            @include font(false, 14px, 18px, false);
+
+            a {
+                @include font(primary, 14px, 18px, bold);
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                    color: map-get($colors, brand);
+                }
+            }
+        }
+
+        .sign-with-btns {
+            padding-bottom: rem-calc(46px);
+            .v-btn {
+                @include font(light, 14px, 22px, false);
+                &.facebook {
+                    background-color: #3b5999;
+                }
+                &.gmail {
+                    background-color: #e1e2e1;
+                    color: map-get($colors, primary);
+                    .v-icon {
+                        color: #ef2d00;
+                    }
+                }
+            }
+        }
+    }
+}

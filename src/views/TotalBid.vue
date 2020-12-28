@@ -50,6 +50,15 @@
                                 <v-flex class="item-info">
                                     <a href="#" class="text-decoration-underline">Seller information</a>
                                 </v-flex>
+
+                                <v-flex class="item-info">
+                                    <span class="d-block pb-3">Payments Method</span>
+
+                                    <v-img
+                                        max-width="258"
+                                        :src="require('@/assets/images/payment-methods.png')"
+                                    ></v-img>
+                                </v-flex>
                             </v-flex>
                         </v-col>
 
@@ -73,8 +82,8 @@
                                         <thead>
                                             <tr>
                                                 <th>Bidder Name</th>
-                                                <th>Bid Amount</th>
                                                 <th>Bid Time</th>
+                                                <th>Bid Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -88,11 +97,11 @@
                                                     </v-avatar>
                                                     {{bid_item.name}}
                                                 </td>
+                                                <td class="col2" v-text="bid_item.bid_time"></td>
                                                 <td
-                                                    class="col2"
+                                                    class="col3"
                                                     v-text="'TK' + bid_item.bid_amount"
                                                 ></td>
-                                                <td class="col3" v-text="bid_item.bid_time"></td>
                                             </tr>
                                         </tbody>
                                     </template>

@@ -40,7 +40,7 @@
     > tr
     > td.col2 {
     width: 35%;
-    @include font(primary, 16px, 22px, semi-bold);
+    @include font(false, 13px, 22px, false);
 }
 .v-data-table.bid-table
     > .v-data-table__wrapper
@@ -49,7 +49,7 @@
     > tr
     > td.col3 {
     width: 26%;
-    @include font(false, 13px, 22px, false);
+    @include font(primary, 16px, 22px, semi-bold);
 }
 .time-holder {
     padding: rem-calc(14px);
@@ -87,9 +87,8 @@
 .item-info {
     &:not(:first-child) {
         padding: rem-calc(30px);
+        border-top: 1px solid lighten(map-get($colors, grey), 40);
     }
-
-    border-bottom: 1px solid lighten(map-get($colors, grey), 40);
 
     ul {
         padding: 0;
@@ -123,4 +122,8 @@
     a {
         @include font(brand, 14px, 22px, false);
     }
+}
+
+.v-data-table__wrapper {
+    @include scroll-y(6px);
 }

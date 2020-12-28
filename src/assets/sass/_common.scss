@@ -116,7 +116,7 @@ input[type="number"] {
             @include font(primary, 15px, 43px, false);
         }
         fieldset {
-            border: 1px solid #dbdbdb;
+            border: 1px solid lighten(map-get($colors, grey), 35);
             border-radius: 0;
         }
     }

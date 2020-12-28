@@ -56,7 +56,7 @@
             <bidding-form></bidding-form>
 
             <v-flex class="automatic-bid">
-                <a href="#">Place an automatic bid</a>
+                <a @click="dialog= !dialog" href="javascript:void(0);">Place an automatic bid</a>
                 <v-tooltip right>
                     <template v-slot:activator="{ on, attrs }">
                         <v-icon v-bind="attrs" v-on="on">mdi-information-outline</v-icon>
@@ -77,6 +77,84 @@
             <!-- Product-Social -->
             <product-social></product-social>
         </v-layout>
+
+        <!-- success greeting popup -->
+        <v-dialog content-class="autobid-popup" v-model="dialog" width="670">
+            <v-sheet class="autobid-wrap">
+                <h3>How do automatic bids work here?</h3>
+                <v-flex class="autobid-text">
+                    <p>By setting up a programmed offer, our framework will naturally put new offers for your sake each time you are outbid. You should simply enter the most extreme value you are happy to offer for a thing. Our framework will at that point continue offering for you, by the littlest conceivable increment each time, until your most extreme cost is reached.</p>
+                </v-flex>
+
+                <ValidationObserver
+                    class="autobid-form"
+                    tag="div"
+                    ref="form"
+                    v-slot="{ handleSubmit }"
+                >
+                    <form @submit.prevent="handleSubmit(onSubmit)">
+                        <ValidationProvider
+                            tag="div"
+                            class="place-bid-field"
+                            name="maximum bid price"
+                            rules="required"
+                            :bails="false"
+                            v-slot="{ errors, classes }"
+                        >
+                            <div class="input-wrap" :class="classes">
+                                <v-flex class="input-label">Maximum bid price</v-flex>
+                                <v-text-field
+                                    solo
+                                    type="number"
+                                    step="any"
+                                    flat
+                                    hide-details
+                                    outlined
+                                    label="Maximum bid tk 25,000"
+                                    v-model="formData.maximum_price"
+                                ></v-text-field>
+                                <span>{{ errors[0] }}</span>
+                            </div>
+                        </ValidationProvider>
+
+                        <ValidationProvider
+                            tag="div"
+                            class="place-bid-field"
+                            name="automatic per bid price"
+                            rules="required"
+                            :bails="false"
+                            v-slot="{ errors, classes }"
+                        >
+                            <div class="input-wrap" :class="classes">
+                                <v-flex class="input-label">Automatic per bid price</v-flex>
+                                <v-text-field
+                                    solo
+                                    type="number"
+                                    step="any"
+                                    flat
+                                    hide-details
+                                    outlined
+                                    label="Automatic bid tk 3"
+                                    v-model="formData.auto_price"
+                                ></v-text-field>
+                                <span>{{ errors[0] }}</span>
+                            </div>
+                        </ValidationProvider>
+
+                        <!-- Product Price & Description -->
+
+                        <v-flex class="text-right">
+                            <v-btn
+                                type="submit"
+                                tile
+                                depressed
+                                class="place-bid-btn brand white--text text-none"
+                            >Ok</v-btn>
+                        </v-flex>
+                    </form>
+                </ValidationObserver>
+            </v-sheet>
+        </v-dialog>
     </v-flex>
 </template>
 
@@ -92,19 +170,41 @@ export default {
     data() {
         return {
             getbidItem: [],
-            abc: "asdfasdf",
+            dialog: false,
+
+            formData: {
+                maximum_price: "",
+                auto_price: "",
+            },
         };
     },
 
     computed: {
         totalBid() {
-            console.log("asdf");
             var totalBidCounter = this.getbidItem.length;
             return totalBidCounter;
         },
     },
+    methods: {
+        onSubmit() {
+            this.$refs.form.validate().then((success) => {
+                if (!success) {
+                    return;
+                }
+                this.formData.maximum_price = this.formData.auto_price = "";
+
+                this.dialog = false;
+
+                // Wait until the models are updated in the UI
+                this.$nextTick(() => {
+                    this.$refs.form.reset();
+                });
+            });
+        },
+    },
     mounted() {
         window.Fire.$on("BidInserted", () => {
+            alert("auc");
             this.getbidItem = JSON.parse(localStorage.getItem("auction-bids"));
         });
     },
@@ -231,6 +331,34 @@ export default {
                     @include font(false, 25px, 40px, false);
                 }
             }
+        }
+    }
+}
+
+.autobid-popup {
+    border-radius: 0;
+    .autobid-wrap {
+        padding: rem-calc(40px);
+
+        h3 {
+            padding: rem-calc(0 0 16px);
+            @include font(primary, 30px, 30px, medium);
+        }
+        .autobid-text {
+            padding: rem-calc(0 0 22px);
+
+            p {
+                @include font(primary, 15px, 24px, false);
+            }
+        }
+        .input-wrap {
+            padding-bottom: rem-calc(20px);
+        }
+
+        .v-btn {
+            height: rem-calc(40px);
+            width: rem-calc(100px);
+            @include font(false, 15px, 30px, semi-bold);
         }
     }
 }

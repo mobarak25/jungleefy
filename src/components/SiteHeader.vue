@@ -105,11 +105,16 @@
                                         </v-flex>
                                     </template>
                                     <v-list>
-                                        <v-list-item
-                                            v-for="(item, index) in userInfos"
-                                            :key="index"
-                                        >
-                                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                                        <v-list-item>
+                                            <v-list-item-title>
+                                                <router-link :to="{name:'login'}">Sign in</router-link>
+                                            </v-list-item-title>
+                                        </v-list-item>
+
+                                        <v-list-item>
+                                            <v-list-item-title>
+                                                <router-link :to="{name:'SignUp'}">Sign up</router-link>
+                                            </v-list-item-title>
                                         </v-list-item>
                                     </v-list>
                                 </v-menu>
@@ -152,13 +157,6 @@ export default {
         items: ["foo", "bar", "fizz", "buzz"],
         values: [],
         value: null,
-
-        userInfos: [
-            { title: "Click Me" },
-            { title: "Click Me" },
-            { title: "Click Me" },
-            { title: "Click Me 2" },
-        ],
     }),
     methods: {
         onResize() {
