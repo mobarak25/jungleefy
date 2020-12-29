@@ -13,6 +13,7 @@ export default new Vuetify({
                 secondary: '#30353d', // footer-bg
                 brand: '#ff9900',     // logo-color
                 site_bg: '#f1f3f6',   // site-bg
+                light: '#fff',   // site-bg
                 success: '#4caf50',
                 info: '#2196f3',
                 warning: '#fb8c00',

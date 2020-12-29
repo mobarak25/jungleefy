@@ -9,6 +9,14 @@
             class="login-logup-wrap mx-auto"
             :style="{ background: '#fff url(' + require('@/assets/images/login-bar.png') + ') left top repeat-x'}"
         >
+            <v-progress-linear
+                :active="loading"
+                :indeterminate="loading"
+                absolute
+                top
+                height="3"
+                color="light"
+            ></v-progress-linear>
             <v-card-title class="justify-center">Sign In</v-card-title>
 
             <ValidationObserver
@@ -73,7 +81,7 @@
                         >
                             <div :class="classes">
                                 <v-checkbox
-                                    color="brand"
+                                    color="grey"
                                     hide-details
                                     v-model="formData.remember"
                                     label="Remember"
@@ -122,6 +130,7 @@ export default {
 
     data() {
         return {
+            loading: true,
             formData: {
                 email_or_phone: "",
                 password: "",

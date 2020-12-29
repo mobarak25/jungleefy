@@ -1,14 +1,22 @@
 <template>
     <v-flex
+        :style="{background:`url(${require('@/assets/images/login-bg.png')}) left top`}"
         class="login-register-bg"
-        :style="{ background: 'url(' + require('@/assets/images/login-bg.png') + ') left top'}"
     >
         <v-card
             tile
             elevation="3"
-            class="login-logup-wrap mx-auto"
+            class="login-logup-wrap mx-auto position-relative"
             :style="{ background: '#fff url(' + require('@/assets/images/login-bar.png') + ') left top repeat-x'}"
         >
+            <v-progress-linear
+                :active="loading"
+                :indeterminate="loading"
+                absolute
+                top
+                height="4"
+                color="light"
+            ></v-progress-linear>
             <v-card-title class="justify-center">Sign Up</v-card-title>
             <v-card-subtitle>Enter your details to create your account:</v-card-subtitle>
 
@@ -65,6 +73,7 @@
                         </ValidationProvider>
                     </v-row>
 
+                    <!-- E-Mail -->
                     <ValidationProvider
                         tag="div"
                         name="e-mail"
@@ -86,6 +95,7 @@
                         </div>
                     </ValidationProvider>
 
+                    <!-- phone -->
                     <ValidationProvider
                         tag="div"
                         name="phone"
@@ -129,18 +139,18 @@
                         </div>
                     </ValidationProvider>
 
-                    <!-- Enter your company name -->
+                    <!-- password -->
                     <ValidationProvider
                         tag="div"
                         name="password"
-                        rules="required"
+                        rules="required|min:5"
                         :bails="false"
                         v-slot="{ errors, classes }"
                     >
                         <div class="input-wrap" :class="classes">
                             <v-text-field
                                 solo
-                                type="text"
+                                type="password"
                                 flat
                                 hide-details
                                 outlined
@@ -151,33 +161,59 @@
                         </div>
                     </ValidationProvider>
 
-                    <v-layout wrap class="remember justify-space-between">
-                        <ValidationProvider
-                            tag="div"
-                            class="place-bid-field"
-                            name="remember"
-                            :bails="false"
-                            v-slot="{ errors, classes }"
-                        >
-                            <div :class="classes">
-                                <v-checkbox
-                                    color="brand"
-                                    hide-details
-                                    v-model="formData.remember"
-                                    label="Remember"
-                                ></v-checkbox>
-                                <span>{{ errors[0] }}</span>
-                            </div>
-                        </ValidationProvider>
-                        <a href="#">Forgot Password ?</a>
-                    </v-layout>
+                    <!-- confirm password -->
+                    <ValidationProvider
+                        tag="div"
+                        name="password confirmation"
+                        rules="confirmed:password"
+                        :bails="false"
+                        v-slot="{ errors, classes }"
+                    >
+                        <div class="input-wrap" :class="classes">
+                            <v-text-field
+                                solo
+                                type="password"
+                                flat
+                                hide-details
+                                outlined
+                                label="Password"
+                                v-model="formData.confirm_password"
+                            ></v-text-field>
+                            <span>{{ errors[0] }}</span>
+                        </div>
+                    </ValidationProvider>
+
+                    <!-- Agree -->
+                    <ValidationProvider
+                        class="agree"
+                        tag="div"
+                        :bails="false"
+                        v-slot="{ errors, classes }"
+                    >
+                        <div :class="classes">
+                            <v-checkbox hide-details v-model="formData.agree">
+                                <template v-slot:label>
+                                    <div>
+                                        I agree that
+                                        <a
+                                            target="_blank"
+                                            href="http://vuetifyjs.com"
+                                            @click.stop
+                                            v-on="on"
+                                        >Terms and Conditions</a>
+                                    </div>
+                                </template>
+                            </v-checkbox>
+                            <span>{{ errors[0] }}</span>
+                        </div>
+                    </ValidationProvider>
 
                     <v-btn
                         width="100%"
                         type="submit"
                         depressed
                         class="login-logup-btn brand white--text text-none d-block"
-                    >Sign In</v-btn>
+                    >Sign Up</v-btn>
                 </form>
             </ValidationObserver>
 
@@ -210,6 +246,7 @@ export default {
 
     data() {
         return {
+            loading: true,
             formData: {
                 first_name: "",
                 last_name: "",
