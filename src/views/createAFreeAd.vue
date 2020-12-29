@@ -152,23 +152,15 @@
                                 </v-row>
 
                                 <!-- Image Uploader -->
-                                <div class="multi-image-uploader">
-                                    <h3>Pictures</h3>
-                                    <vue-upload-multiple-image
-                                        @upload-success="uploadImageSuccess"
-                                        @before-remove="beforeRemove"
-                                        @edit-image="editImage"
-                                        :data-images="images"
-                                        idUpload="myIdUpload"
-                                        editUpload="myIdEdit"
-                                        primaryText="Default"
-                                        markIsPrimaryText="Set as default"
-                                        dragText="Drag images (many)"
-                                        browseText="(or) Select"
-                                        dropText="Drop your file here ..."
-                                        popupText="This image will be displayed as default"
-                                    ></vue-upload-multiple-image>
-                                </div>
+                                <multi-image-uploader
+                                    title="Mipel Gallery"
+                                    id="images-uploader-1"
+                                    edit-id="images-uploader-edit-1"
+                                    url="http://knittersland.test/api/img-upload"
+                                    delete-url="http://knittersland.test/api/img-upload"
+                                    :options="optionsText"
+                                    :data-images="images"
+                                ></multi-image-uploader>
 
                                 <!-- check auction -->
                                 <v-radio-group v-model="formData.auction" row hide-details>
@@ -665,34 +657,43 @@
 
 <script>
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
-import VueUploadMultipleImage from "vue-upload-multiple-image";
+import MultiImageUploader from "@/components/services/MultiImageUploader";
 export default {
     name: "createAFreeAd",
     components: {
         SiteBreadcrumb,
-        VueUploadMultipleImage,
+        MultiImageUploader,
     },
 
     data() {
         return {
+            optionsText: {
+                idUpload: "mipellim",
+            },
             images: [
                 {
                     path:
-                        "https://cdn.pixabay.com/photo/2018/06/17/20/35/chain-3481377_960_720.jpg",
+                        "http://knittersland.test/storage/images/rough/ES1CoxEmjltLihyNi2y7yenVi4CU3PjQtNk7NrOB.jpeg",
+                    name:
+                        "storage/images/rough/ES1CoxEmjltLihyNi2y7yenVi4CU3PjQtNk7NrOB.jpeg",
                     default: 1,
                     highlight: 1,
                     caption: "caption to display. receive", // Optional
                 },
                 {
                     path:
-                        "https://media.istockphoto.com/photos/metail-chains-background-picture-id1168402184",
+                        "http://knittersland.test/storage/images/rough/OUYo40CCntSKBuLSD6dEe7Agnk2NhLNvUanw1fpF.jpeg",
+                    name:
+                        "storage/images/rough/OUYo40CCntSKBuLSD6dEe7Agnk2NhLNvUanw1fpF.jpeg",
                     default: null,
                     highlight: null,
                     caption: "caption to display. receive", // Optional
                 },
                 {
                     path:
-                        "https://media.istockphoto.com/photos/disrupting-wire-rope-isolated-picture-id157429838",
+                        "http://knittersland.test/storage/images/rough/oWdfvZMUx8tlRXDqSmtMPWNfz11yNzX23yFYCpGr.jpeg",
+                    name:
+                        "storage/images/rough/oWdfvZMUx8tlRXDqSmtMPWNfz11yNzX23yFYCpGr.jpeg",
                     default: null,
                     highlight: null,
                     caption: "caption to display. receive", // Optional
@@ -768,23 +769,6 @@ export default {
                     this.$refs.form.reset();
                 });
             });
-        },
-        uploadImageSuccess(formData, index, fileList) {
-            console.log("data", formData, index, fileList);
-            // Upload image api
-            // axios.post('http://your-url-upload', formData).then(response => {
-            //   console.log(response)
-            // })
-        },
-        beforeRemove(index, done, fileList) {
-            console.log("index", index, fileList);
-            var r = confirm("remove image");
-            if (r == true) {
-                done();
-            }
-        },
-        editImage(formData, index, fileList) {
-            console.log("edit data", formData, index, fileList);
         },
     },
 };

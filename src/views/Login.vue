@@ -138,6 +138,25 @@ export default {
             },
         };
     },
+    methods: {
+        onSubmit() {
+            this.$refs.form.validate().then((success) => {
+                if (!success) {
+                    return;
+                }
+
+                alert("message send");
+
+                // Resetting Values
+                this.formData.email_or_phone = this.formData.password = "";
+
+                // Wait until the models are updated in the UI
+                this.$nextTick(() => {
+                    this.$refs.form.reset();
+                });
+            });
+        },
+    },
 };
 </script>
 
