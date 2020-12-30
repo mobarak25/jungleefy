@@ -1,6 +1,6 @@
 <template>
     <div class="multi-image-uploader">
-        <h3 v-text="title||'Pictures'"></h3>
+        <h3 v-html="title||'Pictures'"></h3>
         <vue-upload-multiple-image
             @upload-success="uploadImageSuccess"
             @before-remove="beforeRemove"
@@ -9,13 +9,14 @@
             :id-upload="id || 'myIdUpload'"
             :edit-upload="editId || 'myIdEdit'"
             :primary-text="options.primaryText || 'Default'"
+            :show-primary="options.showPrimary"
             :mark-is-primary-text="options.markIsPrimaryText || 'Set as default'"
             :drag-text="options.dragText || 'Drag images (many)'"
             :browse-text="options.browseText || '(or) Select'"
             :drop-text="options.dropText || 'Drop your file here ...'"
             :popup-text="options.popupText || 'This image will be displayed as default'"
-            :multiple="options.multiple||true"
-            :max-image="options.maxImage||10"
+            :multiple="options.multiple"
+            :max-image="options.maxImage || 10"
         ></vue-upload-multiple-image>
     </div>
 </template>

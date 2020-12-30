@@ -50,7 +50,9 @@
                         <v-flex>
                             <ul>
                                 <li v-for="(accountInfo, index) in accountInfos" :key="index">
-                                    <a href="#">{{accountInfo.text}}</a>
+                                    <router-link
+                                        :to="{name:`${accountInfo.link}` }"
+                                    >{{accountInfo.text}}</router-link>
                                 </li>
                             </ul>
                         </v-flex>
@@ -116,12 +118,16 @@ export default {
             { id: 7, text: "Manufacturer Stock" },
         ],
         accountInfos: [
-            { id: 1, text: "My Account" },
-            { id: 2, text: "Orders" },
-            { id: 3, text: "Addresses" },
-            { id: 4, text: "Cancellation, Return & Refund Policy" },
-            { id: 5, text: "Manage Your Content & Devices" },
-            { id: 6, text: "Help" },
+            { id: 1, text: "My Account", link: "MyAccount" },
+            { id: 2, text: "Orders", link: "MyAccount" },
+            { id: 3, text: "Addresses", link: "MyAccount" },
+            {
+                id: 4,
+                text: "Cancellation, Return & Refund Policy",
+                link: "MyAccount",
+            },
+            { id: 5, text: "Manage Your Content & Devices", link: "MyAccount" },
+            { id: 6, text: "Help", link: "MyAccount" },
         ],
         informations: [
             { id: 1, text: "About Us" },

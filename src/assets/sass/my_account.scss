@@ -1,0 +1,29 @@
+.account-wrap {
+    padding-left: rem-calc(30px);
+}
+.account-panel {
+    padding: rem-calc(30px 15px);
+}
+.account-personal-info {
+    h3 {
+        padding-bottom: rem-calc(6px);
+        @include font(primary, 20px, 26px, medium);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+}
+
+.multi-image-uploader {
+    padding: rem-calc(15px);
+    margin: rem-calc(20px 0 35px);
+    border: 1px dashed rgba(0, 0, 0, 0.12);
+
+    h3 {
+        padding: rem-calc(0 0 5px);
+        @include font(primary, 18px, 26px, medium);
+
+        span {
+            display: block;
+            @include font(primary, 13px, 13px, regular);
+        }
+    }
+}
