@@ -23,20 +23,8 @@
 
                         <v-sheet>
                             <v-flex class="d-flex align-center">
-                                <v-flex class="d-flex align-center sort-field-box">
-                                    <strong>Sort by:</strong>
-                                    <v-flex class="sort-field">
-                                        <v-select
-                                            hide-details
-                                            :items="items"
-                                            label="Date: Newest on top"
-                                            dense
-                                            solo
-                                            flat
-                                            outlined
-                                        ></v-select>
-                                    </v-flex>
-                                </v-flex>
+                                <!-- sort by -->
+                                <sort-by :options="items" title="Sort By"></sort-by>
 
                                 <v-flex class="view-indicator">
                                     <a
@@ -128,6 +116,7 @@
 <script>
 import ProductSidebar from "@/components/ProductSidebar";
 import SiteBreadcrumb from "@/components/SiteBreadcrumb";
+import SortBy from "@/components/sites/pages/SortBy";
 import ProductGridCard from "@/components/ProductGridCard";
 import ProductListCard from "@/components/ProductListCard";
 import Pagination from "@/components/Pagination";
@@ -137,6 +126,7 @@ export default {
     components: {
         ProductSidebar,
         SiteBreadcrumb,
+        SortBy,
         ProductGridCard,
         ProductListCard,
         Pagination,
@@ -190,28 +180,6 @@ export default {
         }
         span {
             color: darken(map-get($colors, grey), 25);
-        }
-    }
-    .sort-field-box {
-        strong {
-            @include font(primary, 15px, 25px, medium);
-        }
-        .sort-field {
-            max-width: 180px;
-            margin-left: rem-calc(8px);
-            .v-input {
-                fieldset {
-                    border: 1px solid #e5e5e5;
-                    border-radius: 0;
-                }
-                .v-input__slot {
-                    padding-right: 0 !important;
-                }
-                .v-select__selection,
-                .v-label {
-                    @include font(primary, 14px, 18px, false);
-                }
-            }
         }
     }
 

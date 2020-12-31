@@ -11,10 +11,10 @@
         </v-sheet>
         <v-card tile elevation="0">
             <v-list class="py-0" flat>
-                <v-list-item-group v-model="selectedItem" color="brand">
+                <v-list-item-group color="brand" v-model="selectedItem">
                     <v-divider></v-divider>
                     <v-flex v-for="(item, i) in items" :key="i">
-                        <v-list-item>
+                        <v-list-item :to="{name:`${item.link}` }">
                             <v-list-item-icon>
                                 <v-icon v-text="item.icon"></v-icon>
                             </v-list-item-icon>
@@ -37,11 +37,27 @@ export default {
         return {
             selectedItem: 0,
             items: [
-                { text: "My Account", icon: "mdi-account-edit" },
-                { text: "My Orders", icon: "mdi-badge-account-outline" },
-                { text: "My Auction", icon: "mdi-hammer-screwdriver" },
-                { text: "Buying Item", icon: "mdi-cash-usd" },
-                { text: "Selling Item", icon: "mdi-cart" },
+                {
+                    text: "My Account",
+                    icon: "mdi-account-edit",
+                    link: "MyAccount",
+                },
+                {
+                    text: "My Orders",
+                    icon: "mdi-badge-account-outline",
+                    link: "MyOrder",
+                },
+                {
+                    text: "My Auction",
+                    icon: "mdi-hammer-screwdriver",
+                    link: "MyAuction",
+                },
+                {
+                    text: "Buying Item",
+                    icon: "mdi-cash-usd",
+                    link: "BuyingItem",
+                },
+                { text: "Selling Item", icon: "mdi-cart", link: "SellingItem" },
             ],
         };
     },

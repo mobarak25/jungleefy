@@ -85,6 +85,30 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "MyAccount" */ "../views/MyAccount.vue")
   },
+  {
+    path: "/my-order",
+    name: "MyOrder",
+    component: () =>
+      import(/* webpackChunkName: "MyOrder" */ "../views/MyOrder.vue")
+  },
+  {
+    path: "/my-auction",
+    name: "MyAuction",
+    component: () =>
+      import(/* webpackChunkName: "MyAuction" */ "../views/MyAuction.vue")
+  },
+  {
+    path: "/buying-item",
+    name: "BuyingItem",
+    component: () =>
+      import(/* webpackChunkName: "BuyingItem" */ "../views/BuyingItem.vue")
+  },
+  {
+    path: "/selling-item",
+    name: "SellingItem",
+    component: () =>
+      import(/* webpackChunkName: "SellingItem" */ "../views/SellingItem.vue")
+  },
 
   {
     path: '/*',

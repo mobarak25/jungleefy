@@ -1,4 +1,5 @@
 .account-wrap {
+    width: calc(100% - 375px);
     padding-left: rem-calc(30px);
 }
 .account-panel {
@@ -7,8 +8,31 @@
 .account-personal-info {
     h3 {
         padding-bottom: rem-calc(6px);
+        margin-bottom: rem-calc(15px);
         @include font(primary, 20px, 26px, medium);
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+        .change-password {
+            @include font(brand, 15px, 22px, regular);
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+.profile-info-form {
+    .input-wrap {
+        padding-bottom: rem-calc(20px);
+    }
+}
+.account-panel {
+    .profile-info-form {
+        .save-info-btn {
+            width: 200px;
+            height: 50px;
+            @include font(false, 18px, 26px, semi-bold);
+        }
     }
 }
 
