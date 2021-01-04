@@ -336,7 +336,7 @@ export default {
             images: [
                 {
                     path:
-                        "http://knittersland.test/storage/images/rough/ES1CoxEmjltLihyNi2y7yenVi4CU3PjQtNk7NrOB.jpeg",
+                        "https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg",
                     name:
                         "storage/images/rough/ES1CoxEmjltLihyNi2y7yenVi4CU3PjQtNk7NrOB.jpeg",
                     default: 1,

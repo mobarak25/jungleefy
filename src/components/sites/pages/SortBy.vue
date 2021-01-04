@@ -2,15 +2,7 @@
     <v-flex class="d-flex flex-grow-0 align-center sort-field-box">
         <strong v-text="title"></strong>
         <v-flex class="sort-field">
-            <v-select
-                hide-details
-                :items="options"
-                label="Date: Newest on top"
-                dense
-                solo
-                flat
-                outlined
-            ></v-select>
+            <v-select v-model="select" hide-details :items="options" dense solo flat outlined></v-select>
         </v-flex>
     </v-flex>
 </template>
@@ -21,9 +13,12 @@ export default {
     props: {
         options: Array,
         title: String,
+        selectOption: String,
     },
     data() {
-        return {};
+        return {
+            select: this.selectOption,
+        };
     },
 };
 </script>

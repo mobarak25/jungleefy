@@ -119,7 +119,7 @@ import SiteBreadcrumb from "@/components/SiteBreadcrumb";
 import SortBy from "@/components/sites/pages/SortBy";
 import ProductGridCard from "@/components/ProductGridCard";
 import ProductListCard from "@/components/ProductListCard";
-import Pagination from "@/components/Pagination";
+import Pagination from "@/components/services/Pagination";
 
 export default {
     name: "Products",

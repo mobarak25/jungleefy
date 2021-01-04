@@ -13,12 +13,12 @@
 }
 .account-panel-table {
     table {
+        width: 100%;
+        padding: 0;
+        margin-bottom: rem-calc(13px);
+        table-layout: fixed;
         border: 1px solid #ccc;
         border-collapse: collapse;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        table-layout: fixed;
 
         th {
             height: 50px;
@@ -44,32 +44,75 @@
                 width: 32.9%;
             }
             &.tbl-3 {
-                width: 19.9%;
+                width: 15%;
             }
             &.tbl-4 {
-                width: 11%;
+                width: 15%;
             }
             &.tbl-5 {
-                width: 11.4%;
+                width: 14.4%;
+            }
+            .status {
+                width: 110px;
+                display: block;
+            }
+            .winning-auction {
+                width: 115px;
+                display: block;
+            }
+        }
+
+        td {
+            padding: rem-calc(10px 20px);
+            text-align: left;
+            @include font(false, 13px, 20px, false);
+
+            .payment-method {
+                @include font(primary, 13px, 20px, semi-bold);
+
+                strong {
+                    font-weight: map-get($font-weight, medium);
+                }
+            }
+            .address {
+                padding: rem-calc(3px 0 0);
+                font-style: normal;
+                @include font(primary, 13px, 20px, regular);
+
+                h4 {
+                    padding: rem-calc(0 0 3px);
+                    display: block;
+                    font-weight: map-get($font-weight, semi-bold);
+                }
+                span {
+                    display: block;
+                }
+            }
+            .details {
+                padding-top: rem-calc(3px);
+                display: inline-block;
+                text-decoration: underline;
+                @include font(brand, 14px, 20px, false);
+            }
+            .product {
+                padding-bottom: rem-calc(7px);
+                @include font(primary, 13px, 14px, semi-bold);
+            }
+            .type {
+                margin-left: rem-calc(25px);
+                height: 24px;
+            }
+            .order-mony {
+                @include font(brand, 15px, 20px, medium);
+            }
+            &.border-right {
+                border-right: 1px solid lighten(map-get($colors, grey), 30);
             }
         }
     }
 
-    table td {
-        padding: rem-calc(0 20px);
-        text-align: left;
-
-        @include font(primary, 13px, 19px, semi-bold);
-        border-bottom: 1px solid lighten(map-get($colors, grey), 35);
-
-        .order-number {
-            display: block;
-            @include font(primary, 13px, 19px, semi-bold);
-        }
-        .order-date {
-            display: block;
-            @include font(grey, 13px, 19px, regular);
-        }
+    .account-pagination {
+        padding-top: rem-calc(20px);
     }
 
     @media screen and (max-width: 900px) {
