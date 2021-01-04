@@ -63,6 +63,7 @@ export default {
     components: {
         ProductGridCard,
     },
+
     props: {
         options: Object,
     },

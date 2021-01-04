@@ -25,7 +25,7 @@ Vue.prototype._ = _;
 Vue.prototype.$appPath = "@/";
 Vue.prototype.$assetsPath = "@/assets/";
 
-window.Fire =  new Vue();
+Vue.prototype.Fire =  new Vue();
 
 new Vue({
   router,

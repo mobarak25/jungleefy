@@ -68,6 +68,12 @@ const routes = [
       import(/* webpackChunkName: "totalBid" */ "../views/TotalBid.vue")
   },
   {
+    path: "/wish-list",
+    name: "WishList",
+    component: () =>
+      import(/* webpackChunkName: "watchList" */ "../views/WishList.vue")
+  },
+  {
     path: "/log-in",
     name: "login",
     component: () =>

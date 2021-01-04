@@ -72,13 +72,13 @@
                         <!-- Top header right -->
                         <v-layout justify-end class="top-header-right align-center">
                             <v-flex class="top-header-widgets flex-grow-0">
-                                <a href="#">
+                                <router-link :to="{name:'WishList'}">
                                     <v-flex class="header-widgets-icon">
                                         <v-icon>mdi-cards-heart</v-icon>
                                         <v-flex class="count">15</v-flex>
                                     </v-flex>
                                     <span>Watchlist</span>
-                                </a>
+                                </router-link>
                             </v-flex>
 
                             <v-flex class="top-header-widgets flex-grow-0">

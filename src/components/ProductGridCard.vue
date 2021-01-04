@@ -20,9 +20,11 @@
                     </v-flex>
 
                     <v-flex class="flex-grow-0">
-                        <v-btn fab elevation="2">
+                        <wish-list-btn :product-id="product.id"></wish-list-btn>
+
+                        <!-- <v-btn fab elevation="2" @click="wishList(product)">
                             <v-icon class="grey--text">mdi-heart</v-icon>
-                        </v-btn>
+                        </v-btn>-->
 
                         <v-btn color="brand" fab elevation="2">
                             <v-icon class="white--text">mdi-cart</v-icon>
@@ -122,9 +124,11 @@
 
 <script>
 import ProductSocial from "@/components/ProductSocial";
+import WishListBtn from "@/components/sites/common/WishListBtn";
 export default {
     name: "ProductCard",
     components: {
+        WishListBtn,
         ProductSocial,
     },
     props: {

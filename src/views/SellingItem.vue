@@ -13,7 +13,7 @@
                                     wrap
                                     class="account-panel-top align-center justify-space-between"
                                 >
-                                    <h2>Buying Item</h2>
+                                    <h2>Selling Item</h2>
                                 </v-layout>
 
                                 <v-flex class="account-panel-table">
@@ -34,11 +34,12 @@
                                                     ></span>
                                                 </th>
                                                 <th scope="col" class="tbl-2">Product</th>
-                                                <th
-                                                    scope="col"
-                                                    class="tbl-3"
-                                                    v-text="'Order Total: TK '+ orders_item.price"
-                                                ></th>
+                                                <th scope="col" class="tbl-3">
+                                                    <span
+                                                        class="order-item-price"
+                                                        v-text="'Order Total: TK '+ orders_item.price"
+                                                    ></span>
+                                                </th>
                                                 <th scope="col" class="tbl-4">Status</th>
                                                 <th scope="col" class="tbl-5">
                                                     <span class="status">Shipping Status</span>

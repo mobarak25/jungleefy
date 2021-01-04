@@ -10,7 +10,8 @@
             "price": "TK 5000",
             "image": "product-1.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Used"
+            "status": "Used",
+            "prodyct_type": "Auction"
         },
         {
             "id": 2,
@@ -19,7 +20,8 @@
             "price": "TK 5000",
             "image": "product-2.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "New"
+            "status": "New",
+            "prodyct_type": "Auction"
         },
         {
             "id": 3,
@@ -28,7 +30,8 @@
             "price": "TK 5000",
             "image": "product-3.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Lot"
+            "status": "Lot",
+            "prodyct_type": "Auction"
         },
         {
             "id": 4,
@@ -37,7 +40,8 @@
             "price": "TK 5000",
             "image": "product-4.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Shop Woner"
+            "status": "Shop Woner",
+            "prodyct_type": "Auction"
         },
         {
             "id": 5,
@@ -46,7 +50,8 @@
             "price": "TK 5000",
             "image": "product-5.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Shop Woner"
+            "status": "Shop Woner",
+            "prodyct_type": "Auction"
         },
         {
             "id": 6,
@@ -55,7 +60,8 @@
             "price": "TK 5000",
             "image": "product-6.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Shop Woner"
+            "status": "Shop Woner",
+            "prodyct_type": "Auction"
         },
         {
             "id": 7,
@@ -64,7 +70,8 @@
             "price": "TK 5000",
             "image": "product-7.jpg",
             "location": "Sekertack | Mohammadpur, Dhaka",
-            "status": "Shop Woner"
+            "status": "Shop Woner",
+            "prodyct_type": "Auction"
         }
     ]
 }

@@ -142,7 +142,7 @@ export default {
     },
 
     mounted() {
-        window.Fire.$on("BidInserted", () => {
+        this.Fire.$on("BidInserted", () => {
             this.bid_items = JSON.parse(localStorage.getItem("auction-bids"));
         });
     },

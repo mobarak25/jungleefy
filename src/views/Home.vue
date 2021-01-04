@@ -43,7 +43,6 @@ export default {
         HomePopularCategory,
         HomeSellerSection,
     },
-    data: () => ({}),
 
     computed: {
         featuredAuctions() {
@@ -56,8 +55,6 @@ export default {
             return this.$store.state.auctionsClosing;
         },
     },
-
-    methods: {},
 
     mounted() {
         this.$store.dispatch("getFeaturedAuctions");

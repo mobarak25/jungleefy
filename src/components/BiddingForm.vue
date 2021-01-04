@@ -71,7 +71,7 @@ export default {
                     JSON.stringify(this.auctionBids)
                 );
 
-                window.Fire.$emit("BidInserted");
+                this.Fire.$emit("BidInserted");
                 // Resetting Values
                 this.formData.bid_price = "";
 

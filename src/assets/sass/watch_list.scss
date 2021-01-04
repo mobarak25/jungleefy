@@ -1,17 +1,22 @@
-.account-wrap {
-    width: calc(100% - 375px);
-    padding-left: rem-calc(30px);
-}
-.account-panel {
-    padding: rem-calc(30px 15px);
-}
-.account-panel-top {
-    padding-bottom: rem-calc(15px);
-    h2 {
-        @include font(primary, 25px, 35px, medium);
+.watch-list-wrap {
+    padding: rem-calc(53px 30px 77px);
+    margin: rem-calc(0 0 40px);
+
+    h1 {
+        padding: rem-calc(0 0 12px);
+        @include font(primary, 35px, 40px, medium);
+    }
+    .watch-list-count {
+        display: block;
+        @include font(primary, 16px, 22px, false);
     }
 }
-.account-panel-table {
+
+.watch-list-related-product {
+    padding: rem-calc(0 30px);
+}
+.watch-list-table {
+    padding: rem-calc(44px 0 0);
     table {
         width: 100%;
         padding: 0;
@@ -114,10 +119,6 @@
                 border-right: 1px solid lighten(map-get($colors, grey), 30);
             }
         }
-    }
-
-    .account-pagination {
-        padding-top: rem-calc(20px);
     }
 
     @media screen and (max-width: 900px) {
