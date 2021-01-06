@@ -15,16 +15,31 @@
 </template>
 <script>
 export default {
-    data: () => ({
-        quantity: 1,
-    }),
+    data() {
+        return {
+            quantity: 0,
+        };
+    },
+    props: {
+        qty: Number,
+        productId: Number,
+    },
     methods: {
         increase() {
             this.quantity++;
+            this.$store.dispatch("updateCards", {
+                id: this.productId,
+                qty: this.quantity,
+            });
         },
         decrease() {
             if (this.quantity > 1) {
                 this.quantity--;
+
+                this.$store.dispatch("updateCards", {
+                    id: this.productId,
+                    qty: this.quantity,
+                });
             }
         },
 
@@ -40,6 +55,9 @@ export default {
                 parseInt((this.quantity = 1));
             }
         },
+    },
+    created() {
+        this.quantity = this.qty;
     },
 };
 </script>

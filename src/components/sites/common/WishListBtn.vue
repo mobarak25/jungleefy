@@ -1,5 +1,5 @@
 <template>
-    <v-btn fab elevation="2" @click="Fire.$emit('addorremovewislist', productId)">
+    <v-btn fab elevation="2" @click="addorremovewislist(productId)">
         <v-icon :class="isWislisted?'brand--text':'grey--text'">mdi-heart</v-icon>
     </v-btn>
 </template>
@@ -13,12 +13,15 @@ export default {
     },
     computed: {
         isWislisted() {
-            if (
-                this.$root.$children[0].wishListedArr.includes(this.productId)
-            ) {
+            if (this.$store.state.wishListedIdsArr.includes(this.productId)) {
                 return true;
             }
             return false;
+        },
+    },
+    methods: {
+        addorremovewislist(productId) {
+            this.$store.dispatch("toggleToWishList", productId);
         },
     },
     created() {

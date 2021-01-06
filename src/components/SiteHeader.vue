@@ -82,13 +82,13 @@
                             </v-flex>
 
                             <v-flex class="top-header-widgets flex-grow-0">
-                                <a href="#">
+                                <router-link :to="{name:'Cart'}">
                                     <v-flex class="header-widgets-icon">
                                         <v-icon>mdi-cart</v-icon>
                                         <v-flex class="count">5</v-flex>
                                     </v-flex>
                                     <span>My Cart</span>
-                                </a>
+                                </router-link>
                             </v-flex>
 
                             <v-flex class="top-header-widgets flex-grow-0">

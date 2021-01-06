@@ -3,6 +3,8 @@ import Vuex from "vuex";
 
 import axios from "axios";
 
+var _ = require('lodash');
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,7 +13,10 @@ export default new Vuex.Store({
     trendingProducts: {},
     auctionsClosing: {},
     productCategories: {},
-    allProduct: {}
+    allProduct: {},
+    wishListedIdsArr:[],
+    wishList:[],
+    cardItems:[]
   },
   mutations: {
     SET_AUCTION_PRODUCTS(state, products) {
@@ -28,6 +33,34 @@ export default new Vuex.Store({
     },
     SET_PRODUCTS(state, allProducts) {
       state.allProduct = allProducts;
+    },
+    SET_WISHLIST(state, allIdArr){
+      state.wishList = state.allProduct.products.filter((el) => { 
+        return allIdArr.includes(el.id) 
+      });
+    },
+    TOGGLE_TO_WISHLIST(state,productId) {
+        //TODO:database query
+        var index = state.wishListedIdsArr.indexOf(productId);
+        if (index !== -1) {
+            state.wishListedIdsArr.splice(index, 1);
+        } else {
+            state.wishListedIdsArr.push(productId);
+        }
+    },
+    UPDATE_CARDS(state,productObj){
+      var index=_.findIndex(state.cardItems,{id:productObj.id});
+      state.cardItems[index].qty=productObj.qty;
+       localStorage.setItem(
+            "jungleefy-card-items",
+            JSON.stringify(state.cardItems)
+        );
+    },
+    DELETE_FROM_CARDS(state,productId){
+       var index = state.cardItems.indexOf(productId);
+        if (index !== -1) {
+            state.cardItems.splice(index, 1);
+        } 
     }
   },
   actions: {
@@ -80,6 +113,15 @@ export default new Vuex.Store({
           console.log(error);
         })
 
+    },
+    toggleToWishList(vuexContext, productId) {
+      vuexContext.commit('TOGGLE_TO_WISHLIST', productId);
+    },
+    updateCards(vuexContext, productObj){
+      vuexContext.commit('UPDATE_CARDS', productObj);  
+    },
+    deleteFromCards(vuexContext, productId){
+      vuexContext.commit('DELETE_FROM_CARDS', productId);  
     }
   },
   modules: {}

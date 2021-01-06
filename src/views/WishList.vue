@@ -4,31 +4,101 @@
             <v-card tile>
                 <v-sheet class="watch-list-wrap">
                     <h1>Favorite Product</h1>
-                    <span class="watch-list-count">You have 4 product(s) in your wishlist</span>
+                    <span
+                        class="watch-list-count"
+                        v-text="`You have ${wishListProducts.length} product(s) in your wishlist`"
+                    ></span>
 
                     <v-flex class="watch-list-table">
                         <table>
                             <thead>
                                 <tr>
-                                    <th scope="col" class="tbl-1">Product Name</th>
-                                    <th scope="col" class="tbl-2">Unit Price</th>
-                                    <th scope="col" class="tbl-3">Product Type</th>
-                                    <th scope="col" class="tbl-4">Stock Status</th>
-                                    <th scope="col" class="tbl-5">
-                                        <span class="status">Shipping Status</span>
-                                    </th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Product Type</th>
+                                    <th scope="col">Stock Status</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="border-right" data-label="Product Name">Product Name</td>
-                                    <td data-label="Unit Price">Unit Price</td>
-                                    <td data-label="Product Type">Product Type</td>
-                                    <td data-label="Stock Status">Stock Status</td>
-                                    <td data-label="Action">Action</td>
+                                <tr
+                                    v-for="wishListProduct in wishListProducts.slice(0, 5)"
+                                    :key="wishListProduct.id"
+                                >
+                                    <td data-label="Product Name">
+                                        <v-layout class="wishlist-products-item">
+                                            <v-img
+                                                contain
+                                                max-width="80"
+                                                :src="require('@/assets/images/products/'+ wishListProduct.image)"
+                                                alt="Image"
+                                            ></v-img>
+                                            <v-flex class="wishlist-product-title flex-grow-0">
+                                                <h4 v-text="wishListProduct.title"></h4>
+                                                <a href="javascript:void(0)">
+                                                    <v-icon>mdi-delete</v-icon>
+                                                </a>
+                                            </v-flex>
+                                        </v-layout>
+                                    </td>
+                                    <td data-label="Unit Price">
+                                        <span class="unit-price" v-text="wishListProduct.price"></span>
+
+                                        <span class="bidding-status">Current Bid</span>
+                                    </td>
+                                    <td data-label="Product Type">
+                                        <v-sheet
+                                            v-if="wishListProduct.type=='Auction'"
+                                            tag="span"
+                                            dark
+                                            color="brand"
+                                            class="auction-label"
+                                        >Auction</v-sheet>
+                                        <span class="auction-label-text" v-else>Without Auction</span>
+                                    </td>
+                                    <td data-label="Stock Status">
+                                        <span
+                                            v-if="wishListProduct.qty > 0"
+                                            v-text="'In Stock'"
+                                            class="stock-status"
+                                        ></span>
+                                        <span v-else v-text="'Out of stock'" class="stock-status"></span>
+                                    </td>
+                                    <td data-label="Action" class="text-center">
+                                        <v-btn
+                                            v-if="wishListProduct.qty > 0 && wishListProduct.type !=='Auction'"
+                                            href="#"
+                                            tile
+                                            depressed
+                                            class="brand white--text text-none"
+                                        >Add to Cart</v-btn>
+                                        <v-flex v-else>
+                                            <v-btn
+                                                tile
+                                                depressed
+                                                class="grey white--text text-none"
+                                            >Add to Cart</v-btn>
+                                            <br />
+                                            <span
+                                                class="not-available"
+                                            >This Product is not available for cart</span>
+                                        </v-flex>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+                        <v-flex class="pt-5 d-flex justify-space-between align-center">
+                            <!-- pagination -->
+                            <pagination class="order-2"></pagination>
+
+                            <v-btn
+                                href="#"
+                                tile
+                                depressed
+                                class="more-product brand white--text text-none order-1"
+                            >View More Product</v-btn>
+                        </v-flex>
                     </v-flex>
                 </v-sheet>
             </v-card>
@@ -45,15 +115,37 @@
 
 <script>
 import RelatedProducts from "@/components/RelatedProducts";
+import Pagination from "@/components/services/Pagination";
 
 export default {
     name: "WatchList",
     components: {
         RelatedProducts,
+        Pagination,
     },
 
     data() {
-        return {};
+        return {
+            wishListProducts: [],
+        };
+    },
+
+    methods: {
+        getWishListProducts() {
+            let url = "http://localhost:8080/data/products.json";
+            this.$http
+                .get(url)
+                .then((result) => {
+                    this.wishListProducts = result.data.products;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+    },
+
+    mounted() {
+        this.getWishListProducts();
     },
 };
 </script>
