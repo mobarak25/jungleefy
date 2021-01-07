@@ -216,7 +216,7 @@ export default {
                 this.ratingTotalCount / this.totalPersonReted
             ).toFixed(1);
 
-            return parseFloat(avarage);
+            return avarage;
         },
     },
     methods: {

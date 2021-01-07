@@ -16,7 +16,9 @@ export default new Vuex.Store({
     allProduct: {},
     wishListedIdsArr:[],
     wishList:[],
-    cardItems:[]
+    cards:{
+      cardItems:[]
+    },    
   },
   mutations: {
     SET_AUCTION_PRODUCTS(state, products) {
@@ -49,18 +51,22 @@ export default new Vuex.Store({
         }
     },
     UPDATE_CARDS(state,productObj){
-      var index=_.findIndex(state.cardItems,{id:productObj.id});
-      state.cardItems[index].qty=productObj.qty;
+      var index=_.findIndex(state.cards.cardItems,{id:productObj.id});
+      state.cards.cardItems[index].qty=productObj.qty;
        localStorage.setItem(
             "jungleefy-card-items",
-            JSON.stringify(state.cardItems)
+            JSON.stringify(state.cards)
         );
     },
     DELETE_FROM_CARDS(state,productId){
-       var index = state.cardItems.indexOf(productId);
+       var index=_.findIndex(state.cards.cardItems,{id:productId});
         if (index !== -1) {
-            state.cardItems.splice(index, 1);
-        } 
+            state.cards.cardItems.splice(index, 1);
+        }
+        localStorage.setItem(
+            "jungleefy-card-items",
+            JSON.stringify(state.cards)
+        ); 
     }
   },
   actions: {

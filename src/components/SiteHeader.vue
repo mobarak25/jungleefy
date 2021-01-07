@@ -107,7 +107,7 @@
                                     <v-list>
                                         <v-list-item>
                                             <v-list-item-title>
-                                                <router-link :to="{name:'login'}">Sign in</router-link>
+                                                <router-link :to="{name:'Login'}">Sign in</router-link>
                                             </v-list-item-title>
                                         </v-list-item>
 

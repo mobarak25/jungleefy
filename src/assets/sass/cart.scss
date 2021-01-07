@@ -3,7 +3,7 @@
     margin: rem-calc(0 0 40px);
 
     h1 {
-        padding: rem-calc(0 0 12px);
+        padding: 0;
         @include font(primary, 35px, 40px, medium);
     }
 }
@@ -105,13 +105,43 @@
     h2 {
         height: 49px;
         padding: rem-calc(0 20px);
-        @include font(primary, 16px, 22px, semi-bold);
+        @include font(primary, 16px, 22px, bold);
         background-color: lighten(map-get($colors, grey), 45);
     }
+    .ship-info {
+        padding: rem-calc(23px 20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        h4 {
+            @include font(primary, 16px, 22px, semi-bold);
+        }
+        .address {
+            max-width: 220px;
+
+            address {
+                padding: rem-calc(10px 0 0);
+                span {
+                    padding: rem-calc(0 0 8px);
+                    display: block;
+                    @include font(primary, 15px, 20px, regular);
+                }
+                strong {
+                    font-weight: map-get($font-weight, medium);
+                }
+            }
+        }
+    }
     .cart-summary-box {
-        padding: rem-calc(0 20px);
+        padding: rem-calc(0 20px 35px);
         .coupon-code {
-            max-width: 185px;
+            padding: 0;
+            width: 55%;
+        }
+        .coupon-code-ntn {
+            width: 40%;
+            .v-btn {
+                width: 100%;
+                height: 43px;
+            }
         }
     }
     .cart-info {

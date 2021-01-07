@@ -75,15 +75,15 @@ const routes = [
   },
   {
     path: "/log-in",
-    name: "login",
+    name: "Login",
     component: () =>
-      import(/* webpackChunkName: "SignIn" */ "../views/Login.vue")
+      import(/* webpackChunkName: "SignIn" */ "../views/login.vue")
   },
   {
     path: "/sign-up",
     name: "SignUp",
     component: () =>
-      import(/* webpackChunkName: "SignUp" */ "../views/SignUp.vue")
+      import(/* webpackChunkName: "SignUp" */ "../views/sign-up.vue")
   },
   {
     path: "/my-account",
@@ -120,6 +120,12 @@ const routes = [
     name: "Cart",
     component: () =>
       import(/* webpackChunkName: "Cart" */ "../views/Cart.vue")
+  },
+  {
+    path: "/checkout",
+    name: "checkout",
+    component: () =>
+      import(/* webpackChunkName: "checkout" */ "../views/checkout.vue")
   },
 
   {

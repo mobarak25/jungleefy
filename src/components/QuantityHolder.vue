@@ -27,22 +27,12 @@ export default {
     methods: {
         increase() {
             this.quantity++;
-            this.$store.dispatch("updateCards", {
-                id: this.productId,
-                qty: this.quantity,
-            });
         },
         decrease() {
             if (this.quantity > 1) {
                 this.quantity--;
-
-                this.$store.dispatch("updateCards", {
-                    id: this.productId,
-                    qty: this.quantity,
-                });
             }
         },
-
         checkingZero() {
             if (
                 Number(this.quantity) === this.quantity &&
@@ -58,6 +48,14 @@ export default {
     },
     created() {
         this.quantity = this.qty;
+    },
+    watch: {
+        quantity: function (newVal) {
+            this.$store.dispatch("updateCards", {
+                id: this.productId,
+                qty: newVal,
+            });
+        },
     },
 };
 </script>
