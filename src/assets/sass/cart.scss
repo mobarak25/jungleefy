@@ -115,7 +115,7 @@
             @include font(primary, 16px, 22px, semi-bold);
         }
         .address {
-            max-width: 220px;
+            width: 50%;
 
             address {
                 padding: rem-calc(10px 0 0);
@@ -128,6 +128,9 @@
                     font-weight: map-get($font-weight, medium);
                 }
             }
+        }
+        .change-address {
+            max-width: 40%;
         }
     }
     .cart-summary-box {

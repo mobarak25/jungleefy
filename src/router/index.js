@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/home.vue";
 
 Vue.use(VueRouter);
 
@@ -23,7 +23,7 @@ const routes = [
     path: "/all-featured-auctions",
     name: "AllFeaturedAuctions",
     component: () =>
-      import(/* webpackChunkName: "product" */ "../views/Product.vue")
+      import(/* webpackChunkName: "product" */ "../views/product.vue")
   },
   {
     path: "/all-auctions-closing",
@@ -41,37 +41,37 @@ const routes = [
     path: "/product-details",
     name: "ProductDetails",
     component: () =>
-      import(/* webpackChunkName: "ProductDetails" */ "../views/ProductDetails.vue")
+      import(/* webpackChunkName: "ProductDetails" */ "../views/product-details.vue")
   },
   {
     path: "/post-your-ad",
     name: "postYourAd",
     component: () =>
-      import(/* webpackChunkName: "PostYourAd" */ "../views/PostYourAd.vue")
+      import(/* webpackChunkName: "PostYourAd" */ "../views/post-your-ad.vue")
   },
   {
     path: "/select-category-for-post-ad",
     name: "postYourAdCategory",
     component: () =>
-      import(/* webpackChunkName: "postYourAdCategory" */ "../views/postYourAdCategory.vue")
+      import(/* webpackChunkName: "postYourAdCategory" */ "../views/post-your-adcategory.vue")
   },
   {
     path: "/create-a-free-ad",
     name: "createAFreeAd",
     component: () =>
-      import(/* webpackChunkName: "createAFreeAd" */ "../views/createAFreeAd.vue")
+      import(/* webpackChunkName: "createAFreeAd" */ "../views/create-a-free-ad.vue")
   },
   {
     path: "/total-bid",
     name: "totalBid",
     component: () =>
-      import(/* webpackChunkName: "totalBid" */ "../views/TotalBid.vue")
+      import(/* webpackChunkName: "totalBid" */ "../views/total-bid.vue")
   },
   {
     path: "/wish-list",
     name: "WishList",
     component: () =>
-      import(/* webpackChunkName: "watchList" */ "../views/WishList.vue")
+      import(/* webpackChunkName: "watchList" */ "../views/wish-list.vue")
   },
   {
     path: "/log-in",
@@ -89,37 +89,37 @@ const routes = [
     path: "/my-account",
     name: "MyAccount",
     component: () =>
-      import(/* webpackChunkName: "MyAccount" */ "../views/MyAccount.vue")
+      import(/* webpackChunkName: "MyAccount" */ "../views/my-account.vue")
   },
   {
     path: "/my-order",
     name: "MyOrder",
     component: () =>
-      import(/* webpackChunkName: "MyOrder" */ "../views/MyOrder.vue")
+      import(/* webpackChunkName: "MyOrder" */ "../views/my-order.vue")
   },
   {
     path: "/my-auction",
     name: "MyAuction",
     component: () =>
-      import(/* webpackChunkName: "MyAuction" */ "../views/MyAuction.vue")
+      import(/* webpackChunkName: "MyAuction" */ "../views/my-auction.vue")
   },
   {
     path: "/buying-item",
     name: "BuyingItem",
     component: () =>
-      import(/* webpackChunkName: "BuyingItem" */ "../views/BuyingItem.vue")
+      import(/* webpackChunkName: "BuyingItem" */ "../views/buying-item.vue")
   },
   {
     path: "/selling-item",
     name: "SellingItem",
     component: () =>
-      import(/* webpackChunkName: "SellingItem" */ "../views/SellingItem.vue")
+      import(/* webpackChunkName: "SellingItem" */ "../views/selling-item.vue")
   },
   {
     path: "/my-cart",
     name: "Cart",
     component: () =>
-      import(/* webpackChunkName: "Cart" */ "../views/Cart.vue")
+      import(/* webpackChunkName: "Cart" */ "../views/cart.vue")
   },
   {
     path: "/checkout",
@@ -131,7 +131,7 @@ const routes = [
   {
     path: '/*',
     component: () =>
-      import(/* webpackChunkName: "NotFound" */ "../views/NotFound.vue")
+      import(/* webpackChunkName: "NotFound" */ "../views/not-found.vue")
   }
 ];
 

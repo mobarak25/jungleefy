@@ -64,7 +64,7 @@
                                 <v-flex class="cart-summary">
                                     <h2 class="d-flex align-center">Ship to</h2>
                                     <v-flex class="ship-info d-flex flex-wrap">
-                                        <v-flex class="address">
+                                        <v-flex class="address flex-grow-0">
                                             <h4>Location</h4>
                                             <address>
                                                 <span>
@@ -81,7 +81,8 @@
                                                 </span>
                                             </address>
                                         </v-flex>
-                                        <v-flex class="ff">
+
+                                        <v-flex class="change-address flex-grow-0">
                                             <v-list>
                                                 <v-list-group
                                                     v-for="item in items"
