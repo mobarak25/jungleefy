@@ -58,6 +58,14 @@ export default new Vuex.Store({
             JSON.stringify(state.cards)
         );
     },
+    UPDATE_ADDRESS(state,location){
+      
+      state.cards.location=location;
+       localStorage.setItem(
+            "jungleefy-card-items",
+            JSON.stringify(state.cards)
+        );
+    },
     DELETE_FROM_CARDS(state,productId){
        var index=_.findIndex(state.cards.cardItems,{id:productId});
         if (index !== -1) {

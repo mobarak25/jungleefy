@@ -1,0 +1,115 @@
+.payment-list-wrap {
+    padding: rem-calc(30px);
+    margin: rem-calc(0 0 40px);
+
+    .v-btn {
+        &.confirm-order {
+            height: 50px;
+            width: 300px;
+            @include font(false, 18px, 26px, semi-bold);
+        }
+    }
+}
+.payment-top {
+    padding: rem-calc(30px);
+    margin: rem-calc(0 0 28px);
+    background-color: lighten(map-get($colors, grey), 45);
+
+    h3 {
+        padding: rem-calc(0 0 10px);
+        @include font(primary, 20px, 26px, semi-bold);
+    }
+    span {
+        display: block;
+        @include font(false, 15px, 22px, false);
+    }
+}
+
+.payment-list {
+    .v-radio {
+        height: 111px;
+        padding: rem-calc(0 40px);
+        margin: rem-calc(10px 0);
+        background-color: lighten(map-get($colors, grey), 45);
+        border: 1px solid lighten(map-get($colors, grey), 45);
+        &.v-item--active {
+            border-color: map-get($colors, brand);
+        }
+
+        .payment-title {
+            span {
+                padding-right: rem-calc(20px);
+                @include font(primary, 19px, 26px, semi-bold);
+            }
+        }
+    }
+}
+.cart-summary {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    h2 {
+        height: 49px;
+        padding: rem-calc(0 20px);
+        @include font(primary, 16px, 22px, bold);
+        background-color: lighten(map-get($colors, grey), 45);
+    }
+    .ship-info {
+        padding: rem-calc(23px 20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        h4 {
+            @include font(primary, 16px, 22px, semi-bold);
+        }
+        .address {
+            width: 50%;
+
+            address {
+                padding: rem-calc(10px 0 0);
+                span {
+                    padding: rem-calc(0 0 8px);
+                    display: block;
+                    @include font(primary, 15px, 20px, regular);
+                }
+                strong {
+                    font-weight: map-get($font-weight, medium);
+                }
+            }
+        }
+        .change-address {
+            h4 {
+                text-decoration: underline;
+            }
+        }
+    }
+    .cart-summary-box {
+        padding: rem-calc(0 20px 35px);
+        .coupon-code {
+            padding: 0;
+            width: 55%;
+        }
+        .coupon-code-ntn {
+            width: 40%;
+            .v-btn {
+                width: 100%;
+                height: 43px;
+            }
+        }
+    }
+    .cart-info {
+        height: 50px;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+        strong {
+            width: 50%;
+            @include font(primary, 16px, 22px, medium);
+        }
+        span {
+            width: 50%;
+            @include font(primary, 15px, 22px, medium);
+
+            &.grand-total {
+                @include font(false, 18px, 22px, semi-bold);
+            }
+        }
+    }
+}

@@ -63,50 +63,61 @@
                             <v-col md="4">
                                 <v-flex class="cart-summary">
                                     <h2 class="d-flex align-center">Ship to</h2>
-                                    <v-flex class="ship-info d-flex flex-wrap">
+                                    <v-flex
+                                        class="ship-info d-flex flex-wrap justify-space-between"
+                                    >
                                         <v-flex class="address flex-grow-0">
                                             <h4>Location</h4>
                                             <address>
                                                 <span>
                                                     Name:
-                                                    <strong>Abir Amzad</strong>
+                                                    <strong v-text="cards.location.name"></strong>
                                                 </span>
                                                 <span>
                                                     Phone:
-                                                    <strong>01823 895 372</strong>
+                                                    <strong v-text="cards.location.phone"></strong>
+                                                </span>
+                                                <span class="text-truncate">
+                                                    Email:
+                                                    <strong v-text="cards.location.email"></strong>
                                                 </span>
                                                 <span>
                                                     Address:
-                                                    <strong>Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212</strong>
+                                                    <strong v-text="cards.location.address"></strong>
                                                 </span>
                                             </address>
                                         </v-flex>
 
                                         <v-flex class="change-address flex-grow-0">
-                                            <v-list>
-                                                <v-list-group
-                                                    v-for="item in items"
-                                                    :key="item.title"
-                                                    v-model="item.active"
-                                                    :prepend-icon="item.action"
-                                                    no-action
-                                                >
-                                                    <template v-slot:activator>
-                                                        <v-list-item-content>
-                                                            <v-list-item-title v-text="item.title"></v-list-item-title>
-                                                        </v-list-item-content>
-                                                    </template>
-
+                                            <v-menu
+                                                transition="slide-x-transition"
+                                                bottom
+                                                left
+                                                offset-y
+                                                rounded="0"
+                                            >
+                                                <template v-slot:activator="{ on, attrs }">
+                                                    <h4
+                                                        v-bind="attrs"
+                                                        v-on="on"
+                                                        class="pointer"
+                                                    >Change</h4>
+                                                </template>
+                                                <v-list dense>
                                                     <v-list-item
-                                                        v-for="child in item.items"
-                                                        :key="child.title"
+                                                        v-for="shipping in shippingAddress"
+                                                        :key="shipping.id"
                                                     >
-                                                        <v-list-item-content>
-                                                            <v-list-item-title v-text="child.title"></v-list-item-title>
-                                                        </v-list-item-content>
+                                                        <v-list-item-title>
+                                                            <a
+                                                                @click="changeAddress(shipping)"
+                                                                href="javascript:void(0)"
+                                                                v-text="shipping.title"
+                                                            ></a>
+                                                        </v-list-item-title>
                                                     </v-list-item>
-                                                </v-list-group>
-                                            </v-list>
+                                                </v-list>
+                                            </v-menu>
                                         </v-flex>
                                     </v-flex>
 
@@ -144,7 +155,7 @@
 
                                             <v-flex class="coupon-code-ntn flex-grow-0">
                                                 <v-btn
-                                                    :to="{name:'CartDetails'}"
+                                                    :to="{name:'checkout'}"
                                                     type="submit"
                                                     tile
                                                     depressed
@@ -154,17 +165,16 @@
                                         </v-layout>
                                     </v-flex>
                                 </v-flex>
+                                <v-flex class="pt-8 d-flex">
+                                    <v-btn
+                                        :to="{name:'payment'}"
+                                        tile
+                                        depressed
+                                        class="more-product brand white--text text-none order-1"
+                                    >Continue To Payment</v-btn>
+                                </v-flex>
                             </v-col>
                         </v-row>
-
-                        <v-flex class="pt-5 d-flex">
-                            <v-btn
-                                :to="{name:'AllFeaturedAuctions'}"
-                                tile
-                                depressed
-                                class="more-product brand white--text text-none order-1"
-                            >Continue Shopping</v-btn>
-                        </v-flex>
                     </v-flex>
                 </v-sheet>
             </v-card>
@@ -184,7 +194,7 @@ import RelatedProducts from "@/components/RelatedProducts";
 import QuantityHolder from "@/components/QuantityHolder";
 
 export default {
-    name: "CartDetails",
+    name: "checkout",
     components: {
         RelatedProducts,
         QuantityHolder,
@@ -193,17 +203,23 @@ export default {
         return {
             coupon_code: "",
             shipping_fee: 70,
-            panel: [0],
-            items: [
+            shippingAddress: [
                 {
-                    title: "Attractions",
-                    action: "mdi-ticket",
-                    items: [{ title: "List Item" }],
+                    id: 1,
+                    title: "Own House",
+                    name: "Abir Amzad",
+                    phone: "01823 895 372",
+                    email: "info@gmail.com",
+                    address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
                 },
-            ],
-            shippingLocations: [
-                { id: 1, title: "Own Address" },
-                { id: 2, title: "Brothers Address" },
+                {
+                    id: 2,
+                    title: "Brother House",
+                    name: "Md. Mobarak Ali",
+                    phone: "01767513948",
+                    email: "mobarakali62@gmail.com",
+                    address: "MF Tower, Pragati Sharani, Link Rd, Dhaka 1212",
+                },
             ],
         };
     },
@@ -236,6 +252,9 @@ export default {
 
         removeProduct(productId) {
             this.$store.dispatch("deleteFromCards", productId);
+        },
+        changeAddress(val) {
+            this.$store.commit("UPDATE_ADDRESS", val);
         },
     },
     created() {

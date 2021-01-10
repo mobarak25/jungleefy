@@ -127,6 +127,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "checkout" */ "../views/checkout.vue")
   },
+  {
+    path: "/payment",
+    name: "payment",
+    component: () =>
+      import(/* webpackChunkName: "payment" */ "../views/payment.vue")
+  },
 
   {
     path: '/*',
