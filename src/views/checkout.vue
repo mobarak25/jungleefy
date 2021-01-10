@@ -167,7 +167,7 @@
                                 </v-flex>
                                 <v-flex class="pt-8 d-flex">
                                     <v-btn
-                                        :to="{name:'payment'}"
+                                        :to="{name:'Payment'}"
                                         tile
                                         depressed
                                         class="more-product brand white--text text-none order-1"

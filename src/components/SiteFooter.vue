@@ -63,7 +63,9 @@
                         <v-flex>
                             <ul>
                                 <li v-for="(information, index) in informations" :key="index">
-                                    <a href="#">{{information.text}}</a>
+                                    <router-link
+                                        :to="{name:`${information.link}`}"
+                                    >{{information.text}}</router-link>
                                 </li>
                             </ul>
                         </v-flex>
@@ -119,7 +121,7 @@ export default {
         ],
         accountInfos: [
             { id: 1, text: "My Account", link: "MyAccount" },
-            { id: 2, text: "Orders", link: "MyAccount" },
+            { id: 2, text: "Orders", link: "MyOrder" },
             { id: 3, text: "Addresses", link: "MyAccount" },
             {
                 id: 4,
@@ -130,13 +132,13 @@ export default {
             { id: 6, text: "Help", link: "MyAccount" },
         ],
         informations: [
-            { id: 1, text: "About Us" },
-            { id: 2, text: "Contact" },
-            { id: 3, text: "Our Blog" },
-            { id: 4, text: "Careers" },
-            { id: 5, text: "Delivery Information" },
-            { id: 6, text: "Privacy Policy" },
-            { id: 7, text: "Terms & Conditions" },
+            { id: 1, text: "About Us", link: "MyAccount" },
+            { id: 2, text: "Contact", link: "Contact" },
+            { id: 3, text: "Our Blog", link: "MyAccount" },
+            { id: 4, text: "Careers", link: "MyAccount" },
+            { id: 5, text: "Delivery Information", link: "MyAccount" },
+            { id: 6, text: "Privacy Policy", link: "MyAccount" },
+            { id: 7, text: "Terms & Conditions", link: "MyAccount" },
         ],
     }),
 };

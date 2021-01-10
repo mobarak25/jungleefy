@@ -1,0 +1,46 @@
+.contact-panel {
+    padding: rem-calc(70px 0);
+    margin: 0;
+
+    .contact-top {
+        padding-bottom: rem-calc(55px);
+        h3 {
+            padding-bottom: rem-calc(27px);
+            @include font(primary, 22px, 28px, medium);
+        }
+        p {
+            @include font(primary, 15px, 26px, false);
+        }
+    }
+    .contact-left {
+        padding: 0;
+        margin: 0;
+
+        .contact-left-box {
+            padding-bottom: rem-calc(50px);
+            margin: 0;
+            address {
+                font-style: normal;
+                @include font(false, 17px, 32px, medium);
+            }
+            h4 {
+                @include font(brand, 17px, 32px, medium);
+            }
+            a {
+                @include font(false, 17px, 32px, medium);
+            }
+        }
+    }
+    .contact-right {
+        .input-wrap {
+            padding-bottom: rem-calc(25px);
+        }
+        .v-btn {
+            &.contact-btn {
+                width: 197px;
+                height: 60px;
+                @include font(false, 20px, 26px, medium);
+            }
+        }
+    }
+}
