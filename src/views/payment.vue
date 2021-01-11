@@ -30,6 +30,20 @@
                                             </template>
                                         </v-radio>
                                     </v-col>
+
+                                    <v-col md="12" class="py-0">
+                                        <v-radio value="Card Payment">
+                                            <template v-slot:label>
+                                                <div class="payment-title d-flex align-center">
+                                                    <span>Card Payment</span>
+                                                    <v-img
+                                                        :src="require('@/assets/images/bank-payment.png')"
+                                                        alt
+                                                    ></v-img>
+                                                </div>
+                                            </template>
+                                        </v-radio>
+                                    </v-col>
                                 </v-row>
                             </v-radio-group>
                         </v-col>
@@ -92,8 +106,8 @@
                                 <h2 class="d-flex align-center">Summary</h2>
                                 <v-flex class="cart-summary-box">
                                     <v-flex class="cart-info">
-                                        <strong>Subtotal:</strong>
-                                        <span v-text="`TK${Subtotal}`"></span>
+                                        <strong>subTotal:</strong>
+                                        <span v-text="`TK${subTotal}`"></span>
                                     </v-flex>
 
                                     <v-flex class="cart-info">
@@ -111,20 +125,19 @@
                                     <v-layout class="pt-8 justify-space-between">
                                         <v-flex class="input-wrap coupon-code flex-grow-0">
                                             <v-text-field
+                                                v-model="coupon_code"
                                                 solo
                                                 flat
                                                 hide-details
                                                 outlined
-                                                type="number"
+                                                type="text"
                                                 label="Enter Your Coupon code"
-                                                v-model="coupon_code"
                                             ></v-text-field>
                                         </v-flex>
 
                                         <v-flex class="coupon-code-ntn flex-grow-0">
                                             <v-btn
-                                                :to="{name:'checkout'}"
-                                                type="submit"
+                                                @click="applyCoupon()"
                                                 tile
                                                 depressed
                                                 class="primary white--text text-none"
@@ -155,8 +168,6 @@ export default {
 
     data() {
         return {
-            coupon_code: "",
-            shipping_fee: 70,
             paymentMethod: "Cash on Delivery",
             paymentItems: [
                 {
@@ -180,39 +191,22 @@ export default {
                     logo: "payment-dmony.png",
                 },
             ],
-            shippingAddress: [
-                {
-                    id: 1,
-                    title: "Own House",
-                    name: "Abir Amzad",
-                    phone: "01823 895 372",
-                    email: "info@gmail.com",
-                    address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
-                },
-                {
-                    id: 2,
-                    title: "Brother House",
-                    name: "Md. Mobarak Ali",
-                    phone: "01767513948",
-                    email: "mobarakali62@gmail.com",
-                    address: "MF Tower, Pragati Sharani, Link Rd, Dhaka 1212",
-                },
-            ],
         };
     },
     computed: {
         cards() {
             return this.$store.state.cards;
         },
-        Subtotal() {
-            var SubtotalHolder = 0;
+        subTotal() {
+            var subTotalHolder = 0;
             this.cards.cardItems.forEach((element) => {
-                SubtotalHolder += element.basePrice * element.qty;
+                subTotalHolder += element.basePrice * element.qty;
             });
-            return SubtotalHolder;
+
+            return subTotalHolder - this.couponDiscount;
         },
         grandTotal() {
-            var grandTotalHolder = (this.Subtotal + this.shipping_fee).toFixed(
+            var grandTotalHolder = (this.subTotal + this.shipping_fee).toFixed(
                 2
             );
             return grandTotalHolder;
@@ -225,6 +219,13 @@ export default {
 
         changeAddress(val) {
             this.$store.commit("UPDATE_ADDRESS", val);
+        },
+        applyCoupon() {
+            this.couponDiscount = 20;
+            this.subTotal();
+            // if (this.coupon_code) {
+            //     return (this.subTotal = this.subTotal - this.couponDiscount);
+            // }
         },
     },
     created() {

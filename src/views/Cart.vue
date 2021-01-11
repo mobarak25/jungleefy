@@ -56,51 +56,7 @@
                                 </table>
                             </v-col>
                             <v-col md="4">
-                                <v-flex class="cart-summary">
-                                    <h2 class="d-flex align-center">Summary</h2>
-                                    <v-flex class="cart-summary-box">
-                                        <v-flex class="cart-info">
-                                            <strong>Subtotal:</strong>
-                                            <span v-text="`TK${Subtotal}`"></span>
-                                        </v-flex>
-
-                                        <v-flex class="cart-info">
-                                            <strong>Shipping Fee:</strong>
-                                            <span v-text="`TK${shipping_fee}`"></span>
-                                        </v-flex>
-                                        <v-flex class="cart-info">
-                                            <strong>Total:</strong>
-                                            <span
-                                                class="grand-total brand--text"
-                                                v-text="`TK${grandTotal}`"
-                                            ></span>
-                                        </v-flex>
-
-                                        <v-layout class="pt-8 justify-space-between">
-                                            <v-flex class="input-wrap coupon-code flex-grow-0">
-                                                <v-text-field
-                                                    solo
-                                                    flat
-                                                    hide-details
-                                                    outlined
-                                                    type="number"
-                                                    label="Enter Your Coupon code"
-                                                    v-model="coupon_code"
-                                                ></v-text-field>
-                                            </v-flex>
-
-                                            <v-flex class="coupon-code-ntn flex-grow-0">
-                                                <v-btn
-                                                    :to="{name:'checkout'}"
-                                                    type="submit"
-                                                    tile
-                                                    depressed
-                                                    class="primary white--text text-none"
-                                                >Apply Coupon</v-btn>
-                                            </v-flex>
-                                        </v-layout>
-                                    </v-flex>
-                                </v-flex>
+                                <order-summay :login="false"></order-summay>
                             </v-col>
                         </v-row>
 
@@ -129,32 +85,52 @@
 <script>
 import RelatedProducts from "@/components/RelatedProducts";
 import QuantityHolder from "@/components/QuantityHolder";
+import OrderSummay from "@/components/sites/common/OrderSummay";
 
 export default {
     name: "Cart",
     components: {
         RelatedProducts,
         QuantityHolder,
+        OrderSummay,
     },
     data() {
         return {
             coupon_code: "",
             shipping_fee: 70,
+            shippingAddress: [
+                {
+                    id: 1,
+                    title: "Own House",
+                    name: "Abir Amzad",
+                    phone: "01823 895 372",
+                    email: "info@gmail.com",
+                    address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
+                },
+                {
+                    id: 2,
+                    title: "Brother House",
+                    name: "Md. Mobarak Ali",
+                    phone: "01767513948",
+                    email: "mobarakali62@gmail.com",
+                    address: "MF Tower, Pragati Sharani, Link Rd, Dhaka 1212",
+                },
+            ],
         };
     },
     computed: {
         cards() {
             return this.$store.state.cards;
         },
-        Subtotal() {
-            var SubtotalHolder = 0;
+        subTotal() {
+            var subTotalHolder = 0;
             this.cards.cardItems.forEach((element) => {
-                SubtotalHolder += element.basePrice * element.qty;
+                subTotalHolder += element.basePrice * element.qty;
             });
-            return SubtotalHolder;
+            return subTotalHolder;
         },
         grandTotal() {
-            var grandTotalHolder = (this.Subtotal + this.shipping_fee).toFixed(
+            var grandTotalHolder = (this.subTotal + this.shipping_fee).toFixed(
                 2
             );
             return grandTotalHolder;
@@ -177,6 +153,14 @@ export default {
         // localStorage.setItem(
         //     "jungleefy-card-items",
         //     JSON.stringify({
+        //         location: {
+        //             id: 1,
+        //             title: "Own House",
+        //             name: "Abir Amzad",
+        //             phone: "01823 895 372",
+        //             email: "info@gmail.com",
+        //             address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
+        //         },
         //         cardItems: [
         //             {
         //                 id: 2,

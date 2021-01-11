@@ -31,7 +31,7 @@ import HomeProdutSections from "@/components/HomeProdutSections";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HomePopularCategory from "@/components/HomePopularCategory";
 import HomeSellerSection from "@/components/HomeSellerSection";
-import HowToBid from "@/components/HowToBid";
+import HowToBid from "@/components/sites/common/HowToBid";
 export default {
     name: "Home",
 

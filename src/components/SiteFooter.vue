@@ -132,7 +132,7 @@ export default {
             { id: 6, text: "Help", link: "MyAccount" },
         ],
         informations: [
-            { id: 1, text: "About Us", link: "MyAccount" },
+            { id: 1, text: "About Us", link: "AboutUs" },
             { id: 2, text: "Contact", link: "Contact" },
             { id: 3, text: "Our Blog", link: "MyAccount" },
             { id: 4, text: "Careers", link: "MyAccount" },

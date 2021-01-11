@@ -17,6 +17,7 @@ export default new Vuex.Store({
     wishListedIdsArr:[],
     wishList:[],
     cards:{
+      
       cardItems:[]
     },    
   },

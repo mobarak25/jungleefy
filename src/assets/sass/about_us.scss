@@ -1,0 +1,21 @@
+.about-panel {
+    padding: rem-calc(70px 0 65px);
+    margin: 0;
+
+    .about-box {
+        padding: 0;
+        margin: 0;
+
+        h3 {
+            padding: rem-calc(0 0 15px);
+            @include font(brand, 22px, 26px, medium);
+        }
+        p {
+            padding: rem-calc(0 0 26px);
+            @include font(false, 15px, 26px, false);
+        }
+        &.about-box-bg {
+            background-color: lighten(map-get($colors, grey), 44);
+        }
+    }
+}
