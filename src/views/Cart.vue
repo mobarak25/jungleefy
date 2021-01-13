@@ -56,7 +56,17 @@
                                 </table>
                             </v-col>
                             <v-col md="4">
+                                <!-- order-summay information-->
                                 <order-summay :login="false"></order-summay>
+
+                                <v-flex class="pt-8 d-flex">
+                                    <v-btn
+                                        :to="{name:'checkout'}"
+                                        tile
+                                        depressed
+                                        class="confirm-order brand white--text text-none order-1"
+                                    >Checkout</v-btn>
+                                </v-flex>
                             </v-col>
                         </v-row>
 

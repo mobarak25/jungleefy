@@ -145,6 +145,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "AboutUs" */ "../views/about-us.vue")
   },
+  {
+    path: "/delivery-information",
+    name: "DeliveryInformation",
+    component: () =>
+      import(/* webpackChunkName: "DeliveryInformation" */ "../views/delivery-information.vue")
+  },
+  {
+    path: "/terms-and-conditions",
+    name: "TermsAndConditions",
+    component: () =>
+      import(/* webpackChunkName: "TermsAndConditions" */ "../views/terms-and-conditions.vue")
+  },
+  {
+    path: "/privacy-policy",
+    name: "PrivacyPolicy",
+    component: () =>
+      import(/* webpackChunkName: "PrivacyPolicy" */ "../views/privacy-policy.vue")
+  },
 
   {
     path: '/*',

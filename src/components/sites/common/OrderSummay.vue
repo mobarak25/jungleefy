@@ -53,6 +53,11 @@
                 <span v-text="`TK${subTotal}`"></span>
             </v-flex>
 
+            <v-flex class="cart-info" v-if="this.cards.coupon.code">
+                <strong v-text="'Coupon: '+this.cards.coupon.code"></strong>
+                <span v-text="'TK (-' + this.cards.coupon.discount +')'"></span>
+            </v-flex>
+
             <v-flex class="cart-info">
                 <strong>Shipping Fee:</strong>
                 <span v-text="`TK${shipping_fee}`"></span>
@@ -65,11 +70,12 @@
             <v-layout class="pt-8 justify-space-between">
                 <v-flex class="input-wrap coupon-code flex-grow-0">
                     <v-text-field
-                        v-model="coupon_code"
+                        v-model="coupon.code"
                         solo
                         flat
                         hide-details
                         outlined
+                        autocomplete="off"
                         type="text"
                         label="Enter Your Coupon code"
                     ></v-text-field>
@@ -98,8 +104,11 @@ export default {
 
     data() {
         return {
-            coupon_code: "",
-            couponDiscount: 0,
+            coupon: {
+                code: "",
+                discount: 20,
+            },
+
             shipping_fee: 70,
             shippingAddress: [
                 {
@@ -130,8 +139,12 @@ export default {
             this.cards.cardItems.forEach((element) => {
                 subTotalHolder += element.basePrice * element.qty;
             });
-
-            return subTotalHolder - this.couponDiscount;
+            if (this.cards.coupon.code) {
+                return (subTotalHolder =
+                    subTotalHolder - this.cards.coupon.discount);
+            } else {
+                return subTotalHolder;
+            }
         },
         grandTotal() {
             var grandTotalHolder = (this.subTotal + this.shipping_fee).toFixed(
@@ -149,8 +162,7 @@ export default {
             this.$store.commit("UPDATE_ADDRESS", val);
         },
         applyCoupon() {
-            this.couponDiscount = 20;
-            this.subTotal();
+            this.$store.commit("UPDATE_COUPON", this.coupon);
         },
     },
     created() {
@@ -182,4 +194,74 @@ export default {
 </script>
 
 <style lang="scss">
+.cart-summary {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    h2 {
+        height: 49px;
+        padding: rem-calc(0 20px);
+        @include font(primary, 16px, 22px, bold);
+        background-color: lighten(map-get($colors, grey), 45);
+    }
+    .ship-info {
+        padding: rem-calc(23px 20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        h4 {
+            @include font(primary, 16px, 22px, semi-bold);
+        }
+        .address {
+            width: 50%;
+
+            address {
+                padding: rem-calc(10px 0 0);
+                font-style: normal;
+                span {
+                    padding: rem-calc(0 0 8px);
+                    display: block;
+                    @include font(primary, 15px, 20px, regular);
+                }
+                strong {
+                    font-weight: map-get($font-weight, medium);
+                }
+            }
+        }
+        .change-address {
+            h4 {
+                text-decoration: underline;
+            }
+        }
+    }
+    .cart-summary-box {
+        padding: rem-calc(0 20px 35px);
+        .coupon-code {
+            padding: 0;
+            width: 55%;
+        }
+        .coupon-code-ntn {
+            width: 40%;
+            .v-btn {
+                width: 100%;
+                height: 43px;
+            }
+        }
+    }
+    .cart-info {
+        height: 50px;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+        strong {
+            width: 50%;
+            @include font(primary, 16px, 22px, medium);
+        }
+        span {
+            width: 50%;
+            @include font(primary, 15px, 22px, medium);
+
+            &.grand-total {
+                @include font(false, 18px, 22px, semi-bold);
+            }
+        }
+    }
+}
 </style>

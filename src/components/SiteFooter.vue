@@ -136,9 +136,13 @@ export default {
             { id: 2, text: "Contact", link: "Contact" },
             { id: 3, text: "Our Blog", link: "MyAccount" },
             { id: 4, text: "Careers", link: "MyAccount" },
-            { id: 5, text: "Delivery Information", link: "MyAccount" },
-            { id: 6, text: "Privacy Policy", link: "MyAccount" },
-            { id: 7, text: "Terms & Conditions", link: "MyAccount" },
+            {
+                id: 5,
+                text: "Delivery Information",
+                link: "DeliveryInformation",
+            },
+            { id: 6, text: "Privacy Policy", link: "PrivacyPolicy" },
+            { id: 7, text: "Terms & Conditions", link: "TermsAndConditions" },
         ],
     }),
 };

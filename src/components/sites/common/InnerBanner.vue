@@ -5,7 +5,7 @@
             alt="options.title + 'Image'"
         >
             <v-container class="fill-height d-flex align-center">
-                <h1 v-text="options.title"></h1>
+                <h1 v-html="options.title"></h1>
             </v-container>
         </v-img>
     </v-flex>
@@ -27,6 +27,12 @@ export default {
 
     h1 {
         @include font(primary, 40px, 50px, medium);
+
+        span {
+            padding-top: rem-calc(5px);
+            display: block;
+            @include font(false, 16px, 22px, regular);
+        }
     }
 }
 </style>

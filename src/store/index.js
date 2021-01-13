@@ -76,6 +76,13 @@ export default new Vuex.Store({
             "jungleefy-card-items",
             JSON.stringify(state.cards)
         ); 
+    },
+    UPDATE_COUPON(state,coupon){
+      state.cards.coupon=coupon;
+      localStorage.setItem(
+        "jungleefy-card-items",
+        JSON.stringify(state.cards)
+      );
     }
   },
   actions: {
