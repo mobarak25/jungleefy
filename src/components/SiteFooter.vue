@@ -28,7 +28,7 @@
                         <v-flex>
                             <ul>
                                 <li v-for="(work, index) in howWorks" :key="index">
-                                    <a href="#">{{work.text}}</a>
+                                    <router-link :to="{name:'`${work.link}`'}">{{work.text}}</router-link>
                                 </li>
                             </ul>
                         </v-flex>
@@ -104,11 +104,11 @@ export default {
         icons: ["mdi-twitter", "mdi-facebook", "mdi-youtube", "mdi-linkedin"],
 
         howWorks: [
-            { id: 1, text: "Online Auction" },
-            { id: 2, text: "How to Bid" },
-            { id: 3, text: "Auction Fees" },
-            { id: 4, text: "Shipping Fees" },
-            { id: 5, text: "Auction FAQ's" },
+            { id: 1, text: "Online Auction", link: "MyAccount" },
+            { id: 2, text: "How to Bid", link: "MyAccount" },
+            { id: 3, text: "Auction Fees", link: "MyAccount" },
+            { id: 4, text: "Shipping Fees", link: "MyAccount" },
+            { id: 5, text: "Auction FAQ's", link: "MyAccount" },
         ],
         categories: [
             { id: 1, text: "Drop shipping" },

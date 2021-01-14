@@ -163,6 +163,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "PrivacyPolicy" */ "../views/privacy-policy.vue")
   },
+  {
+    path: "/faq",
+    name: "Faq",
+    component: () =>
+      import(/* webpackChunkName: "Faq" */ "../views/faq.vue")
+  },
 
   {
     path: '/*',
