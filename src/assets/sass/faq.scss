@@ -1,0 +1,50 @@
+.tab-panel {
+    padding: rem-calc(60px 0);
+    .tab-left {
+        width: 70%;
+    }
+    .tab-right {
+        width: 20%;
+    }
+    .v-tabs-bar {
+        width: 330px;
+        margin-right: 70px;
+    }
+    .v-tab {
+        justify-content: start;
+        color: map-get($colors, primary) !important;
+        @include font(false, 15px, 22px, regular);
+        &.v-tab--active {
+            color: map-get($colors, brand) !important;
+        }
+    }
+    .v-tab:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        background-color: #ddd;
+    }
+    .v-tabs-slider {
+        display: none;
+    }
+    .v-expansion-panel::before {
+        box-shadow: none;
+    }
+    .v-expansion-panel-header {
+        padding: rem-calc(24px 0);
+        @include font(primary, 19px, 22px, medium);
+    }
+
+    .v-expansion-panel-content {
+        p {
+            @include font(primary, 15px, 28px, regular);
+        }
+    }
+    .v-expansion-panel-content__wrap {
+        padding: 30px 15px 28px;
+        border-top: 1px solid #ddd;
+    }
+}

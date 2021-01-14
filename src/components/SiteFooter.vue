@@ -28,7 +28,7 @@
                         <v-flex>
                             <ul>
                                 <li v-for="(work, index) in howWorks" :key="index">
-                                    <router-link :to="{name:'`${work.link}`'}">{{work.text}}</router-link>
+                                    <router-link :to="{name:`${work.link}`}">{{work.text}}</router-link>
                                 </li>
                             </ul>
                         </v-flex>
@@ -108,7 +108,7 @@ export default {
             { id: 2, text: "How to Bid", link: "MyAccount" },
             { id: 3, text: "Auction Fees", link: "MyAccount" },
             { id: 4, text: "Shipping Fees", link: "MyAccount" },
-            { id: 5, text: "Auction FAQ's", link: "MyAccount" },
+            { id: 5, text: "Auction FAQ's", link: "Faq" },
         ],
         categories: [
             { id: 1, text: "Drop shipping" },
