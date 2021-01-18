@@ -15,6 +15,7 @@
 </template>
 <script>
 export default {
+    name: "QuantityHolder",
     data() {
         return {
             quantity: 0,

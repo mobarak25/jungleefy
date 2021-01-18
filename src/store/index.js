@@ -19,7 +19,9 @@ export default new Vuex.Store({
     cards:{
       
       cardItems:[]
-    },    
+    },
+    
+    blogPosts:[]
   },
   mutations: {
     SET_AUCTION_PRODUCTS(state, products) {
@@ -83,7 +85,14 @@ export default new Vuex.Store({
         "jungleefy-card-items",
         JSON.stringify(state.cards)
       );
-    }
+    },
+    SET_POSTS(state,allPosts){
+      state.blogPosts=allPosts.posts;
+      localStorage.setItem(
+        "jungleefy-blog-posts",
+        JSON.stringify(state.blogPosts)
+      );
+    },
   },
   actions: {
     getFeaturedAuctions({ commit }) {
@@ -136,6 +145,16 @@ export default new Vuex.Store({
         })
 
     },
+    getPosts({ commit }) {
+      let url = "http://localhost:8080/data/blog.json";
+      axios.get(url)
+        .then(result => {
+          commit('SET_POSTS', result.data)
+        }).catch(error => {
+          console.log(error);
+        })
+
+    },
     toggleToWishList(vuexContext, productId) {
       vuexContext.commit('TOGGLE_TO_WISHLIST', productId);
     },
@@ -144,7 +163,7 @@ export default new Vuex.Store({
     },
     deleteFromCards(vuexContext, productId){
       vuexContext.commit('DELETE_FROM_CARDS', productId);  
-    }
+    },
   },
   modules: {}
 });

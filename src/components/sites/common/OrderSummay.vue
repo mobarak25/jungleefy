@@ -71,6 +71,7 @@
                 <v-flex class="input-wrap coupon-code flex-grow-0">
                     <v-text-field
                         v-model="coupon.code"
+                        value="4557"
                         solo
                         flat
                         hide-details

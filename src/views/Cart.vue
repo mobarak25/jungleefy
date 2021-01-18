@@ -160,28 +160,32 @@ export default {
         },
     },
     created() {
-        // localStorage.setItem(
-        //     "jungleefy-card-items",
-        //     JSON.stringify({
-        //         location: {
-        //             id: 1,
-        //             title: "Own House",
-        //             name: "Abir Amzad",
-        //             phone: "01823 895 372",
-        //             email: "info@gmail.com",
-        //             address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
-        //         },
-        //         cardItems: [
-        //             {
-        //                 id: 2,
-        //                 img: "product-8.jpg",
-        //                 title: "Nikon COOLPIX B500 Digital Camera (Black)",
-        //                 qty: 3,
-        //                 basePrice: 500,
-        //             },
-        //         ],
-        //     })
-        // );
+        localStorage.setItem(
+            "jungleefy-card-items",
+            JSON.stringify({
+                coupon: {
+                    code: "dsfdsf",
+                    discount: 20,
+                },
+                location: {
+                    id: 1,
+                    title: "Own House",
+                    name: "Abir Amzad",
+                    phone: "01823 895 372",
+                    email: "info@gmail.com",
+                    address: "Zora Villa, GP-j, 46/3 Mohakhali, Dhaka-1212",
+                },
+                cardItems: [
+                    {
+                        id: 2,
+                        img: "product-8.jpg",
+                        title: "Nikon COOLPIX B500 Digital Camera (Black)",
+                        qty: 3,
+                        basePrice: 500,
+                    },
+                ],
+            })
+        );
         this.$store.state.cards = this.getCardIemsFormLocalStorage();
     },
     mounted() {},

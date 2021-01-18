@@ -45,6 +45,8 @@
                                             <span class="info-text">333911616245</span>
                                         </li>
                                     </ul>
+
+                                    <!-- bidding-form -->
                                     <bidding-form></bidding-form>
                                 </v-flex>
                                 <v-flex class="item-info">

@@ -100,6 +100,7 @@
 </template>
 <script>
 export default {
+    name: "SiteFooter",
     data: () => ({
         icons: ["mdi-twitter", "mdi-facebook", "mdi-youtube", "mdi-linkedin"],
 
@@ -134,7 +135,7 @@ export default {
         informations: [
             { id: 1, text: "About Us", link: "AboutUs" },
             { id: 2, text: "Contact", link: "Contact" },
-            { id: 3, text: "Our Blog", link: "MyAccount" },
+            { id: 3, text: "Our Blog", link: "Blog" },
             { id: 4, text: "Careers", link: "MyAccount" },
             {
                 id: 5,

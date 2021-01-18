@@ -32,8 +32,48 @@
                         </v-tabs>
                     </v-flex>
                     <v-flex class="tab-right flex-grow-0">
-                        <h2>Can't find an answer to your question?</h2>
-                        <v-textarea label="One row" auto-grow outlined rows="1" row-height="15"></v-textarea>
+                        <v-flex class="tab-right-box">
+                            <h2>Can't find an answer to your question?</h2>
+
+                            <div class="input-wrap">
+                                <v-textarea
+                                    solo
+                                    flat
+                                    hide-details
+                                    outlined
+                                    label="Ask your question"
+                                    rows="3"
+                                    v-model="ask_question"
+                                ></v-textarea>
+                            </div>
+                            <v-btn
+                                type="submit"
+                                depressed
+                                tile
+                                class="faq-btn mt-1 brand white--text text-none"
+                            >Submit</v-btn>
+                        </v-flex>
+
+                        <v-flex class="faq-contact">
+                            <v-layout class="faq-contact-title align-center">
+                                <v-flex class="flex-grow-0">
+                                    <img
+                                        :src="require('@/assets/images/faq-contact.png')"
+                                        alt="faq contact icon"
+                                    />
+                                </v-flex>
+                                <h3>Contact Info</h3>
+                            </v-layout>
+
+                            <span>
+                                Email:
+                                <a href="mailto:info@jungleebazaar.com">info@jungleebazaar.com</a>
+                            </span>
+                            <span>
+                                Phone:
+                                <a href="tel:+8802 1234567">+8802 1234567</a>
+                            </span>
+                        </v-flex>
                     </v-flex>
                 </v-layout>
             </v-container>
@@ -45,13 +85,14 @@
 import InnerBanner from "@/components/sites/common/InnerBanner";
 
 export default {
-    name: "privacyPolicy",
+    name: "Faq",
     components: {
         InnerBanner,
     },
 
     data() {
         return {
+            ask_question: "",
             windowSize: "",
             panel: 0,
 

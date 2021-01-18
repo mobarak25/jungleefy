@@ -1,0 +1,33 @@
+{
+    
+    "posts": [
+        {
+            "id": 1,
+            "title": "Boho Dress Floral Print Neck Strap High Low Dark",
+            "user": "Alam",
+            "content": "This lawful content applies to the data we gather from you when you visit our Website, as in the accompanying cases: client enrollment, utilizing any of our administrations .",
+            "image": "blog-1.jpg",
+            "date": "June 12, 2020",
+            "comment_count": 0
+        },
+        {
+            "id": 2,
+            "title": "How To Make-Up Lipstick? How Best To Use Body?",
+            "user": "Alam",
+            "content": "Curabitur in ligula a augue auctor commodo vel eu nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim, ex non lobortis venenatis, mi massa egestas turpis.",
+            "image": "blog-2.jpg",
+            "date": "June 12, 2020",
+            "comment_count": 5
+        },
+        {
+            "id": 3,
+            "title": "Global Travel and Vacations on a Tight Budget",
+            "user": "Alam",
+            "content": "This lawful content applies to the data we gather from you when you visit our Website, as in the accompanying cases: client enrollment, utilizing any of our administrations .",
+            "image": "blog-3.jpg",
+            "date": "June 12, 2020",
+            "comment_count": 5
+        }
+
+    ]
+}
