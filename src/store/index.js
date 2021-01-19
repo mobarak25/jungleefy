@@ -21,7 +21,10 @@ export default new Vuex.Store({
       cardItems:[]
     },
     
-    blogPosts:[]
+    blogPosts:{
+      allPost:[],
+      filteredPost:[]
+    }
   },
   mutations: {
     SET_AUCTION_PRODUCTS(state, products) {
@@ -87,13 +90,34 @@ export default new Vuex.Store({
       );
     },
     SET_POSTS(state,allPosts){
-      state.blogPosts=allPosts.posts;
+      state.blogPosts.allPost = allPosts.posts;
       localStorage.setItem(
         "jungleefy-blog-posts",
         JSON.stringify(state.blogPosts)
       );
     },
+    SEARCH_POSTS(state,search){
+      if(search){
+        state.blogPosts.filteredPost = state.blogPosts.allPost.filter(post => {
+          return post.title.toLowerCase().includes(search.toLowerCase())
+        })
+      }else{
+        state.blogPosts.filteredPost=[];
+      }
+      
+    },
   },
+
+
+
+
+
+
+
+
+
+
+
   actions: {
     getFeaturedAuctions({ commit }) {
       let url = "http://localhost:8080/data/featuredAuctions.json";

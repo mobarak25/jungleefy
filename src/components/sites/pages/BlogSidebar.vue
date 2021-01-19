@@ -4,6 +4,7 @@
             <v-flex class="search-blog">
                 <div class="input-wrap">
                     <v-text-field
+                        autocomplete="false"
                         append-icon="mdi-magnify"
                         solo
                         flat
@@ -12,7 +13,7 @@
                         label="Search"
                         v-model="search"
                         @keyup="searchPost()"
-                    ></v-text-field>
+                    >></v-text-field>
                 </div>
             </v-flex>
         </v-flex>
@@ -30,7 +31,8 @@ export default {
     },
     methods: {
         searchPost() {
-            alert(this.search);
+            this.$store.commit("SEARCH_POSTS", this.search);
+            this.$emit("searchText", this.search);
         },
     },
 };
