@@ -60,18 +60,26 @@
                 </v-layout>
             </v-container>
         </v-flex>
+
+        <v-flex class="blog-pagination">
+            <v-container>
+                <pagination></pagination>
+            </v-container>
+        </v-flex>
     </v-flex>
 </template>
 
 <script>
 import InnerBanner from "@/components/sites/common/InnerBanner";
 import BlogSidebar from "@/components/sites/pages/BlogSidebar";
+import Pagination from "@/components/services/Pagination";
 
 export default {
     name: "Blog",
     components: {
         InnerBanner,
         BlogSidebar,
+        Pagination,
     },
 
     data() {
@@ -101,8 +109,6 @@ export default {
     mounted() {
         this.$store.dispatch("getPosts");
     },
-
-    created() {},
 };
 </script>
 

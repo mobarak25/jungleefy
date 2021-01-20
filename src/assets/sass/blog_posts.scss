@@ -1,5 +1,5 @@
 .blog-panel {
-    padding: rem-calc(95px 0);
+    padding: rem-calc(95px 0 0);
     .blog-item {
         width: 64%;
     }
@@ -41,9 +41,16 @@
         .read-more {
             width: 136px;
             height: 45px;
+
+            &:hover {
+                background: map-get($colors, brand) !important;
+            }
         }
     }
     .feature-image {
         max-width: 54.8%;
     }
+}
+.blog-pagination {
+    padding: rem-calc(0 0 90px);
 }
