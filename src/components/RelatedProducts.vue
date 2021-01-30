@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ProductGridCard from "@/components/ProductGridCard";
+import ProductGridCard from "@/components/sites/common/ProductGridCard";
 
 export default {
     name: "RelatedProduct",

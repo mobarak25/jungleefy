@@ -1,9 +1,20 @@
 <template>
-    <v-flex class="site-content-wrap site_bg">
+    <v-flex class="site-content-wrap site_bg" v-resize="onResize">
+        <v-btn
+            tile
+            dark
+            color="brand"
+            class="filter-btn d-lg-none"
+            @click.stop="drawer = !drawer"
+        >Filter</v-btn>
         <v-container class="py-0">
             <v-flex wrap class="d-flex justify-space-between">
                 <!-- sidebar sections -->
-                <product-sidebar></product-sidebar>
+                <product-sidebar v-if="windowSize >= 1264"></product-sidebar>
+
+                <v-navigation-drawer v-else v-model="drawer" temporary app>
+                    <product-sidebar></product-sidebar>
+                </v-navigation-drawer>
 
                 <v-card tile class="portlet">
                     <!-- breadcrumb sections -->
@@ -22,7 +33,7 @@
                         </v-sheet>
 
                         <v-sheet class="product-short">
-                            <v-flex class="d-flex align-center">
+                            <v-flex class="d-flex flex-wrap justify-space-between align-center">
                                 <!-- sort by -->
                                 <sort-by
                                     :options="items"
@@ -30,7 +41,7 @@
                                     select-option="Last 2 Order"
                                 ></sort-by>
 
-                                <v-flex class="view-indicator">
+                                <v-flex class="view-indicator flex-grow-0">
                                     <a
                                         :class="{active:listView}"
                                         @click="listView = true"
@@ -118,11 +129,11 @@
 </template>
 
 <script>
-import ProductSidebar from "@/components/ProductSidebar";
-import SiteBreadcrumb from "@/components/SiteBreadcrumb";
+import ProductSidebar from "@/components/sites/pages/ProductSidebar";
+import SiteBreadcrumb from "@/components/sites/common/SiteBreadcrumb";
 import SortBy from "@/components/sites/pages/SortBy";
-import ProductGridCard from "@/components/ProductGridCard";
-import ProductListCard from "@/components/ProductListCard";
+import ProductGridCard from "@/components/sites/common/ProductGridCard";
+import ProductListCard from "@/components/sites/common/ProductListCard";
 import Pagination from "@/components/services/Pagination";
 
 export default {
@@ -138,6 +149,9 @@ export default {
 
     data() {
         return {
+            drawer: false,
+            windowSize: "",
+
             listView: false,
             items: ["Last 2 Order", "Low to high price", "high to Low price"],
             breadcrumbItems: [
@@ -155,19 +169,40 @@ export default {
         };
     },
 
+    methods: {
+        onResize() {
+            this.windowSize = window.innerWidth;
+        },
+    },
+
     computed: {
         getAllProduct() {
             return this.$store.state.allProduct;
         },
     },
 
+    watch: {
+        windowSize: function (newVal) {
+            if (newVal < 700) {
+                this.listView = false;
+            }
+        },
+    },
+
     mounted() {
         this.$store.dispatch("getProducts");
+        this.onResize();
     },
 };
 </script>
 
 <style lang="scss" scoped>
+.filter-btn {
+    position: fixed;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+}
 .portlet {
     width: calc(100% - 288px);
     padding: rem-calc(20px 30px);
@@ -225,20 +260,38 @@ export default {
 @include media(1639px) {
     .products-wraper {
         .product-items {
-            flex: 33.33%;
-            max-width: 33.33%;
+            width: 33.33%;
         }
+    }
+    .product-short {
+        width: 100%;
     }
 }
 @include media(lg) {
     .portlet {
-        width: calc(100% - 288px);
+        width: 100%;
         padding: rem-calc(24px);
+    }
+}
+@include media(699px) {
+    .view-indicator {
+        display: none;
+    }
+}
+@include media(sm) {
+    .products-wraper {
+        .product-items {
+            width: 50%;
+        }
+    }
+}
+@include media(479px) {
+    .portlet {
+        padding: rem-calc(15px);
     }
     .products-wraper {
         .product-items {
-            flex: 50%;
-            max-width: 50%;
+            width: 100%;
         }
     }
 }

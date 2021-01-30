@@ -162,7 +162,7 @@
 </template>
 
 <script>
-import SiteBreadcrumb from "@/components/SiteBreadcrumb";
+import SiteBreadcrumb from "@/components/sites/common/SiteBreadcrumb";
 import ProductDetailsSummeryAuction from "@/components/ProductDetailsSummeryAuction";
 import ProductDetailsSummery from "@/components/ProductDetailsSummery";
 import ProductInformation from "@/components/ProductInformation";

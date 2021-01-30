@@ -57,7 +57,7 @@
     </v-layout>
 </template>
 <script>
-import ProductGridCard from "./ProductGridCard";
+import ProductGridCard from "@/components/sites/common/ProductGridCard";
 export default {
     name: "HomeProductSections",
     components: {

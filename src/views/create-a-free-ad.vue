@@ -656,7 +656,7 @@
 </template>
 
 <script>
-import SiteBreadcrumb from "@/components/SiteBreadcrumb";
+import SiteBreadcrumb from "@/components/sites/common/SiteBreadcrumb";
 import MultiImageUploader from "@/components/services/MultiImageUploader";
 export default {
     name: "createAFreeAd",
