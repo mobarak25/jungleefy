@@ -71,7 +71,14 @@ input[type="number"] {
 /*==============================*/
 /*=====  Main structure  =======*/
 /*==============================*/
-
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-right: -12px;
+    margin-left: -12px;
+}
 @include media(container) {
     .container {
         max-width: 1614px;

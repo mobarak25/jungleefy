@@ -21,10 +21,14 @@
                             </span>
                         </v-sheet>
 
-                        <v-sheet>
+                        <v-sheet class="product-short">
                             <v-flex class="d-flex align-center">
                                 <!-- sort by -->
-                                <sort-by :options="items" title="Sort By"></sort-by>
+                                <sort-by
+                                    :options="items"
+                                    title="Sort By"
+                                    select-option="Last 2 Order"
+                                ></sort-by>
 
                                 <v-flex class="view-indicator">
                                     <a
@@ -70,7 +74,7 @@
                                 sm="4"
                             >
                                 <v-sheet height="100%" class="product-box">
-                                    <v-card height="100%" elevation="5" :to="{name:'About'}">
+                                    <v-card height="100%" elevation="5" :to="{name:'AboutUs'}">
                                         <v-sheet
                                             height="100%"
                                             class="d-flex align-end"
@@ -135,7 +139,7 @@ export default {
     data() {
         return {
             listView: false,
-            items: ["Date:Newest on top", "Foo", "Bar", "Fizz", "Buzz"],
+            items: ["Last 2 Order", "Low to high price", "high to Low price"],
             breadcrumbItems: [
                 {
                     text: "Home",
@@ -163,16 +167,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .portlet {
     width: calc(100% - 288px);
     padding: rem-calc(20px 30px);
 }
 .product-top-filter {
-    padding-top: rem-calc(13px);
     margin: 0;
 
     .filter-info {
+        display: block;
+        padding-top: rem-calc(13px);
         @include font(grey, 15px, 25px, medium);
 
         b {
@@ -181,6 +186,9 @@ export default {
         span {
             color: darken(map-get($colors, grey), 25);
         }
+    }
+    .product-short {
+        padding-top: rem-calc(13px);
     }
 
     .view-indicator {
@@ -212,5 +220,26 @@ export default {
 }
 .product-pagination {
     padding: rem-calc(40px 0 37px);
+}
+
+@include media(1639px) {
+    .products-wraper {
+        .product-items {
+            flex: 33.33%;
+            max-width: 33.33%;
+        }
+    }
+}
+@include media(lg) {
+    .portlet {
+        width: calc(100% - 288px);
+        padding: rem-calc(24px);
+    }
+    .products-wraper {
+        .product-items {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
 }
 </style>

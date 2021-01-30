@@ -72,3 +72,10 @@
         @include font(primary, 6px, 20px, false);
     }
 }
+
+@include media(lg) {
+    .product-sidebar {
+        width: 250px;
+        padding: rem-calc(15px);
+    }
+}

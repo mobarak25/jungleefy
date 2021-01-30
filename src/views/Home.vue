@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import HomeBanner from "@/components/HomeBanner";
+import HomeBanner from "@/components/sites/pages/HomeBanner";
 import HomeProdutSections from "@/components/HomeProdutSections";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import HomePopularCategory from "@/components/HomePopularCategory";

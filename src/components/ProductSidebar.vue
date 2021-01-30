@@ -161,6 +161,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/product_sidebar.scss";
 </style>

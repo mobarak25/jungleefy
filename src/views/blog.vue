@@ -33,9 +33,9 @@
                                     </v-flex>
 
                                     <h3 v-text="post.title"></h3>
-                                    <p v-text="post.content"></p>
+                                    <p v-text="post.short_description"></p>
                                     <v-btn
-                                        href="#"
+                                        :to="{name:'BlogPostDetails'}"
                                         depressed
                                         class="read-more primary white--text text-none"
                                     >Read More</v-btn>
@@ -112,6 +112,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/blog_posts.scss";
 </style>

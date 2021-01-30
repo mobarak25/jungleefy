@@ -1,0 +1,56 @@
+.blog-comments {
+    padding-top: rem-calc(50px);
+
+    h3 {
+        padding-bottom: rem-calc(32px);
+        @include font(false, 30px, 40px, regular);
+    }
+
+    .comments-item {
+        padding-bottom: rem-calc(50px);
+
+        .v-avatar {
+            margin-right: rem-calc(44px);
+        }
+        .comments-content {
+            padding-top: rem-calc(10px);
+            @include font(grey, 17px, 28px, regular);
+
+            .replay-btn {
+                padding-top: rem-calc(10px);
+                a {
+                    text-decoration: underline;
+                    @include font(brand, 17px, 28px, regular);
+                }
+            }
+        }
+
+        .replay-holder {
+            padding-left: rem-calc(55px);
+            .replays {
+                padding-top: rem-calc(44px);
+            }
+            .likes {
+                padding-top: rem-calc(10px);
+                a {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .comments-form {
+        padding: rem-calc(10px 0 44px);
+
+        h4 {
+            padding-bottom: rem-calc(18px);
+            @include font(false, 30px, 40px, regular);
+        }
+
+        .v-btn.submit {
+            width: 275px;
+            height: 46px;
+            @include font(false, 20px, 28px, false);
+        }
+    }
+}
