@@ -17,6 +17,7 @@
                             step="any"
                             flat
                             hide-details
+                            autocomplete="off"
                             outlined
                             label="Enter Your Bidding Price"
                             v-model="formData.bid_price"
@@ -104,6 +105,18 @@ export default {
         width: 49%;
         height: 43px;
         @include font(light, 16px, 20px, medium);
+    }
+}
+
+@include media(479px) {
+    .bid-form {
+        .place-bid-field {
+            width: 100%;
+        }
+        .v-btn.place-bid-btn {
+            width: 100%;
+            margin-top: rem-calc(10px);
+        }
     }
 }
 </style>

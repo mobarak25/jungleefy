@@ -72,7 +72,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product-details-mid {
     margin: rem-calc(85px 0 0);
     .product-detail-title {
@@ -87,7 +87,6 @@ export default {
     .items {
         padding: 0;
         margin: 0;
-
         column-count: 2;
         column-gap: 40px;
 
@@ -101,6 +100,31 @@ export default {
             .item-content {
                 width: calc(100% - 160px);
                 color: map-get($colors, primary);
+            }
+        }
+    }
+}
+
+@include media(1639px) {
+    .product-details-mid {
+        margin: rem-calc(60px 0 0);
+    }
+}
+@include media(lg) {
+    .product-details-mid {
+        .items {
+            column-count: auto;
+            column-gap: normal;
+        }
+    }
+}
+@include media(479px) {
+    .product-details-mid {
+        .items {
+            li {
+                .item-content {
+                    width: 100%;
+                }
             }
         }
     }

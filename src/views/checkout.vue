@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import RelatedProducts from "@/components/RelatedProducts";
+import RelatedProducts from "@/components/sites/common/RelatedProducts";
 import QuantityHolder from "@/components/QuantityHolder";
 import OrderSummay from "@/components/sites/common/OrderSummay";
 

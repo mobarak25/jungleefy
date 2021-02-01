@@ -1,9 +1,9 @@
 <!-- Product section -->
 <template>
-    <div class="pagination-holder text-center d-flex">
-        <v-pagination color="brand" v-model="page" :length="15" :total-visible="8"></v-pagination>
+    <div class="pagination-holder text-center d-flex flex-wrap">
+        <v-pagination color="brand" v-model="page" :length="15" :total-visible="7"></v-pagination>
 
-        <v-flex class="d-flex align-center">
+        <v-flex class="d-flex align-center goto-holder">
             <span class="goto">Go to Page</span>
             <v-text-field type="number" v-model="goToPage" solo flat hide-details="auto" outlined></v-text-field>
             <v-btn @click="goTo()" type="submit" outlined depressed tile>Go</v-btn>
@@ -34,11 +34,15 @@ export default {
 
 <style lang="scss">
 .pagination-holder {
-    .goto {
-        margin: rem-calc(0 28px 0 18px);
-        display: block;
-        @include font(false, 13px, 13px, false);
+    .goto-holder {
+        padding-left: rem-calc(18px);
+        .goto {
+            padding-right: rem-calc(28px);
+            display: block;
+            @include font(false, 13px, 13px, false);
+        }
     }
+
     .v-input {
         max-width: 45px;
 
@@ -63,6 +67,31 @@ export default {
         border-color: #e5e5e5;
         text-transform: none;
         @include font(primary, 13px, 13px, false);
+    }
+}
+@include media(699px) {
+    .pagination-holder {
+        .goto-holder {
+            padding-left: rem-calc(10px);
+            padding-top: rem-calc(10px);
+            .goto {
+                padding-right: rem-calc(5px);
+            }
+        }
+        .v-pagination__item,
+        .v-pagination__navigation {
+            height: 26px;
+            min-width: 26px;
+        }
+        .v-input {
+            max-width: 45px;
+            input {
+                height: 28px;
+            }
+        }
+        .v-btn {
+            height: 28px !important;
+        }
     }
 }
 </style>

@@ -34,6 +34,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/related_products.scss";
 </style>

@@ -44,7 +44,6 @@
                                 tile
                                 depressed
                                 height="40"
-                                width="160"
                                 class="primary white--text text-none"
                                 @click="submitcomments()"
                             >Submit</v-btn>
@@ -244,6 +243,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/reviews_and_ratings.scss";
 </style>

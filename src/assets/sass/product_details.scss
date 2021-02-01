@@ -48,3 +48,54 @@
         }
     }
 }
+
+@include media(1639px) {
+    .product-details-images {
+        max-width: 37%;
+    }
+
+    .product-details-info {
+        max-width: 20%;
+
+        .delivery-option {
+            padding: rem-calc(5px 15px);
+
+            .v-card__text {
+                @include font(false, 14px, 20px, false);
+
+                .star {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@include media(lg) {
+    .product-details-wrap {
+        padding: rem-calc(15px);
+    }
+    .product-details-images {
+        width: 50%;
+        max-width: 100%;
+    }
+
+    .product-details-info {
+        width: 100%;
+        max-width: 100%;
+        margin-top: rem-calc(30px);
+
+        .delivery-option {
+            padding: rem-calc(15px);
+        }
+    }
+    .please-contact {
+        padding: rem-calc(0 15px) !important;
+    }
+}
+
+@include media(699px) {
+    .product-details-images {
+        width: 100%;
+    }
+}

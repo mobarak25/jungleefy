@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import RelatedProducts from "@/components/RelatedProducts";
+import RelatedProducts from "@/components/sites/common/RelatedProducts";
 import Pagination from "@/components/services/Pagination";
 
 export default {

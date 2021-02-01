@@ -28,6 +28,7 @@
                 @include font(grey, 14px, 18px, false);
             }
             .v-btn {
+                width: 160px;
                 @include font(false, 16px, 22px, medium);
             }
         }
@@ -99,5 +100,96 @@
                 font-size: 18px;
             }
         }
+    }
+}
+@include media(1639px) {
+    .review-ratings-wrap {
+        .review-area {
+            max-width: 48%;
+        }
+        .rating-area {
+            max-width: 48%;
+        }
+    }
+}
+
+@include media(lg) {
+    .review-ratings-wrap {
+        .rating-area {
+            .rating-items {
+                .rating-items-left {
+                    width: 170px;
+                }
+            }
+        }
+    }
+}
+
+@include media(md) {
+    .review-ratings-wrap {
+        .review-area {
+            width: 100%;
+            max-width: 100%;
+            order: 2;
+            .review-box {
+                padding: rem-calc(10px 20px);
+            }
+        }
+        .rating-area {
+            width: 100%;
+            max-width: 100%;
+            padding-bottom: rem-calc(50px);
+            order: 1;
+            .rating-items {
+                .rating-items-left {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    .review-commant-left {
+        width: 160px;
+    }
+    .review-commant-right {
+        width: calc(100% - 164px);
+    }
+}
+
+@include media(sm) {
+    .review-ratings-wrap {
+        .review-area {
+            .review-box {
+                padding: rem-calc(10px);
+            }
+        }
+        .rating-area {
+            padding-bottom: rem-calc(40px);
+            .rating-items {
+                .rating-items-left {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+
+@include media(479px) {
+    .review-ratings-wrap {
+        .review-area {
+            .review-box {
+                .v-btn {
+                    margin-top: rem-calc(10px);
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .review-commant-left {
+        padding-bottom: rem-calc(12px);
+    }
+    .review-commant-left,
+    .review-commant-right {
+        width: 100%;
     }
 }

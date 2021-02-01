@@ -6,7 +6,7 @@
                     <!-- breadcrumb sections -->
                     <site-breadcrumb :options="breadcrumb"></site-breadcrumb>
 
-                    <v-layout wrap class="product-details-top">
+                    <v-layout wrap class="product-details-top justify-space-between">
                         <!-- product details images -->
                         <v-flex class="product-details-images">
                             <v-img
@@ -16,10 +16,10 @@
                         </v-flex>
 
                         <!-- product details summery auction-->
-                        <product-details-summery-auction v-if="true"></product-details-summery-auction>
+                        <product-details-summery-auction v-if="false"></product-details-summery-auction>
 
                         <!-- product details summery -->
-                        <product-details-summery v-if="false"></product-details-summery>
+                        <product-details-summery v-if="true"></product-details-summery>
 
                         <!-- product-details-info -->
                         <v-flex class="product-details-info">
@@ -163,11 +163,11 @@
 
 <script>
 import SiteBreadcrumb from "@/components/sites/common/SiteBreadcrumb";
-import ProductDetailsSummeryAuction from "@/components/ProductDetailsSummeryAuction";
-import ProductDetailsSummery from "@/components/ProductDetailsSummery";
-import ProductInformation from "@/components/ProductInformation";
-import RelatedProducts from "@/components/RelatedProducts";
-import ReviewsAndRatings from "@/components/ReviewsAndRatings";
+import ProductDetailsSummeryAuction from "@/components/sites/pages/ProductDetailsSummeryAuction";
+import ProductDetailsSummery from "@/components/sites/pages/ProductDetailsSummery";
+import ProductInformation from "@/components/sites/pages/ProductInformation";
+import RelatedProducts from "@/components/sites/common/RelatedProducts";
+import ReviewsAndRatings from "@/components/sites/pages/ReviewsAndRatings";
 
 export default {
     name: "Products",
@@ -206,6 +206,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/product_details.scss";
 </style>
