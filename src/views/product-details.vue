@@ -16,10 +16,10 @@
                         </v-flex>
 
                         <!-- product details summery auction-->
-                        <product-details-summery-auction v-if="false"></product-details-summery-auction>
+                        <product-details-summery-auction v-if="true"></product-details-summery-auction>
 
                         <!-- product details summery -->
-                        <product-details-summery v-if="true"></product-details-summery>
+                        <product-details-summery v-if="false"></product-details-summery>
 
                         <!-- product-details-info -->
                         <v-flex class="product-details-info">

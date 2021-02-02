@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import QuantityHolder from "@/components/QuantityHolder";
-import ProductSocial from "@/components/ProductSocial";
+import QuantityHolder from "@/components/sites/common/QuantityHolder";
+import ProductSocial from "@/components/sites/pages/ProductSocial";
 export default {
     name: "ProductDetailsSummery",
     components: {

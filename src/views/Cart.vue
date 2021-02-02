@@ -94,7 +94,7 @@
 
 <script>
 import RelatedProducts from "@/components/sites/common/RelatedProducts";
-import QuantityHolder from "@/components/QuantityHolder";
+import QuantityHolder from "@/components/sites/common/QuantityHolder";
 import OrderSummay from "@/components/sites/common/OrderSummay";
 
 export default {

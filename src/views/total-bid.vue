@@ -5,7 +5,7 @@
                 <v-sheet class="bid-history-wrap">
                     <h2>Bid history</h2>
                     <v-row>
-                        <v-col md="4" order="2" class="py-0">
+                        <v-col lg="4" cols="12" order-lg="2" class="py-0">
                             <v-flex class="item-info-wrap">
                                 <v-flex class="item-info d-flex align-center">
                                     <v-flex class="item-image">
@@ -64,7 +64,7 @@
                             </v-flex>
                         </v-col>
 
-                        <v-col md="8" order="1" class="py-0">
+                        <v-col lg="8" cols="12" order-lg="1" class="py-0">
                             <v-flex class="bid-history-box">
                                 <v-flex class="time-holder">
                                     <strong>3 Day</strong>
@@ -90,27 +90,38 @@
                                         </thead>
                                         <tbody>
                                             <tr v-for="bid_item in bid_items" :key="bid_item.id">
-                                                <td class="col1">
+                                                <td data-label="Bidder Name">
                                                     <v-avatar size="35" class="mr-3">
                                                         <img
                                                             src="https://cdn.vuetifyjs.com/images/john.jpg"
                                                             alt="John"
                                                         />
                                                     </v-avatar>
-                                                    {{bid_item.name}}
+
+                                                    <span
+                                                        class="bidder-name"
+                                                        v-text="bid_item.name"
+                                                    ></span>
                                                 </td>
-                                                <td class="col2" v-text="bid_item.bid_time"></td>
-                                                <td
-                                                    class="col3"
-                                                    v-text="'TK' + bid_item.bid_amount"
-                                                ></td>
+                                                <td data-label="Bid Time">
+                                                    <span
+                                                        class="bid-time"
+                                                        v-text="bid_item.bid_time"
+                                                    ></span>
+                                                </td>
+                                                <td data-label="Bid Amount">
+                                                    <span
+                                                        class="bid-amount"
+                                                        v-text="'TK' + bid_item.bid_amount"
+                                                    ></span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </template>
                                 </v-simple-table>
                             </v-flex>
                             <v-flex
-                                class="same-amount"
+                                class="table-bottom-text"
                             >If two people bid the same amount, the first bid has priority</v-flex>
                         </v-col>
                     </v-row>
@@ -118,7 +129,7 @@
             </v-card>
 
             <v-card tile elevation="2" class="mt-4 py-4">
-                <v-card-text class="pa-0 black--text text-center please-contact">
+                <v-card-text class="py-0 black--text text-center please-contact">
                     If you want to Buy or Sell then create you post? please
                     <router-link :to="{name:'Contact'}">Contact</router-link>
                 </v-card-text>
@@ -128,7 +139,7 @@
 </template>
 
 <script>
-import BiddingForm from "@/components/BiddingForm";
+import BiddingForm from "@/components/sites/pages/BiddingForm";
 
 export default {
     name: "TotalBid",
@@ -157,6 +168,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/total_bid.scss";
 </style>

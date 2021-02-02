@@ -159,8 +159,8 @@
 </template>
 
 <script>
-import ProductSocial from "@/components/ProductSocial";
-import BiddingForm from "@/components/BiddingForm";
+import ProductSocial from "@/components/sites/pages/ProductSocial";
+import BiddingForm from "@/components/sites/pages/BiddingForm";
 export default {
     name: "ProductDetailsSummeryAuction",
     components: {

@@ -116,7 +116,7 @@
 </template>
 
 <script>
-import ProductSocial from "@/components/ProductSocial";
+import ProductSocial from "@/components/sites/pages/ProductSocial";
 export default {
     name: "ProductCard",
     components: {

@@ -123,7 +123,7 @@
 </template>
 
 <script>
-import ProductSocial from "@/components/ProductSocial";
+import ProductSocial from "@/components/sites/pages/ProductSocial";
 import WishListBtn from "@/components/sites/common/WishListBtn";
 export default {
     name: "ProductCard",

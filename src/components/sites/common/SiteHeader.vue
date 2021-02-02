@@ -135,7 +135,7 @@
 
 
 <script>
-import SiteMenu from "@/components/SiteMenu";
+import SiteMenu from "@/components/sites/common/SiteMenu";
 
 export default {
     name: "SiteHeader",
