@@ -153,6 +153,17 @@
         padding-top: rem-calc(9px);
         padding-right: rem-calc(10px);
     }
+
+    .tooltip-wrap {
+        padding-right: rem-calc(34px);
+        position: relative;
+
+        .tooltip-holder {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
 }
 
 .personal-information {
@@ -194,5 +205,27 @@
         .popup-hand {
             @include absolute(false, false, left, 0, bottom, 0);
         }
+    }
+}
+
+@include media(lg) {
+    .create-ad {
+        padding: rem-calc(20px);
+    }
+}
+@include media(699px) {
+    .breadcrumb-holder {
+        margin-bottom: rem-calc(15px);
+    }
+    .pick-category {
+        padding-bottom: rem-calc(15px);
+    }
+}
+@include media(479px) {
+    .create-ad {
+        padding: rem-calc(10px);
+    }
+    .conditions {
+        flex-wrap: wrap;
     }
 }

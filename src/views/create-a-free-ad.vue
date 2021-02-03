@@ -153,7 +153,7 @@
 
                                 <!-- Image Uploader -->
                                 <multi-image-uploader
-                                    title="Mipel Gallery"
+                                    title="Photo Gallery"
                                     id="images-uploader-1"
                                     edit-id="images-uploader-edit-1"
                                     url="http://knittersland.test/api/img-upload"
@@ -165,14 +165,14 @@
                                 <!-- check auction -->
                                 <v-radio-group v-model="formData.auction" row hide-details>
                                     <v-row class="auction-check">
-                                        <v-col md="6" class="py-0">
+                                        <v-col sm="6" cols="12" class="py-0 mb-2">
                                             <v-radio
                                                 color="brand"
                                                 label="Sale with Auction"
                                                 value="with_auction"
                                             ></v-radio>
                                         </v-col>
-                                        <v-col md="6" class="py-0">
+                                        <v-col sm="6" cols="12" class="py-0 mb-2">
                                             <v-radio
                                                 color="brand"
                                                 label="Sale without  Auction"
@@ -203,34 +203,38 @@
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Starting Price (TK)</v-flex>
-                                                <v-flex>
-                                                    <v-text-field
-                                                        solo
-                                                        flat
-                                                        hide-details
-                                                        outlined
-                                                        type="number"
-                                                        label="Example 8000 TK"
-                                                        v-model="formData.starting_price"
-                                                    ></v-text-field>
-                                                    <span>{{ errors[0] }}</span>
-                                                </v-flex>
-                                                <v-flex class="flex-grow-0">
-                                                    <v-tooltip right>
-                                                        <template v-slot:activator="{ on, attrs }">
-                                                            <v-icon
-                                                                v-bind="attrs"
-                                                                v-on="on"
-                                                            >mdi-information-outline</v-icon>
-                                                        </template>
-                                                        <span class="tooltip-info">
-                                                            Lorem ipsum, dolor sit
-                                                            <br />amet consectetur
-                                                            <br />adipisicing elit.
-                                                            <br />Dolorem facilis unde
-                                                            <br />fugiat eum iure sequi
-                                                        </span>
-                                                    </v-tooltip>
+                                                <v-flex class="tooltip-wrap">
+                                                    <v-flex>
+                                                        <v-text-field
+                                                            solo
+                                                            flat
+                                                            hide-details
+                                                            outlined
+                                                            type="number"
+                                                            label="Example 8000 TK"
+                                                            v-model="formData.starting_price"
+                                                        ></v-text-field>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </v-flex>
+                                                    <v-flex class="tooltip-holder">
+                                                        <v-tooltip right>
+                                                            <template
+                                                                v-slot:activator="{ on, attrs }"
+                                                            >
+                                                                <v-icon
+                                                                    v-bind="attrs"
+                                                                    v-on="on"
+                                                                >mdi-information-outline</v-icon>
+                                                            </template>
+                                                            <span class="tooltip-info">
+                                                                Lorem ipsum, dolor sit
+                                                                <br />amet consectetur
+                                                                <br />adipisicing elit.
+                                                                <br />Dolorem facilis unde
+                                                                <br />fugiat eum iure sequi
+                                                            </span>
+                                                        </v-tooltip>
+                                                    </v-flex>
                                                 </v-flex>
                                             </div>
                                         </ValidationProvider>
@@ -251,34 +255,38 @@
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Buy Now Price</v-flex>
-                                                <v-flex>
-                                                    <v-text-field
-                                                        solo
-                                                        flat
-                                                        hide-details
-                                                        outlined
-                                                        type="number"
-                                                        label="Example 8000 TK"
-                                                        v-model="formData.buy_price"
-                                                    ></v-text-field>
-                                                    <span>{{ errors[0] }}</span>
-                                                </v-flex>
-                                                <v-flex class="flex-grow-0">
-                                                    <v-tooltip right>
-                                                        <template v-slot:activator="{ on, attrs }">
-                                                            <v-icon
-                                                                v-bind="attrs"
-                                                                v-on="on"
-                                                            >mdi-information-outline</v-icon>
-                                                        </template>
-                                                        <span class="tooltip-info">
-                                                            Lorem ipsum, dolor sit
-                                                            <br />amet consectetur
-                                                            <br />adipisicing elit.
-                                                            <br />Dolorem facilis unde
-                                                            <br />fugiat eum iure sequi
-                                                        </span>
-                                                    </v-tooltip>
+                                                <v-flex class="tooltip-wrap">
+                                                    <v-flex>
+                                                        <v-text-field
+                                                            solo
+                                                            flat
+                                                            hide-details
+                                                            outlined
+                                                            type="number"
+                                                            label="Example 8000 TK"
+                                                            v-model="formData.buy_price"
+                                                        ></v-text-field>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </v-flex>
+                                                    <v-flex class="tooltip-holder">
+                                                        <v-tooltip right>
+                                                            <template
+                                                                v-slot:activator="{ on, attrs }"
+                                                            >
+                                                                <v-icon
+                                                                    v-bind="attrs"
+                                                                    v-on="on"
+                                                                >mdi-information-outline</v-icon>
+                                                            </template>
+                                                            <span class="tooltip-info">
+                                                                Lorem ipsum, dolor sit
+                                                                <br />amet consectetur
+                                                                <br />adipisicing elit.
+                                                                <br />Dolorem facilis unde
+                                                                <br />fugiat eum iure sequi
+                                                            </span>
+                                                        </v-tooltip>
+                                                    </v-flex>
                                                 </v-flex>
                                             </div>
                                         </ValidationProvider>
@@ -299,34 +307,38 @@
                                                 <v-flex
                                                     class="input-label flex-grow-0"
                                                 >Approximately Price (TK)</v-flex>
-                                                <v-flex>
-                                                    <v-text-field
-                                                        solo
-                                                        flat
-                                                        hide-details
-                                                        outlined
-                                                        type="number"
-                                                        label="Example 8000 TK"
-                                                        v-model="formData.approximately_price"
-                                                    ></v-text-field>
-                                                    <span>{{ errors[0] }}</span>
-                                                </v-flex>
-                                                <v-flex class="flex-grow-0">
-                                                    <v-tooltip right>
-                                                        <template v-slot:activator="{ on, attrs }">
-                                                            <v-icon
-                                                                v-bind="attrs"
-                                                                v-on="on"
-                                                            >mdi-information-outline</v-icon>
-                                                        </template>
-                                                        <span class="tooltip-info">
-                                                            Lorem ipsum, dolor sit
-                                                            <br />amet consectetur
-                                                            <br />adipisicing elit.
-                                                            <br />Dolorem facilis unde
-                                                            <br />fugiat eum iure sequi
-                                                        </span>
-                                                    </v-tooltip>
+                                                <v-flex class="tooltip-wrap">
+                                                    <v-flex>
+                                                        <v-text-field
+                                                            solo
+                                                            flat
+                                                            hide-details
+                                                            outlined
+                                                            type="number"
+                                                            label="Example 8000 TK"
+                                                            v-model="formData.approximately_price"
+                                                        ></v-text-field>
+                                                        <span>{{ errors[0] }}</span>
+                                                    </v-flex>
+                                                    <v-flex class="tooltip-holder">
+                                                        <v-tooltip right>
+                                                            <template
+                                                                v-slot:activator="{ on, attrs }"
+                                                            >
+                                                                <v-icon
+                                                                    v-bind="attrs"
+                                                                    v-on="on"
+                                                                >mdi-information-outline</v-icon>
+                                                            </template>
+                                                            <span class="tooltip-info">
+                                                                Lorem ipsum, dolor sit
+                                                                <br />amet consectetur
+                                                                <br />adipisicing elit.
+                                                                <br />Dolorem facilis unde
+                                                                <br />fugiat eum iure sequi
+                                                            </span>
+                                                        </v-tooltip>
+                                                    </v-flex>
                                                 </v-flex>
                                             </div>
                                         </ValidationProvider>
@@ -774,7 +786,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/create_free_ad.scss";
 </style>
 
