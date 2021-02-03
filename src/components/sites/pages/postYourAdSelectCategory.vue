@@ -175,7 +175,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .choose-category {
     padding: rem-calc(73px 77px 60px);
 
@@ -213,6 +213,7 @@ export default {
     }
     .category-holder {
         padding: rem-calc(0 15px);
+        margin-bottom: rem-calc(20px);
         h4 {
             height: 50px;
             padding: rem-calc(0 22px);
@@ -237,12 +238,40 @@ export default {
     }
 
     .continue {
-        padding: rem-calc(40px 0 0);
+        padding: rem-calc(20px 0 0);
 
         .v-btn {
             width: rem-calc(150px);
             height: rem-calc(50px);
             @include font(false, 18px, 22px, semi-bold);
+        }
+    }
+}
+
+@include media(lg) {
+    .choose-category {
+        padding: rem-calc(15px);
+    }
+}
+@include media(479px) {
+    .choose-category {
+        h2 {
+            padding: rem-calc(10);
+            margin: rem-calc(0 0 15px);
+            @include font(false, 20px, 26px, false);
+        }
+        .category-holder {
+            h4 {
+                height: 40px;
+                padding: rem-calc(0 15px);
+            }
+        }
+        .category-holder {
+            select {
+                option {
+                    padding: rem-calc(7px 10px);
+                }
+            }
         }
     }
 }

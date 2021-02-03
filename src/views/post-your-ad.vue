@@ -22,7 +22,7 @@
                                             />
                                         </v-flex>
 
-                                        <span>I want Sale something</span>
+                                        <span>I want to Sale something</span>
                                     </router-link>
                                 </v-flex>
                             </v-flex>
@@ -38,7 +38,7 @@
                                             />
                                         </v-flex>
 
-                                        <span>I want Buy something</span>
+                                        <span>I want to Buy something</span>
                                     </a>
                                 </v-flex>
                             </v-flex>
@@ -75,6 +75,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/post_your_ad.scss";
 </style>

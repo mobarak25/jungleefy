@@ -38,6 +38,7 @@ const routes = [
   {
     path: "/post-your-ad",
     name: "postYourAd",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/post-your-ad.vue")
   },

@@ -38,6 +38,9 @@
         @include border-radius(50%);
         background-color: map-get($colors, light);
         border: 1px solid lighten(map-get($colors, grey), 25);
+        img {
+            width: 57%;
+        }
     }
     &.active .options-icon,
     &:hover .options-icon {
@@ -60,5 +63,114 @@
     p {
         padding: rem-calc(15px 25px 0);
         @include font(primary, 15px, 28px, false);
+    }
+}
+
+@include media(1639px) {
+    .choose-option {
+        max-width: 100%;
+        padding: rem-calc(50px 40px);
+        h4 {
+            @include font(primary, 26px, 32px, medium);
+        }
+    }
+    .options-in {
+        max-width: 520px;
+        padding-left: rem-calc(45px);
+    }
+    .options {
+        height: 150px;
+        .options-icon {
+            width: 90px;
+            height: 90px;
+        }
+    }
+    .choose-option-box {
+        padding: rem-calc(30px 0 0);
+    }
+}
+
+@include media(lg) {
+    .choose-option {
+        padding: rem-calc(30px 30px 50px);
+    }
+    .options-in {
+        max-width: 48%;
+        padding-left: rem-calc(35px);
+    }
+    .options {
+        height: 120px;
+        .options-icon {
+            width: 70px;
+            height: 70px;
+        }
+        a {
+            padding-left: rem-calc(55px);
+        }
+        span {
+            @include font(false, 20px, 28px, false);
+        }
+    }
+    .options-details {
+        padding: rem-calc(40px 0 0);
+    }
+    .options-details-box {
+        max-width: 100%;
+        padding: rem-calc(0 15px 40px);
+        h4 {
+            padding: rem-calc(10px 25px);
+            @include font(false, 20px, 26px, false);
+        }
+    }
+}
+
+@include media(830px) {
+    .options-in {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: rem-calc(35px);
+    }
+    .choose-option {
+        padding: rem-calc(30px 30px 10px);
+    }
+}
+
+@include media(479px) {
+    .choose-option-box {
+        padding: 0 0 20px;
+    }
+    .choose-option {
+        padding: rem-calc(20px);
+        h4 {
+            @include font(false, 18px, 26px, false);
+        }
+    }
+    .options {
+        height: 120px;
+        .options-icon {
+            @include absolute(false, false, left, 50%, top, -35px);
+            transform: translateX(-50%);
+        }
+        a {
+            width: 100%;
+            padding: rem-calc(20px 10px 0);
+            justify-content: center;
+        }
+        span {
+            text-align: center;
+            @include font(false, 20px, 28px, false);
+        }
+    }
+    .options-in {
+        padding: 0;
+        margin: rem-calc(60px 0 0);
+    }
+    .options-details-box {
+        h4 {
+            padding: rem-calc(10px);
+        }
+        p {
+            padding: rem-calc(10px);
+        }
     }
 }

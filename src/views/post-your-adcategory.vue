@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import postYourAdSelectCategory from "@/components/postYourAdSelectCategory";
+import postYourAdSelectCategory from "@/components/sites/pages/postYourAdSelectCategory";
 
 export default {
     name: "postYourAdCategory",
