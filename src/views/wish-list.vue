@@ -13,11 +13,14 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Unit Price</th>
-                                    <th scope="col">Product Type</th>
-                                    <th scope="col">Stock Status</th>
-                                    <th scope="col"></th>
+                                    <th>Product Name</th>
+                                    <th>
+                                        <div style="width: 100px;">Unit Price</div>
+                                    </th>
+                                    <th>
+                                        <div style="width: 132px;">Product Type</div>
+                                    </th>
+                                    <th colspan="2">Stock Status</th>
                                 </tr>
                             </thead>
                             <tbody>
