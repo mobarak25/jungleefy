@@ -6,7 +6,7 @@
                     <h1 v-text="`Shopping  Cart (${cards.cardItems.length})`"></h1>
                     <v-flex class="card-list-table">
                         <v-row>
-                            <v-col md="8">
+                            <v-col lg="8" cols="12">
                                 <table>
                                     <thead>
                                         <tr>
@@ -21,7 +21,7 @@
                                             :key="item.id"
                                         >
                                             <td data-label="Product Name">
-                                                <v-layout>
+                                                <v-layout class="cart-product">
                                                     <v-img
                                                         contain
                                                         max-width="80"
@@ -55,17 +55,18 @@
                                     </tbody>
                                 </table>
                             </v-col>
-                            <v-col md="4">
+
+                            <v-col lg="4" cols="12">
                                 <!-- order-summay information-->
                                 <order-summay :login="false"></order-summay>
 
-                                <v-flex class="pt-8 d-flex">
+                                <v-flex class="proceed">
                                     <v-btn
                                         :to="{name:'checkout'}"
                                         tile
                                         depressed
                                         class="confirm-order brand white--text text-none order-1"
-                                    >Checkout</v-btn>
+                                    >Proceed to Checkout</v-btn>
                                 </v-flex>
                             </v-col>
                         </v-row>
@@ -183,6 +184,27 @@ export default {
                         qty: 3,
                         basePrice: 500,
                     },
+                    {
+                        id: 3,
+                        img: "product-1.jpg",
+                        title: "Nikon COOLPIX B500 Digital Camera (Black)",
+                        qty: 3,
+                        basePrice: 500,
+                    },
+                    {
+                        id: 4,
+                        img: "product-7.jpg",
+                        title: "Nikon COOLPIX B500 Digital Camera (Black)",
+                        qty: 3,
+                        basePrice: 500,
+                    },
+                    {
+                        id: 1,
+                        img: "product-2.jpg",
+                        title: "Nikon COOLPIX B500 Digital Camera (Black)",
+                        qty: 3,
+                        basePrice: 500,
+                    },
                 ],
             })
         );
@@ -192,6 +214,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/cart.scss";
 </style>

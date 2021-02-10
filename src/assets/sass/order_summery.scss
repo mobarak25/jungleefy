@@ -1,0 +1,89 @@
+.cart-summary {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    h2 {
+        height: 49px;
+        padding: rem-calc(0 20px);
+        @include font(primary, 16px, 22px, bold);
+        background-color: lighten(map-get($colors, grey), 45);
+    }
+    .ship-info {
+        padding: rem-calc(23px 20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        h4 {
+            @include font(primary, 16px, 22px, semi-bold);
+        }
+        .address {
+            width: 50%;
+
+            address {
+                padding: rem-calc(10px 0 0);
+                font-style: normal;
+                span {
+                    padding: rem-calc(0 0 8px);
+                    display: block;
+                    @include font(primary, 15px, 20px, regular);
+                }
+                strong {
+                    font-weight: map-get($font-weight, medium);
+                }
+            }
+        }
+        .change-address {
+            h4 {
+                text-decoration: underline;
+            }
+        }
+    }
+    .cart-summary-box {
+        padding: rem-calc(0 20px 35px);
+        .coupon-code {
+            padding: 0;
+            width: 55%;
+        }
+        .coupon-code-ntn {
+            width: 40%;
+            .v-btn {
+                width: 100%;
+                height: 43px;
+            }
+        }
+    }
+    .cart-info {
+        height: 50px;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+        strong {
+            width: 50%;
+            @include font(primary, 16px, 22px, medium);
+        }
+        span {
+            width: 50%;
+            @include font(primary, 15px, 22px, medium);
+
+            &.grand-total {
+                @include font(false, 18px, 22px, semi-bold);
+            }
+        }
+    }
+}
+
+@include media(479px) {
+    .btn-holder {
+        flex-wrap: wrap;
+    }
+
+    .cart-summary {
+        .cart-summary-box {
+            padding: rem-calc(10px);
+            .coupon-code {
+                width: 100%;
+                padding-bottom: rem-calc(15px);
+            }
+            .coupon-code-ntn {
+                width: 100%;
+            }
+        }
+    }
+}

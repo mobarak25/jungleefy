@@ -45,12 +45,14 @@ const routes = [
   {
     path: "/select-category-for-post-ad",
     name: "postYourAdCategory",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/post-your-adcategory.vue")
   },
   {
     path: "/create-a-free-ad",
     name: "createAFreeAd",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/create-a-free-ad.vue")
   },
@@ -63,6 +65,7 @@ const routes = [
   {
     path: "/wish-list",
     name: "WishList",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/wish-list.vue")
   },
@@ -81,48 +84,56 @@ const routes = [
   {
     path: "/my-account",
     name: "MyAccount",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/my-account.vue")
   },
   {
     path: "/my-order",
     name: "MyOrder",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/my-order.vue")
   },
   {
     path: "/my-auction",
     name: "MyAuction",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/my-auction.vue")
   },
   {
     path: "/buying-item",
     name: "BuyingItem",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/buying-item.vue")
   },
   {
     path: "/selling-item",
     name: "SellingItem",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/selling-item.vue")
   },
   {
     path: "/my-cart",
     name: "Cart",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/cart.vue")
   },
   {
     path: "/checkout",
     name: "checkout",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/checkout.vue")
   },
   {
     path: "/payment",
     name: "Payment",
+    meta: { requiresAuth: true },
     component: () =>
       import(/* webpackChunkName: "components" */ "../views/payment.vue")
   },

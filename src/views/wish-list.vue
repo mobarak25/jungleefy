@@ -91,12 +91,12 @@
                             </tbody>
                         </table>
 
-                        <v-flex class="pt-5 d-flex justify-space-between align-center">
+                        <v-flex class="pt-5 flex-wrap d-flex justify-space-between align-center">
                             <!-- pagination -->
-                            <pagination class="order-2"></pagination>
+                            <pagination class="order-lg-2"></pagination>
 
                             <v-btn
-                                href="#"
+                                :to="{name:'AllFeaturedAuctions'}"
                                 tile
                                 depressed
                                 class="more-product brand white--text text-none order-1"
@@ -153,6 +153,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "@/assets/sass/watch_list.scss";
+<style lang="scss" scoped>
+@import "@/assets/sass/wish_list.scss";
 </style>
