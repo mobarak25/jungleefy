@@ -29,8 +29,12 @@
             }
         }
         .change-address {
+            order: 2;
             h4 {
                 text-decoration: underline;
+            }
+            a {
+                color: map-get($colors, primary);
             }
         }
     }
@@ -68,13 +72,37 @@
         }
     }
 }
-
+.v-list-item__title a {
+    color: map-get($colors, primary);
+}
+@include media(md) {
+    .cart-summary {
+        .ship-info {
+            .address {
+                width: 70%;
+            }
+        }
+    }
+}
 @include media(479px) {
     .btn-holder {
         flex-wrap: wrap;
     }
 
     .cart-summary {
+        .ship-info {
+            .address {
+                width: 100%;
+                order: 2;
+            }
+            .change-address {
+                width: 100%;
+                order: 1;
+                h4 {
+                    text-align: right;
+                }
+            }
+        }
         .cart-summary-box {
             padding: rem-calc(10px);
             .coupon-code {

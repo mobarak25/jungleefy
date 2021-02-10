@@ -3,6 +3,24 @@
         <template v-if="login">
             <h2 class="d-flex align-center">Ship to</h2>
             <v-flex class="ship-info d-flex flex-wrap justify-space-between">
+                <v-flex class="change-address flex-grow-0">
+                    <v-menu transition="slide-x-transition" bottom left offset-y rounded="0">
+                        <template v-slot:activator="{ on, attrs }">
+                            <h4 v-bind="attrs" v-on="on" class="pointer">Change</h4>
+                        </template>
+                        <v-list dense>
+                            <v-list-item v-for="shipping in shippingAddress" :key="shipping.id">
+                                <v-list-item-title>
+                                    <a
+                                        @click="changeAddress(shipping)"
+                                        href="javascript:void(0)"
+                                        v-text="shipping.title"
+                                    ></a>
+                                </v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-menu>
+                </v-flex>
                 <v-flex class="address flex-grow-0">
                     <h4>Location</h4>
                     <address>
@@ -23,25 +41,6 @@
                             <strong v-text="cards.location.address"></strong>
                         </span>
                     </address>
-                </v-flex>
-
-                <v-flex class="change-address flex-grow-0">
-                    <v-menu transition="slide-x-transition" bottom left offset-y rounded="0">
-                        <template v-slot:activator="{ on, attrs }">
-                            <h4 v-bind="attrs" v-on="on" class="pointer">Change</h4>
-                        </template>
-                        <v-list dense>
-                            <v-list-item v-for="shipping in shippingAddress" :key="shipping.id">
-                                <v-list-item-title>
-                                    <a
-                                        @click="changeAddress(shipping)"
-                                        href="javascript:void(0)"
-                                        v-text="shipping.title"
-                                    ></a>
-                                </v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
                 </v-flex>
             </v-flex>
         </template>

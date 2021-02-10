@@ -3,14 +3,14 @@
         <v-container class="py-0">
             <v-card tile>
                 <v-sheet class="card-list-wrap">
-                    <v-layout class="justify-space-between">
-                        <h1 v-text="`${cards.cardItems.length} Items`"></h1>
+                    <v-layout wrap class="justify-space-between align-center">
+                        <h1 class="pr-2" v-text="`${cards.cardItems.length} Items`"></h1>
                         <span>Bill to the same address</span>
                     </v-layout>
 
                     <v-flex class="card-list-table">
                         <v-row>
-                            <v-col md="8">
+                            <v-col lg="8" cols="12">
                                 <table>
                                     <thead>
                                         <tr>
@@ -25,7 +25,7 @@
                                             :key="item.id"
                                         >
                                             <td data-label="Product Name">
-                                                <v-layout>
+                                                <v-layout class="cart-product">
                                                     <v-img
                                                         contain
                                                         max-width="80"
@@ -60,7 +60,7 @@
                                 </table>
                             </v-col>
 
-                            <v-col md="4">
+                            <v-col lg="4" cols="12">
                                 <!-- order-summay information-->
                                 <order-summay :login="true"></order-summay>
 

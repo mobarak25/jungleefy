@@ -44,3 +44,32 @@
         }
     }
 }
+
+@include media(lg) {
+    .payment-list-wrap {
+        padding: rem-calc(15px);
+        .v-btn {
+            &.confirm-order {
+                height: 50px;
+                width: 250px;
+            }
+        }
+    }
+}
+@include media(md) {
+    .site-content-wrap {
+        padding: rem-calc(15px 0 0);
+    }
+    .payment-list {
+        .v-radio {
+            height: 80px;
+            padding: rem-calc(0 15px);
+
+            .payment-title {
+                .v-image {
+                    max-width: 200px !important;
+                }
+            }
+        }
+    }
+}

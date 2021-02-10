@@ -4,7 +4,7 @@
             <v-card tile>
                 <v-sheet class="payment-list-wrap">
                     <v-row>
-                        <v-col md="8" class="py-0">
+                        <v-col lg="8" cols="12" class="py-0">
                             <v-flex class="payment-top">
                                 <h3>Payment Method</h3>
                                 <span>(Please select only one! payment method)</span>
@@ -15,7 +15,8 @@
                                     <v-col
                                         v-for="paymentItem in paymentItems"
                                         :key="paymentItem.id"
-                                        md="6"
+                                        sm="6"
+                                        cols="12"
                                         class="py-0"
                                     >
                                         <v-radio :value="paymentItem.title">
@@ -31,12 +32,15 @@
                                         </v-radio>
                                     </v-col>
 
-                                    <v-col md="12" class="py-0">
+                                    <v-col md="12" cols="12" class="py-0">
                                         <v-radio value="Card Payment">
                                             <template v-slot:label>
-                                                <div class="payment-title d-flex align-center">
+                                                <div
+                                                    class="payment-title flex-wrap d-flex align-center"
+                                                >
                                                     <span>Card Payment</span>
                                                     <v-img
+                                                        max-width="233"
                                                         :src="require('@/assets/images/bank-payment.png')"
                                                         alt
                                                     ></v-img>
@@ -48,7 +52,7 @@
                             </v-radio-group>
                         </v-col>
 
-                        <v-col md="4" class="py-0">
+                        <v-col lg="4" cols="12" class="py-0">
                             <!-- order-summay information-->
                             <order-summay :login="true"></order-summay>
 
