@@ -11,7 +11,7 @@
                 </v-flex>
 
                 <v-row>
-                    <v-col md="7">
+                    <v-col lg="7" md="6" cols="12">
                         <v-flex class="contact-left">
                             <v-flex class="contact-left-box">
                                 <h4>Address</h4>
@@ -34,7 +34,7 @@
                             </v-flex>
                         </v-flex>
                     </v-col>
-                    <v-col md="5">
+                    <v-col lg="5" md="6" cols="12">
                         <v-flex class="contact-right">
                             <ValidationObserver ref="form" v-slot="{ handleSubmit }">
                                 <form @submit.prevent="handleSubmit(onSubmit)">
@@ -164,6 +164,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/contact_us.scss";
 </style>

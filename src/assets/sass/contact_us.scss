@@ -21,13 +21,13 @@
             margin: 0;
             address {
                 font-style: normal;
-                @include font(false, 17px, 32px, medium);
+                @include font(primary, 17px, 32px, medium);
             }
             h4 {
                 @include font(brand, 17px, 32px, medium);
             }
             a {
-                @include font(false, 17px, 32px, medium);
+                @include font(primary, 17px, 32px, medium);
             }
         }
     }
@@ -40,6 +40,42 @@
                 width: 197px;
                 height: 60px;
                 @include font(false, 20px, 26px, medium);
+            }
+        }
+    }
+}
+
+@include media(md) {
+    .contact-panel {
+        padding: rem-calc(50px 5px);
+
+        .contact-top {
+            padding-bottom: rem-calc(30px);
+        }
+        .contact-left {
+            .contact-left-box {
+                padding-bottom: rem-calc(30px);
+            }
+        }
+        .contact-right {
+            .v-btn {
+                &.contact-btn {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+@include media(sm) {
+    .contact-panel {
+        padding: rem-calc(30px 5px);
+        .contact-left {
+            .contact-left-box {
+                address {
+                    br {
+                        display: none;
+                    }
+                }
             }
         }
     }
