@@ -30,18 +30,20 @@
                                     >
                                         <thead>
                                             <tr>
-                                                <th scope="col" class="tbl-1">
+                                                <th>
                                                     <span
                                                         class="order-date"
                                                         v-text="'Date: '+ orders_item.order_date"
                                                     ></span>
                                                 </th>
-                                                <th scope="col" class="tbl-2">Product</th>
-                                                <th scope="col" class="tbl-3">Price</th>
-                                                <th scope="col" class="tbl-4">
+                                                <th>Product</th>
+                                                <th>
+                                                    <div style="width: 100px;">Price</div>
+                                                </th>
+                                                <th>
                                                     <span class="winning-auction">Winning Auction</span>
                                                 </th>
-                                                <th scope="col" class="tbl-5">
+                                                <th>
                                                     <span class="status">Shipping Status</span>
                                                 </th>
                                             </tr>
@@ -62,7 +64,7 @@
                                                     </address>
                                                 </td>
                                                 <td data-label="Product">
-                                                    <v-layout class="fill-height">
+                                                    <v-layout class="my-product-img fill-height">
                                                         <v-img
                                                             contain
                                                             max-width="45"
@@ -70,7 +72,7 @@
                                                             alt="Image"
                                                         ></v-img>
 
-                                                        <v-flex class="pl-3">
+                                                        <v-flex class="my-product-title">
                                                             <h4
                                                                 class="product"
                                                                 v-text="orders_item.title"
@@ -78,6 +80,7 @@
 
                                                             <v-flex>
                                                                 <span
+                                                                    class="qty"
                                                                     v-text="'Qty - '+orders_item.qty"
                                                                 ></span>
                                                                 <v-chip
@@ -88,9 +91,7 @@
                                                         </v-flex>
                                                     </v-layout>
                                                 </td>
-                                                <td
-                                                    :data-label="`Order Total : TK ${orders_item.price}`"
-                                                >
+                                                <td data-label="Price">
                                                     <span
                                                         v-text="'TK '+ orders_item.price"
                                                         class="order-mony d-block"
@@ -101,7 +102,7 @@
                                                     >Starting bid</span>
                                                 </td>
                                                 <td data-label="Winning Auction">
-                                                    <v-layout class="align-center">
+                                                    <v-layout class="winning align-center">
                                                         <v-img
                                                             v-if="orders_item.auction_status=='Winning Bid'"
                                                             contain
@@ -116,7 +117,7 @@
                                                             height="28"
                                                             :src="require('@/assets/images/bid_participate.png')"
                                                         ></v-img>
-                                                        <v-flex class="pl-2">
+                                                        <v-flex class="winning-bid">
                                                             <span
                                                                 v-text="orders_item.auction_status"
                                                                 class="d-block"
@@ -164,6 +165,8 @@ export default {
 
     data() {
         return {
+            windowSize: "",
+            drawer: false,
             sort_item: [
                 "Last 2 Auction",
                 "Low to high price",
@@ -206,10 +209,18 @@ export default {
             ],
         };
     },
+    methods: {
+        onResize() {
+            this.windowSize = window.innerWidth;
+        },
+    },
+    mounted() {
+        this.onResize();
+    },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/account_table.scss";
 </style>
 

@@ -51,3 +51,31 @@
         }
     }
 }
+
+.filter-btn {
+    position: fixed;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+}
+.drawer-toggle {
+    left: 255px;
+    top: 24px;
+    z-index: 9;
+    position: fixed;
+    background: #fff;
+}
+
+@include media(1639px) {
+    .account-wrap {
+        width: calc(100% - 275px);
+        padding-left: rem-calc(30px);
+    }
+}
+
+@include media(lg) {
+    .account-wrap {
+        width: 100%;
+        padding-left: 0;
+    }
+}

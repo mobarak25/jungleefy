@@ -326,6 +326,7 @@ export default {
         return {
             date: "",
             modal: false,
+
             gender: ["Male", "Female", "Other"],
 
             optionsText: {
@@ -395,7 +396,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/my_account.scss";
 </style>
 

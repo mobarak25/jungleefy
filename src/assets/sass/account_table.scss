@@ -8,6 +8,7 @@
 .account-panel-top {
     padding-bottom: rem-calc(15px);
     h2 {
+        padding-right: rem-calc(10px);
         @include font(primary, 25px, 35px, medium);
     }
 }
@@ -16,19 +17,19 @@
         width: 100%;
         padding: 0;
         margin-bottom: rem-calc(13px);
-        table-layout: fixed;
         border: 1px solid #ccc;
         border-collapse: collapse;
 
         th {
             height: 50px;
-            padding: rem-calc(0 20px);
+            padding: rem-calc(0 8px);
             text-align: left;
-
             @include font(primary, 13px, 19px, semi-bold);
             background-color: lighten(map-get($colors, grey), 45);
             border-bottom: 1px solid lighten(map-get($colors, grey), 35);
-
+            .order-price {
+                width: 160px;
+            }
             .order-number {
                 display: block;
                 @include font(primary, 13px, 19px, semi-bold);
@@ -37,27 +38,12 @@
                 display: block;
                 @include font(grey, 13px, 19px, regular);
             }
-            &.tbl-1 {
-                width: 24%;
-            }
-            &.tbl-2 {
-                width: 27%;
-            }
-            &.tbl-3 {
-                width: 15%;
-            }
-            &.tbl-4 {
-                width: 15%;
-            }
-            &.tbl-5 {
-                width: 14.4%;
-            }
             .status {
                 width: 110px;
                 display: block;
             }
             .winning-auction {
-                width: 115px;
+                width: 155px;
                 display: block;
             }
             .order-item-price {
@@ -92,6 +78,9 @@
                     display: block;
                 }
             }
+            .my-product-title {
+                padding-left: rem-calc(8px);
+            }
             .details {
                 padding-top: rem-calc(3px);
                 display: inline-block;
@@ -103,8 +92,10 @@
                 @include font(primary, 13px, 14px, semi-bold);
             }
             .type {
-                margin-left: rem-calc(25px);
                 height: 24px;
+            }
+            .qty {
+                margin-right: rem-calc(25px);
             }
             .order-mony {
                 @include font(brand, 15px, 20px, medium);
@@ -119,49 +110,93 @@
     .account-pagination {
         padding-top: rem-calc(20px);
     }
+}
+@include media(1639px) {
+    .account-wrap {
+        width: calc(100% - 275px);
+        padding-left: rem-calc(30px);
+    }
+}
 
-    @media screen and (max-width: 900px) {
+@include media(lg) {
+    .account-wrap {
+        width: 100%;
+        padding-left: 0;
+    }
+    .account-panel-table {
         table {
-            border: 0;
-        }
-
-        table thead {
             border: none;
-            clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px;
-        }
+            thead {
+                display: none;
+            }
+            tbody,
+            tr,
+            td {
+                width: 100%;
+                display: block;
+            }
+            tbody {
+                tr {
+                    margin-bottom: 15px;
 
-        table tr {
-            border-bottom: 3px solid #ddd;
-            display: block;
-            margin-bottom: 0.625em;
-        }
+                    td {
+                        height: auto;
+                        text-align: center;
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                        padding-left: 50%;
+                        position: relative;
+                        border-left: thin solid rgba(0, 0, 0, 0.12);
+                        border-right: thin solid rgba(0, 0, 0, 0.12);
+                        .winning,
+                        .my-product-img {
+                            flex-wrap: wrap;
+                            justify-content: center;
 
-        table td {
-            border-bottom: 1px solid #ddd;
-            display: block;
-            font-size: 0.8em;
-            text-align: right;
-        }
+                            .v-image {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        .winning {
+                            .winning-bid {
+                                width: 100%;
+                            }
+                        }
 
-        table td::before {
-            /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-            content: attr(data-label);
-            float: left;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+                        .my-product-title {
+                            padding-left: 0;
+                        }
+                        &:first-child {
+                            border-top: thin solid rgba(0, 0, 0, 0.12);
+                        }
 
-        table td:last-child {
-            border-bottom: 0;
+                        &::before {
+                            width: 43%;
+                            text-align: left;
+                            content: attr(data-label);
+                            position: absolute;
+                            left: 15px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            @include font(primary, 15px, 18px, medium);
+                        }
+                    }
+                    &:nth-child(even) {
+                        background-color: #f5f5f5;
+                    }
+                    &:last-child {
+                        td {
+                            border-bottom: thin solid rgba(0, 0, 0, 0.12);
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+@include media(sm) {
+    .account-panel {
+        padding: rem-calc(15px 10px);
     }
 }

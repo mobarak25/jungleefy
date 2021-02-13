@@ -23,7 +23,7 @@
                                     >
                                         <thead>
                                             <tr>
-                                                <th scope="col" class="tbl-1">
+                                                <th>
                                                     <span
                                                         class="order-number"
                                                         v-text="'Order Number: '+ orders_item.order_number"
@@ -33,15 +33,15 @@
                                                         v-text="'Order Date: '+ orders_item.order_date"
                                                     ></span>
                                                 </th>
-                                                <th scope="col" class="tbl-2">Product</th>
-                                                <th scope="col" class="tbl-3">
+                                                <th>Product</th>
+                                                <th>
                                                     <span
                                                         class="order-item-price"
                                                         v-text="'Order Total: TK '+ orders_item.price"
                                                     ></span>
                                                 </th>
-                                                <th scope="col" class="tbl-4">Status</th>
-                                                <th scope="col" class="tbl-5">
+                                                <th>Status</th>
+                                                <th>
                                                     <span class="status">Shipping Status</span>
                                                 </th>
                                             </tr>
@@ -56,7 +56,7 @@
                                                     </address>
                                                 </td>
                                                 <td data-label="Product">
-                                                    <v-layout class="fill-height">
+                                                    <v-layout class="my-product-img fill-height">
                                                         <v-img
                                                             contain
                                                             max-width="45"
@@ -64,7 +64,7 @@
                                                             alt="Image"
                                                         ></v-img>
 
-                                                        <v-flex class="pl-3">
+                                                        <v-flex class="my-product-title">
                                                             <h4
                                                                 class="product"
                                                                 v-text="orders_item.title"
@@ -72,6 +72,7 @@
 
                                                             <v-flex>
                                                                 <span
+                                                                    class="qty"
                                                                     v-text="'Qty - '+orders_item.qty"
                                                                 ></span>
                                                                 <v-chip
