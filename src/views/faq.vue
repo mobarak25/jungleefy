@@ -7,7 +7,7 @@
             <v-container class="py-0">
                 <v-layout wrap class="justify-space-between">
                     <v-flex class="tab-left flex-grow-0">
-                        <v-tabs :vertical="vertical">
+                        <v-tabs show-arrows :vertical="vertical">
                             <v-tab
                                 class="text-none"
                                 v-for="(faq,index) in faqs"
@@ -147,10 +147,6 @@ export default {
                             question: "9. How To Get More Customers?",
                             ans: "Shipments sent outside the turopean anion",
                         },
-                        {
-                            question: " ",
-                            ans: "Shipments sent outside the turopean anion",
-                        },
                     ],
                 },
                 {
@@ -197,7 +193,7 @@ export default {
     },
     computed: {
         vertical() {
-            if (this.windowSize < 768) {
+            if (this.windowSize < 1264) {
                 return false;
             } else {
                 return true;
@@ -219,6 +215,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/faq.scss";
 </style>

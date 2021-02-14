@@ -34,13 +34,13 @@
             }
 
             span {
-                padding: rem-calc(0 10px 13px 45);
+                padding: rem-calc(0 10px 13px 45px);
                 display: block;
                 @include font(primary, 15px, 22px, false);
             }
         }
     }
-    .v-tabs-bar {
+    &::v-deep .v-tabs-bar {
         width: 330px;
         margin-right: 75px;
     }
@@ -61,10 +61,10 @@
         bottom: -1px;
         background-color: #ddd;
     }
-    .v-tabs-slider {
+    &::v-deep .v-tabs-slider {
         display: none;
     }
-    .v-expansion-panel::before {
+    &::v-deep .v-expansion-panel::before {
         box-shadow: none;
     }
     .v-expansion-panel-header {
@@ -80,5 +80,105 @@
     .v-expansion-panel-content__wrap {
         padding: rem-calc(30px 15px 28px);
         border-top: 1px solid #ddd;
+    }
+}
+
+@include media(1639px) {
+    .tab-panel {
+        .tab-left {
+            width: 73%;
+        }
+        .tab-right {
+            width: 27%;
+            padding-left: rem-calc(30px);
+
+            .tab-right-box {
+                padding: rem-calc(0 0 30px);
+                h2 {
+                    padding: rem-calc(0 0 20px);
+                    @include font(primary, 20px, 26px, medium);
+                }
+                .faq-btn {
+                    height: 45px;
+                }
+            }
+            .faq-contact {
+                padding: rem-calc(25px 0);
+                .faq-contact-title {
+                    padding: rem-calc(0 15px 15px);
+
+                    h3 {
+                        padding-left: rem-calc(15px);
+                    }
+                }
+
+                span {
+                    padding: rem-calc(0 10px 10px 15px);
+                }
+            }
+        }
+        &::v-deep .v-tabs-bar {
+            width: 250px;
+            margin-right: 30px;
+        }
+    }
+}
+
+@include media(lg) {
+    .tab-panel {
+        .tab-left {
+            width: 66%;
+        }
+        .tab-right {
+            width: 34%;
+            padding-left: rem-calc(30px);
+
+            .tab-right-box {
+                padding: rem-calc(0 0 30px);
+                h2 {
+                    padding: rem-calc(0 0 20px);
+                    @include font(primary, 20px, 26px, medium);
+                }
+                .faq-btn {
+                    height: 45px;
+                }
+            }
+            .faq-contact {
+                padding: rem-calc(25px 0);
+                .faq-contact-title {
+                    padding: rem-calc(0 15px 15px);
+
+                    h3 {
+                        padding-left: rem-calc(15px);
+                    }
+                }
+
+                span {
+                    padding: rem-calc(0 10px 10px 15px);
+                }
+            }
+        }
+        &::v-deep .v-tabs-bar {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .v-tab {
+            @include font(false, 20px, 26px, medium);
+        }
+    }
+}
+
+@include media(md) {
+    .tab-panel {
+        .tab-left {
+            width: 100%;
+        }
+        .tab-right {
+            width: 100%;
+            padding: rem-calc(20px 0 0);
+            margin-top: rem-calc(40px);
+            border-top: 2px solid map-get($colors, primary);
+        }
     }
 }
