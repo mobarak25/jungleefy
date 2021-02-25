@@ -1,7 +1,7 @@
 <template>
     <v-main>
         <!-- Banner Section -->
-        <HomeBanner />
+        <home-banner></home-banner>
 
         <!-- Featured Auctions  Section-->
         <home-produt-sections :options="featuredAuctions"></home-produt-sections>
@@ -27,10 +27,10 @@
 
 <script>
 import HomeBanner from "@/components/sites/pages/HomeBanner";
-import HomeProdutSections from "@/components/HomeProdutSections";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import HomePopularCategory from "@/components/HomePopularCategory";
-import HomeSellerSection from "@/components/HomeSellerSection";
+import HomeProdutSections from "@/components/sites/pages/HomeProdutSections";
+import FeaturedProducts from "@/components/sites/pages/FeaturedProducts";
+import HomePopularCategory from "@/components/sites/pages/HomePopularCategory";
+import HomeSellerSection from "@/components/sites/pages/HomeSellerSection";
 import HowToBid from "@/components/sites/common/HowToBid";
 export default {
     name: "Home",

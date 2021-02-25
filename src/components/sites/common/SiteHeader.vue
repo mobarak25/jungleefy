@@ -1,6 +1,11 @@
 <template>
     <div v-resize="onResize">
-        <v-layout v-if="windowSize >= 960" d-block tag="header" class="white--text flex-grow-0">
+        <v-layout
+            v-if="windowSize >= 960"
+            d-block
+            tag="header"
+            class="header white--text flex-grow-0"
+        >
             <v-layout class="top-header-wrapper">
                 <v-container class="py-0">
                     <v-layout class="top-header mx-0 wrap">
@@ -128,6 +133,7 @@
                 <site-menu></site-menu>
             </v-layout>
         </v-layout>
+        <v-flex class="stiky-height"></v-flex>
 
         <v-layout v-if="windowSize < 960">Mobile menu {{windowSize}}</v-layout>
     </div>

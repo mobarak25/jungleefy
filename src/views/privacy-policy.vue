@@ -129,7 +129,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .delivery-wrap .container {
     max-width: 1050px;
 }
@@ -166,6 +166,12 @@ export default {
     }
     span {
         @include font(false, 15px, 26px, false);
+    }
+}
+
+@include media(md) {
+    .delivery-panel {
+        padding: rem-calc(30px 0);
     }
 }
 </style>

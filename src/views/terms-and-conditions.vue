@@ -162,4 +162,9 @@ export default {
         @include font(false, 15px, 26px, false);
     }
 }
+@include media(md) {
+    .delivery-panel {
+        padding: rem-calc(30px 0);
+    }
+}
 </style>

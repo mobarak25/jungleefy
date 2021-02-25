@@ -1,78 +1,81 @@
-header{
+header {
     background-color: map-get($colors, primary);
 }
-.top-header-wrapper{
-    border-bottom: 1px solid darken(map-get($colors,primary),10);
+.top-header-wrapper {
+    border-bottom: 1px solid darken(map-get($colors, primary), 10);
 }
-.top-header{
-   padding:rem-calc(23 0);
+.top-header {
+    padding: rem-calc(23 0);
 }
-.top-header-left{
+.top-header-left {
     width: 34%;
 }
-.top-header-mid{
+.top-header-mid {
     width: 40.5%;
 }
-.top-header-right{
+.top-header-right {
     width: 25.5%;
 }
-.site-search{
+.site-search {
     position: relative;
     @include border-radius(6px);
     border: 2px solid #2d323b;
 
-    .site-search-btn{
+    .site-search-btn {
         @include transition(all, 400ms);
-        @include font(false, 16px, 22px,false);
-        @include absolute(117px, 100%, right,0, top,0);
+        @include font(false, 16px, 22px, false);
+        @include absolute(117px, 100%, right, 0, top, 0);
         @include border-radius(0 4px 4px 0);
-        color: map-get($colors , light);
-        background-color: map-get($colors , brand);
+        color: map-get($colors, light);
+        background-color: map-get($colors, brand);
 
-        i{
-            @include font(light, 27px, 27px,false);
+        i {
+            @include font(light, 27px, 27px, false);
         }
 
-        &:hover{
-            background-color:darken( map-get($colors , brand), 5)
+        &:hover {
+            background-color: darken(map-get($colors, brand), 5);
         }
     }
 }
-.site-search-box{
+.site-search-box {
     width: calc(100% - 117px);
-    .v-text-field--outlined, .v-text-field--solo {
+    .v-text-field--outlined,
+    .v-text-field--solo {
         border-radius: 4px 0 0 4px;
     }
 }
-.site-search-field{
+.site-search-field {
     width: 100%;
-    padding:rem-calc(10 125 9 17);
+    padding: rem-calc(10 125 9 17);
     margin: 0;
     border: 0;
     @include border-radius(4px);
-    font-family:'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     @include font(false, 16px, 25px, false);
-    &:focus{
+    &:focus {
         outline: 0;
     }
 }
 
-.top-header-widgets{
-    padding:rem-calc(0 15px);
+.top-header-widgets {
+    padding: rem-calc(0 15px);
     text-align: center;
-    & > a{
+    & > a {
         text-decoration: none;
-        span{ color: map-get($colors , light)}; 
+        span {
+            color: map-get($colors, light);
+        }
     }
-    span{
-        @include font(false, 14px, 18px,false);
-        &.sign-text{
+    span {
+        @include font(false, 14px, 18px, false);
+        &.sign-text {
             width: 86px;
             display: block;
         }
     }
 }
-.header-widgets-icon{
+.header-widgets-icon {
     width: 26px;
     height: 26px;
     margin: 0 auto;
@@ -80,37 +83,37 @@ header{
     border: 1px solid #fff;
     @include border-radius(50%);
 
-    i.v-icon{
+    i.v-icon {
         @include center(false, false);
-        color: map-get($colors , light);
+        color: map-get($colors, light);
 
-        &.mdi-cards-heart{
+        &.mdi-cards-heart {
             @include font(false, 17px, 17px, false);
         }
-        &.mdi-cart{
+        &.mdi-cart {
             @include font(false, 16px, 16px, false);
         }
-        &.mdi-account{
+        &.mdi-account {
             @include font(false, 20px, 20px, false);
         }
-        &.mdi-chevron-down{
+        &.mdi-chevron-down {
             @include font(false, 19px, 19px, false);
             left: calc(100% + 5px);
-            transform: translateY(-50%); 
+            transform: translateY(-50%);
         }
     }
 
-    .count{
+    .count {
         color: #202227;
         @include border-radius(50%);
-        @include font(false, 13px, 22px,medium);
-        background-color: map-get($colors , brand);
-        border: 2px solid map-get($colors , vulcan);
-        @include absolute(24px, 24px, top, -10px, right,-17px);
+        @include font(false, 13px, 22px, medium);
+        background-color: map-get($colors, brand);
+        border: 2px solid map-get($colors, vulcan);
+        @include absolute(24px, 24px, top, -10px, right, -17px);
     }
 }
 
-.select-box-wrapper{
+.select-box-wrapper {
     padding-right: rem-calc(11px);
 }
 .select-box {
@@ -122,82 +125,115 @@ header{
     .theme--dark.v-label {
         @include font(light, 14px, 16px, false);
     }
-    .v-icon.v-icon {font-size: 20px;}
+    .v-icon.v-icon {
+        font-size: 20px;
+    }
     .v-input__icon {
         height: 16px;
         min-width: 13px;
         width: 13px;
     }
 }
-.btm-header-wrapper{
-    .v-toolbar{
+.btm-header-wrapper {
+    .v-toolbar {
         height: auto;
-        .v-toolbar__content{
+        .v-toolbar__content {
             height: auto;
         }
     }
 }
-.main-menu{
+.main-menu {
     width: calc(100% - 138px);
-    > ul{
-        > li{
+    > ul {
+        > li {
             padding: rem-calc(0 15px);
             display: inline-block;
             @include font(light, 15px, 30px, light);
-            a{
-               color: map-get($colors , light); 
-               &:hover{
-                   @include transition(all, 400ms);
-                   color: map-get($colors , brand);
-               }
+            a {
+                color: map-get($colors, light);
+                &:hover {
+                    @include transition(all, 400ms);
+                    color: map-get($colors, brand);
+                }
             }
-            ul{
+            ul {
                 display: none;
             }
         }
     }
-    .more-menu{
+    .more-menu {
         padding-left: rem-calc(15px);
         @include font(brand, 15px, 30px, light);
     }
 }
-.btm-header{
-
-    .post-promotion{
+.btm-header {
+    .post-promotion {
         width: 138px;
         text-align: center;
         @include border-radius(6px);
         @include font(light, 15px, 30px, false);
         border: 1px solid darken(map-get($colors, primary), 10);
-        background: rgb(43,48,55);
-        background: linear-gradient(0deg, rgba(43,48,55,1) 0%, rgba(28,30,34,1) 100%);
+        background: rgb(43, 48, 55);
+        background: linear-gradient(
+            0deg,
+            rgba(43, 48, 55, 1) 0%,
+            rgba(28, 30, 34, 1) 100%
+        );
     }
 }
 
-@include media(container){
+.static_header {
+    .top-header-wrapper {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        -webkit-animation: smoothScroll 1s forwards;
+        animation: smoothScroll 1s forwards;
+        background-color: map-get($colors, primary);
+    }
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-95px);
+            -webkit-transform: translateY(-95px);
+        }
+
+        100% {
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+        }
+    }
+    .stiky-height {
+        height: 94px;
+    }
+}
+
+@include media(container) {
     .top-header-left {
         width: 37%;
     }
     .top-header-mid {
         width: 37.5%;
     }
-    .select-box{
+    .select-box {
         margin-right: rem-calc(5px);
     }
-    .select-box-wrapper{
+    .select-box-wrapper {
         padding-right: 0;
     }
 }
 
-@include media(lg){
-    .site-search{
+@include media(lg) {
+    .site-search {
         .site-search-btn {
             width: 50px;
         }
         .site-search-box {
             width: calc(100% - 50px);
         }
-    } 
+    }
     .top-header-left {
         width: 45%;
     }
@@ -209,17 +245,16 @@ header{
     }
     .select-box {
         width: 93px;
-        .v-input__slot{
+        .v-input__slot {
             padding: 0 5px !important;
         }
     }
-    .top-header-widgets{ 
-        span{
+    .top-header-widgets {
+        span {
             display: none;
-            &.sign-text{
+            &.sign-text {
                 display: none;
             }
         }
     }
-
 }

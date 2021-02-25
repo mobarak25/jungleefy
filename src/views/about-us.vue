@@ -71,6 +71,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/sass/about_us.scss";
 </style>

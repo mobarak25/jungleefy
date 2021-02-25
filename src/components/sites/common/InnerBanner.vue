@@ -35,4 +35,11 @@ export default {
         }
     }
 }
+@include media(md) {
+    .inner-banner {
+        h1 {
+            @include font(primary, 30px, 40px, medium);
+        }
+    }
+}
 </style>

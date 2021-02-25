@@ -105,43 +105,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.delivery-wrap .container {
-    max-width: 1050px;
-}
-.delivery-panel {
-    padding: rem-calc(65px 0);
-}
-.delivery-box {
-    padding-bottom: rem-calc(25px);
-    h4 {
-        padding-bottom: rem-calc(10px);
-        @include font(primary, 22px, 26px, medium);
-    }
-    p {
-        @include font(false, 15px, 26px, false);
-        &:not(:last-child) {
-            padding-bottom: rem-calc(25px);
-        }
-    }
-    ol {
-        padding-left: rem-calc(15px);
-
-        li {
-            @include font(false, 15px, 26px, false);
-        }
-    }
-    ul {
-        li {
-            @include font(false, 15px, 26px, false);
-        }
-    }
-    address {
-        font-style: normal;
-        @include font(false, 15px, 26px, false);
-    }
-    span {
-        @include font(false, 15px, 26px, false);
-    }
-}
+<style lang="scss" scoped>
+@import "@/assets/sass/delivery_information.scss";
 </style>

@@ -180,5 +180,9 @@
             margin-top: rem-calc(40px);
             border-top: 2px solid map-get($colors, primary);
         }
+        .v-expansion-panel-header {
+            padding: rem-calc(20px 0);
+            @include font(false, 16px, 20px, false);
+        }
     }
 }

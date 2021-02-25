@@ -324,7 +324,6 @@ export default {
 
     data() {
         return {
-            date: "",
             modal: false,
 
             gender: ["Male", "Female", "Other"],
@@ -360,7 +359,7 @@ export default {
                 last_name: "",
                 email: "",
                 phone: "",
-                birth_date: null,
+                birth_date: new Date().toISOString().substr(0, 10),
                 gender: "",
                 current_password: "mobarak84",
                 new_password: "",
