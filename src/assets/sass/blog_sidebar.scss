@@ -52,10 +52,31 @@
         .recent-blog-right {
             h4 {
                 padding-bottom: rem-calc(5px);
+                @include truncate-clamp(2);
                 @include font(primary, 16px, 22px, regular);
             }
             i {
                 @include font(grey, 14px, 16px, false);
+            }
+        }
+    }
+}
+
+@include media(1639px) {
+    .blog-sideIn {
+        padding: rem-calc(20px);
+        .recent-blog {
+            .recent-blog-left {
+                max-width: 120px;
+                padding-right: rem-calc(10px);
+            }
+            .recent-blog-right {
+                h4 {
+                    @include font(false, 14px, 20px, false);
+                }
+                i {
+                    @include font(grey, 13px, 16px, false);
+                }
             }
         }
     }

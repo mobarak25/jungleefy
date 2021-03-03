@@ -103,3 +103,57 @@
         }
     }
 }
+
+@include media(1639px) {
+    .blog-panel {
+        .blog-top {
+            padding-bottom: rem-calc(15px);
+        }
+        .blog-item {
+            width: 68%;
+        }
+        .blog-sidebar {
+            width: 28%;
+        }
+        .blog-item-content {
+            &:not(:last-child) {
+                padding-bottom: rem-calc(70px);
+            }
+        }
+
+        .blog-left {
+            max-width: 48%;
+            h3 {
+                padding-bottom: rem-calc(20px);
+                @include font(false, 22px, 28px, false);
+            }
+            p {
+                padding-bottom: rem-calc(20px);
+            }
+        }
+        .feature-image {
+            max-width: 50%;
+        }
+    }
+}
+
+@include media(lg) {
+    .blog-panel {
+        .blog-item {
+            width: 60%;
+        }
+        .blog-sidebar {
+            width: 35%;
+        }
+
+        .blog-left {
+            max-width: 100%;
+            order: 2;
+        }
+        .feature-image {
+            max-width: 100%;
+            padding-bottom: rem-calc(30px);
+            order: 1;
+        }
+    }
+}

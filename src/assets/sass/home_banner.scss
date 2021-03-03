@@ -104,6 +104,16 @@
         margin: 0;
         top: auto;
         bottom: 15px;
+        background-color: #fff;
+        @include transition(all, 400ms);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        &:hover {
+            background-color: map-get($colors, brand);
+            box-shadow: 0 3px 10px rgba(255, 153, 0, 0.4);
+            .v-btn--icon.v-size--default {
+                color: map-get($colors, light);
+            }
+        }
     }
     .v-window__prev {
         margin-left: -115px;
@@ -116,6 +126,10 @@
     .v-btn--icon.v-size--default {
         height: 32px;
         width: 32px;
+        color: map-get($colors, primary);
+        i {
+            font-size: 25px !important;
+        }
     }
 }
 
@@ -138,7 +152,6 @@
 
 @include media(lg) {
     .banner-wrapper {
-        padding-bottom: rem-calc(30px);
         .banner-caption {
             .v-btn {
                 height: 32px;

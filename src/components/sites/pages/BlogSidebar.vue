@@ -49,7 +49,6 @@
                     <v-flex class="recent-blog-left">
                         <v-img
                             width="100%"
-                            height="100%"
                             :src="require('@/assets/images/blog/'+ post.image)"
                             alt="faq contact icon"
                         ></v-img>
